@@ -1,0 +1,130 @@
+package com.ebay.communication.generated.notification.subscription.item.filter.item;
+
+import com.ebay.communication.generated.notification.models.SubscriptionFilter;
+import com.microsoft.kiota.BaseRequestBuilder;
+import com.microsoft.kiota.BaseRequestConfiguration;
+import com.microsoft.kiota.HttpMethod;
+import com.microsoft.kiota.RequestAdapter;
+import com.microsoft.kiota.RequestInformation;
+import com.microsoft.kiota.RequestOption;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParsableFactory;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * Builds and executes requests for operations under /subscription/{subscription_id}/filter/{filter_id}
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class WithFilterItemRequestBuilder extends BaseRequestBuilder {
+    /**
+     * Instantiates a new {@link WithFilterItemRequestBuilder} and sets the default values.
+     * @param pathParameters Path parameters for the request
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public WithFilterItemRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/subscription/{subscription_id}/filter/{filter_id}", pathParameters);
+    }
+    /**
+     * Instantiates a new {@link WithFilterItemRequestBuilder} and sets the default values.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @param requestAdapter The request adapter to use to execute the requests.
+     */
+    public WithFilterItemRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
+        super(requestAdapter, "{+baseurl}/subscription/{subscription_id}/filter/{filter_id}", rawUrl);
+    }
+    /**
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     */
+    public void delete() {
+        delete(null);
+    }
+    /**
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
+        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+    }
+    /**
+     * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
+     * @return a {@link SubscriptionFilter}
+     */
+    @jakarta.annotation.Nullable
+    public SubscriptionFilter get() {
+        return get(null);
+    }
+    /**
+     * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link SubscriptionFilter}
+     */
+    @jakarta.annotation.Nullable
+    public SubscriptionFilter get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
+        return this.requestAdapter.send(requestInfo, null, SubscriptionFilter::createFromDiscriminatorValue);
+    }
+    /**
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toDeleteRequestInformation() {
+        return toDeleteRequestInformation(null);
+    }
+    /**
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        return requestInfo;
+    }
+    /**
+     * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation() {
+        return toGetRequestInformation(null);
+    }
+    /**
+     * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
+     * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link RequestInformation}
+     */
+    @jakarta.annotation.Nonnull
+    public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
+        requestInfo.configure(requestConfiguration, GetRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
+        return requestInfo;
+    }
+    /**
+     * Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+     * @param rawUrl The raw URL to use for the request builder.
+     * @return a {@link WithFilterItemRequestBuilder}
+     */
+    @jakarta.annotation.Nonnull
+    public WithFilterItemRequestBuilder withUrl(@jakarta.annotation.Nonnull final String rawUrl) {
+        Objects.requireNonNull(rawUrl);
+        return new WithFilterItemRequestBuilder(rawUrl, requestAdapter);
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class DeleteRequestConfiguration extends BaseRequestConfiguration {
+    }
+    /**
+     * Configuration for the request such as headers, query parameters, and middleware options.
+     */
+    @jakarta.annotation.Generated("com.microsoft.kiota")
+    public class GetRequestConfiguration extends BaseRequestConfiguration {
+    }
+}

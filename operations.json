@@ -1,0 +1,45 @@
+{
+  "rest": {
+    "commerce_feedback_v1_beta_oas3": [
+      "getFeedback",
+      "getFeedbackRatingSummary",
+      "getItemsAwaitingFeedback",
+      "leaveFeedback",
+      "respondToFeedback"
+    ],
+    "commerce_message_v1_oas3": [
+      "bulkUpdateConversation",
+      "getConversation",
+      "getConversations",
+      "sendMessage",
+      "updateConversation"
+    ],
+    "sell_negotiation_v1_oas3": [
+      "findEligibleItems",
+      "sendOfferToInterestedBuyers"
+    ],
+    "commerce_notification_v1_oas3": [
+      "createDestination",
+      "createSubscription",
+      "createSubscriptionFilter",
+      "deleteDestination",
+      "deleteSubscription",
+      "deleteSubscriptionFilter",
+      "disableSubscription",
+      "enableSubscription",
+      "getConfig",
+      "getDestination",
+      "getDestinations",
+      "getPublicKey",
+      "getSubscription",
+      "getSubscriptionFilter",
+      "getSubscriptions",
+      "getTopic",
+      "getTopics",
+      "testSubscription",
+      "updateConfig",
+      "updateDestination",
+      "updateSubscription"
+    ]
+  }
+}

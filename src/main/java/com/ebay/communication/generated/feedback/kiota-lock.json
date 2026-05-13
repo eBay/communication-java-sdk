@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "4D840E9EF8DAB558CEEF1B7B8D02024665178221CA5BB1C7A22AD9FB652EEE8DE2373C3618567C28BA5FDF656C30481B45113C69E00CE77DEF2702B0B2C613BB",
+  "descriptionLocation": "../../../../../../../../specs/commerce_feedback_v1_beta_oas3.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.31.1",
+  "clientClassName": "FeedbackApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "com.ebay.communication.generated.feedback",
+  "language": "Java",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}

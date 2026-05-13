@@ -1,0 +1,34 @@
+{
+  "descriptionHash": "680305A1D504F3FA121D79A8A430D3E93659A536B8F1BF456B9C5B1B38F38B4D88E84171405B3CEB8AB8D92F58833142A28FFA2BCDCAC39253EFBD231BE0A6A8",
+  "descriptionLocation": "../../../../../../../../specs/commerce_notification_v1_oas3.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.31.1",
+  "clientClassName": "NotificationApiClient",
+  "typeAccessModifier": "Public",
+  "clientNamespaceName": "com.ebay.communication.generated.notification",
+  "language": "Java",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": true,
+  "includeAdditionalData": true,
+  "disableSSLValidation": false,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
