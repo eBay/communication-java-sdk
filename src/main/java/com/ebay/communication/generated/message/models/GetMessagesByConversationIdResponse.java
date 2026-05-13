@@ -1,0 +1,277 @@
+package com.ebay.communication.generated.message.models;
+
+import com.microsoft.kiota.serialization.AdditionalDataHolder;
+import com.microsoft.kiota.serialization.Parsable;
+import com.microsoft.kiota.serialization.ParseNode;
+import com.microsoft.kiota.serialization.SerializationWriter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+/**
+ * This type defines the response payload of the &lt;b&gt;getConversation&lt;/b&gt; method.
+ */
+@jakarta.annotation.Generated("com.microsoft.kiota")
+public class GetMessagesByConversationIdResponse implements AdditionalDataHolder, Parsable {
+    /**
+     * Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     */
+    private Map<String, Object> additionalData;
+    /**
+     * The current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;. 
+     */
+    private String conversationStatus;
+    /**
+     * The title of the conversation.
+     */
+    private String conversationTitle;
+    /**
+     * The type of the conversation, such as &lt;code&gt;FROM_EBAY&lt;/code&gt; or &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.
+     */
+    private String conversationType;
+    /**
+     * The URI to the current page of results.
+     */
+    private String href;
+    /**
+     * The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     */
+    private Integer limit;
+    /**
+     * This array returns a list of messages from the specified conversation.
+     */
+    private java.util.List<MessageDetail> messages;
+    /**
+     * The URI for the next page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is an additional page of results in the result set.
+     */
+    private String next;
+    /**
+     * The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     */
+    private Integer offset;
+    /**
+     * The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     */
+    private String prev;
+    /**
+     * The total number of entries returned in the result set.
+     */
+    private Integer total;
+    /**
+     * Instantiates a new {@link GetMessagesByConversationIdResponse} and sets the default values.
+     */
+    public GetMessagesByConversationIdResponse() {
+        this.setAdditionalData(new HashMap<>());
+    }
+    /**
+     * Creates a new instance of the appropriate class based on discriminator value
+     * @param parseNode The parse node to use to read the discriminator value and create the object
+     * @return a {@link GetMessagesByConversationIdResponse}
+     */
+    @jakarta.annotation.Nonnull
+    public static GetMessagesByConversationIdResponse createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+        Objects.requireNonNull(parseNode);
+        return new GetMessagesByConversationIdResponse();
+    }
+    /**
+     * Gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @return a {@link Map<String, Object>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, Object> getAdditionalData() {
+        return this.additionalData;
+    }
+    /**
+     * Gets the conversationStatus property value. The current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;. 
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getConversationStatus() {
+        return this.conversationStatus;
+    }
+    /**
+     * Gets the conversationTitle property value. The title of the conversation.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getConversationTitle() {
+        return this.conversationTitle;
+    }
+    /**
+     * Gets the conversationType property value. The type of the conversation, such as &lt;code&gt;FROM_EBAY&lt;/code&gt; or &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getConversationType() {
+        return this.conversationType;
+    }
+    /**
+     * The deserialization information for the current model
+     * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
+     */
+    @jakarta.annotation.Nonnull
+    public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(10);
+        deserializerMap.put("conversationStatus", (n) -> { this.setConversationStatus(n.getStringValue()); });
+        deserializerMap.put("conversationTitle", (n) -> { this.setConversationTitle(n.getStringValue()); });
+        deserializerMap.put("conversationType", (n) -> { this.setConversationType(n.getStringValue()); });
+        deserializerMap.put("href", (n) -> { this.setHref(n.getStringValue()); });
+        deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
+        deserializerMap.put("messages", (n) -> { this.setMessages(n.getCollectionOfObjectValues(MessageDetail::createFromDiscriminatorValue)); });
+        deserializerMap.put("next", (n) -> { this.setNext(n.getStringValue()); });
+        deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
+        deserializerMap.put("prev", (n) -> { this.setPrev(n.getStringValue()); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getIntegerValue()); });
+        return deserializerMap;
+    }
+    /**
+     * Gets the href property value. The URI to the current page of results.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getHref() {
+        return this.href;
+    }
+    /**
+     * Gets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getLimit() {
+        return this.limit;
+    }
+    /**
+     * Gets the messages property value. This array returns a list of messages from the specified conversation.
+     * @return a {@link java.util.List<MessageDetail>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<MessageDetail> getMessages() {
+        return this.messages;
+    }
+    /**
+     * Gets the next property value. The URI for the next page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is an additional page of results in the result set.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getNext() {
+        return this.next;
+    }
+    /**
+     * Gets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getOffset() {
+        return this.offset;
+    }
+    /**
+     * Gets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     * @return a {@link String}
+     */
+    @jakarta.annotation.Nullable
+    public String getPrev() {
+        return this.prev;
+    }
+    /**
+     * Gets the total property value. The total number of entries returned in the result set.
+     * @return a {@link Integer}
+     */
+    @jakarta.annotation.Nullable
+    public Integer getTotal() {
+        return this.total;
+    }
+    /**
+     * Serializes information the current object
+     * @param writer Serialization writer to use to serialize this model
+     */
+    public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
+        Objects.requireNonNull(writer);
+        writer.writeStringValue("conversationStatus", this.getConversationStatus());
+        writer.writeStringValue("conversationTitle", this.getConversationTitle());
+        writer.writeStringValue("conversationType", this.getConversationType());
+        writer.writeStringValue("href", this.getHref());
+        writer.writeIntegerValue("limit", this.getLimit());
+        writer.writeCollectionOfObjectValues("messages", this.getMessages());
+        writer.writeStringValue("next", this.getNext());
+        writer.writeIntegerValue("offset", this.getOffset());
+        writer.writeStringValue("prev", this.getPrev());
+        writer.writeIntegerValue("total", this.getTotal());
+        writer.writeAdditionalData(this.getAdditionalData());
+    }
+    /**
+     * Sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+     * @param value Value to set for the AdditionalData property.
+     */
+    public void setAdditionalData(@jakarta.annotation.Nullable final Map<String, Object> value) {
+        this.additionalData = value;
+    }
+    /**
+     * Sets the conversationStatus property value. The current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;. 
+     * @param value Value to set for the conversationStatus property.
+     */
+    public void setConversationStatus(@jakarta.annotation.Nullable final String value) {
+        this.conversationStatus = value;
+    }
+    /**
+     * Sets the conversationTitle property value. The title of the conversation.
+     * @param value Value to set for the conversationTitle property.
+     */
+    public void setConversationTitle(@jakarta.annotation.Nullable final String value) {
+        this.conversationTitle = value;
+    }
+    /**
+     * Sets the conversationType property value. The type of the conversation, such as &lt;code&gt;FROM_EBAY&lt;/code&gt; or &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.
+     * @param value Value to set for the conversationType property.
+     */
+    public void setConversationType(@jakarta.annotation.Nullable final String value) {
+        this.conversationType = value;
+    }
+    /**
+     * Sets the href property value. The URI to the current page of results.
+     * @param value Value to set for the href property.
+     */
+    public void setHref(@jakarta.annotation.Nullable final String value) {
+        this.href = value;
+    }
+    /**
+     * Sets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     * @param value Value to set for the limit property.
+     */
+    public void setLimit(@jakarta.annotation.Nullable final Integer value) {
+        this.limit = value;
+    }
+    /**
+     * Sets the messages property value. This array returns a list of messages from the specified conversation.
+     * @param value Value to set for the messages property.
+     */
+    public void setMessages(@jakarta.annotation.Nullable final java.util.List<MessageDetail> value) {
+        this.messages = value;
+    }
+    /**
+     * Sets the next property value. The URI for the next page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is an additional page of results in the result set.
+     * @param value Value to set for the next property.
+     */
+    public void setNext(@jakarta.annotation.Nullable final String value) {
+        this.next = value;
+    }
+    /**
+     * Sets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     * @param value Value to set for the offset property.
+     */
+    public void setOffset(@jakarta.annotation.Nullable final Integer value) {
+        this.offset = value;
+    }
+    /**
+     * Sets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     * @param value Value to set for the prev property.
+     */
+    public void setPrev(@jakarta.annotation.Nullable final String value) {
+        this.prev = value;
+    }
+    /**
+     * Sets the total property value. The total number of entries returned in the result set.
+     * @param value Value to set for the total property.
+     */
+    public void setTotal(@jakarta.annotation.Nullable final Integer value) {
+        this.total = value;
+    }
+}
