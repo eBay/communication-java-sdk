@@ -15,7 +15,7 @@ public final class CommunicationConfiguration {
     private String messageBaseUrl = "https://api.ebay.com/commerce/message/v1";
     private String notificationBaseUrl = "https://api.ebay.com/commerce/notification/v1";
     private String negotiationBaseUrl = "https://api.ebay.com/sell/negotiation/v1";
-    private String graphQLBaseUrl = "https://api.ebay.com/buy/marketplace-insights/v1_beta/graphql";
+    private String graphQLBaseUrl = "https://api.ebay.com/graphql";
 
     private String accessToken;  // static fallback; per-call token takes precedence
     private boolean diagnosticLogging = false;
