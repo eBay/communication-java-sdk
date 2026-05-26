@@ -35,4 +35,7 @@ kiota generate -l java \
   -o src/main/java/com/ebay/communication/generated/negotiation \
   --ebc --co
 
+echo "Adding license headers to generated files..."
+./add-license-headers.sh ./src
+
 echo "Done. Run './gradlew build' to compile."
