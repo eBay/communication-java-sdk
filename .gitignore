@@ -28,3 +28,8 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# Internal integration tests (require eBay credentials, not for public use)
+INTEGRATION_TEST.md
+src/test/kotlin/IntegrationTest.kt
+src/test/java/IntegrationTest.java
