@@ -23,7 +23,7 @@ public class GraphQLException extends SdkException {
     private final List<String> errors;
 
     public GraphQLException(List<String> errors) {
-        super("GraphQL errors: " + String.join(", ", errors));
+        super("GraphQL request returned " + errors.size() + " error(s); call getErrors() for details");
         this.errors = List.copyOf(errors);
     }
 

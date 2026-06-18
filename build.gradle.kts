@@ -1,6 +1,7 @@
 plugins {
     `java-library`
     `maven-publish`
+    id("org.owasp.dependencycheck") version "12.1.3"
 }
 
 group = "com.ebay"
@@ -28,6 +29,24 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+// SEC-011: CVE scanning
+dependencyCheck {
+    failBuildOnCVSS = 7.0f
+    suppressionFile = "dependency-check-suppressions.xml"
+    analyzers {
+        assemblyEnabled = false
+        ossIndexEnabled = false
+    }
+    nvd {
+        apiKey = System.getenv("NVD_API_KEY") ?: ""
+    }
+}
+
+// SEC-011: Dependency locking
+dependencyLocking {
+    lockAllConfigurations()
 }
 
 publishing {

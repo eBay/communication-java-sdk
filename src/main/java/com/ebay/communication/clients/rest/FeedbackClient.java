@@ -54,13 +54,12 @@ public final class FeedbackClient {
      * @param requestOptions Optional request options for custom headers (e.g., marketplace ID).
      */
     public CompletableFuture<GetFeedbackResponse> getFeedbackAsync(String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.feedback().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -70,13 +69,12 @@ public final class FeedbackClient {
      */
     public CompletableFuture<GetFeedbackRatingSummaryResponse> getFeedbackRatingSummaryAsync(
             String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.feedbackRatingSummary().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -86,13 +84,12 @@ public final class FeedbackClient {
      */
     public CompletableFuture<AwaitingFeedbackResponse> getItemsAwaitingFeedbackAsync(
             String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.awaitingFeedback().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -103,13 +100,12 @@ public final class FeedbackClient {
      */
     public CompletableFuture<LeaveFeedbackResponse> leaveFeedbackAsync(
             LeaveFeedbackRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.feedback().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -120,13 +116,12 @@ public final class FeedbackClient {
      */
     public CompletableFuture<Void> respondToFeedbackAsync(
             RespondToFeedbackRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             kiota.respondToFeedback().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
             return null;
-        });
+        }));
     }
 }
