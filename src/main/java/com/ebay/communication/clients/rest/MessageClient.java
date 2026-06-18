@@ -56,13 +56,13 @@ public final class MessageClient {
      */
     public CompletableFuture<GetMessagesByConversationIdResponse> getConversationAsync(
             String conversationId, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        Params.requireValid("conversationId", conversationId);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.conversation().byConversation_id(conversationId).get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -72,13 +72,12 @@ public final class MessageClient {
      */
     public CompletableFuture<GetAllMyConversationsResponse> getConversationsAsync(
             String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.conversation().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -89,13 +88,12 @@ public final class MessageClient {
      */
     public CompletableFuture<SendMessageResponse> sendMessageAsync(
             SendMessageRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.sendMessage().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -106,14 +104,13 @@ public final class MessageClient {
      */
     public CompletableFuture<Void> updateConversationAsync(
             UpdateConversationRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             kiota.updateConversation().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
             return null;
-        });
+        }));
     }
 
     /**
@@ -124,12 +121,11 @@ public final class MessageClient {
      */
     public CompletableFuture<BulkUpdateConversationsResponse> bulkUpdateConversationAsync(
             BulkUpdateConversationsRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.bulkUpdateConversation().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 }

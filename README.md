@@ -148,6 +148,14 @@ JsonNode data = sdk.graphQL.executeRawUnsafe(query, null, null, null);
 
 > **Warning:** Never interpolate user input directly into the query string — always pass dynamic values through `variables` to avoid GraphQL injection.
 
+## Rate Limiting and Retry
+
+The SDK does not include built-in retry logic or rate-limit handling. eBay's APIs return HTTP 429 Too Many Requests when rate limits are exceeded. Implement exponential back-off in your application layer when calling bulk endpoints in loops.
+
+Refer to eBay's API call limits documentation for per-endpoint rate limit details.
+
+---
+
 ## Error Handling
 
 ```java

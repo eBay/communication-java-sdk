@@ -55,13 +55,12 @@ public final class NegotiationClient {
      */
     public CompletableFuture<PagedEligibleItemCollection> findEligibleItemsAsync(
             String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.findEligibleItems().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 
     /**
@@ -72,12 +71,11 @@ public final class NegotiationClient {
      */
     public CompletableFuture<SendOfferToInterestedBuyersCollectionResponse> sendOfferToInterestedBuyersAsync(
             CreateOffersRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> {
-            TokenContext.CURRENT.set(accessToken);
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.sendOfferToInterestedBuyers().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-        });
+        }));
     }
 }
