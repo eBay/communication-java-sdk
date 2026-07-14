@@ -18,7 +18,7 @@ dependencies {
     implementation("com.microsoft.kiota:microsoft-kiota-serialization-form:1.9.2")
     implementation("com.microsoft.kiota:microsoft-kiota-serialization-multipart:1.9.2")
 
-    implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
+    compileOnly("jakarta.annotation:jakarta.annotation-api:2.1.1")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.21.2")
     implementation("org.slf4j:slf4j-api:2.0.17")
