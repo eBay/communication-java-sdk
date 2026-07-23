@@ -25,9 +25,6 @@ dependencies {
 
 }
 
-tasks.test {
-    useJUnitPlatform()
-}
 
 // SEC-011: CVE scanning
 dependencyCheck {
