@@ -20,7 +20,7 @@ dependencies {
 
     compileOnly("jakarta.annotation:jakarta.annotation-api:2.1.1")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.21.2")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.21.4")
     implementation("org.slf4j:slf4j-api:2.0.17")
 
 }
