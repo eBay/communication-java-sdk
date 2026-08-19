@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.ebay"
-version = "1.0.0"
+version = "0.1.0"
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
