@@ -5,7 +5,7 @@ echo "Regenerating REST clients via Kiota..."
 
 # Feedback API
 kiota generate -l java \
-  -d specs/commerce_feedback_v1_beta_oas3.yaml \
+  -d specs/openapi/feedback.yaml \
   -c FeedbackApiClient \
   -n com.ebay.communication.generated.feedback \
   -o src/main/java/com/ebay/communication/generated/feedback \
@@ -13,7 +13,7 @@ kiota generate -l java \
 
 # Message API
 kiota generate -l java \
-  -d specs/commerce_message_v1_oas3.yaml \
+  -d specs/openapi/message.yaml \
   -c MessageApiClient \
   -n com.ebay.communication.generated.message \
   -o src/main/java/com/ebay/communication/generated/message \
@@ -21,7 +21,7 @@ kiota generate -l java \
 
 # Notification API
 kiota generate -l java \
-  -d specs/commerce_notification_v1_oas3.yaml \
+  -d specs/openapi/notification.yaml \
   -c NotificationApiClient \
   -n com.ebay.communication.generated.notification \
   -o src/main/java/com/ebay/communication/generated/notification \
@@ -29,7 +29,7 @@ kiota generate -l java \
 
 # Negotiation API
 kiota generate -l java \
-  -d specs/sell_negotiation_v1_oas3.yaml \
+  -d specs/openapi/negotiation.yaml \
   -c NegotiationApiClient \
   -n com.ebay.communication.generated.negotiation \
   -o src/main/java/com/ebay/communication/generated/negotiation \
