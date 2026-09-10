@@ -2957,7 +2957,7 @@ Client implementation guidelines:
 - Persist the raw string value to preserve unknown future values
 
 Example:
-\`\`\`typescript
+```typescript
 switch (reason) {
 case 'BUYER_REQUESTED':
 // handle...
@@ -2966,7 +2966,7 @@ case 'OUT_OF_STOCK':
 default:
 // handle unknown future values gracefully
 }
-\`\`\`
+```
 """
 enum ContractCancellationSellerReasonInput {
   """ The buyer requested the order cancellation."""
@@ -11516,7 +11516,7 @@ type Mutation {
   """
   The **attachReturnShipmentLabel** mutation attaches a return shipment label to the specified return.
     
-  **Note:** Use the **Media API** <a href=\"https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/uploadPostOrderDocument\" target=\"_blank\">upPostOrderDocument</a> method to upload the label, and then reference it in this mutation.
+  **Note:** Use the **Media API** <a href="https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/uploadPostOrderDocument" target="_blank">upPostOrderDocument</a> method to upload the label, and then reference it in this mutation.
   """
   attachReturnShipmentLabel(input: AttachReturnShipmentLabelInput!): AttachReturnShipmentLabelOutput! @authorize(scopes: ["https://api.ebay.com/oauth/api_scope/sell.return&eBayUser"])
   """
@@ -20801,7 +20801,7 @@ type ReturnLabel {
   """
   This field contains the return label document ID. This is the unique identifier for the return shipment label document.
     
-  **Note:** Use the **Media API** <a href=\"https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/downloadPostOrderDocument\"  target=\"_blank\">downloadPostOrderDocument</a> method to download the label.
+  **Note:** Use the **Media API** <a href="https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/downloadPostOrderDocument"  target="_blank">downloadPostOrderDocument</a> method to download the label.
     
   This optional field is not available during the following scenarios.
   - seller provides only tracking and shipping carrier code for offline methods
@@ -20830,7 +20830,7 @@ enum ReturnLabelProvisionOption {
   """
   The seller attaches the return label to the return.
     
-  **Note:** Use the **Media API** <a href=\"https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/downloadPostOrderDocument\"  target=\"_blank\">downloadPostOrderDocument</a> method to download the label.
+  **Note:** Use the **Media API** <a href="https://developer.ebay.com/api-docs/commerce/media/resources/post_order/methods/downloadPostOrderDocument"  target="_blank">downloadPostOrderDocument</a> method to download the label.
   """
   ATTACH_LABEL_TO_RETURN
   """The seller has sent the return label to the buyer offline."""
@@ -22275,7 +22275,7 @@ input ReturnShippingCarrierInput {
   """
   The eBay-standard carrier code for the shipping carrier which must match one of the supported eBay carrier codes for the marketplace. Use the special value `UNSUPPORTED` if the carrier is not supported or recognized by eBay for the marketplace. For unsupported carriers, provide the carrier name in the **unsupportedCarrierName** field.
     
-  **Note:** Use the **Metadata API** <a href=\"https://developer.ebay.com/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingCarriers\" target=\"_blank\">getShippingCarriers</a> method to retrieve **shippingCarrier** codes for an eBay marketplace.
+  **Note:** Use the **Metadata API** <a href="https://developer.ebay.com/api-docs/sell/metadata/resources/shipping:marketplace/methods/getShippingCarriers" target="_blank">getShippingCarriers</a> method to retrieve **shippingCarrier** codes for an eBay marketplace.
   """
   carrierCode: String!
   """
@@ -27915,7 +27915,7 @@ type UserCustomList {
   """
   The user-defined name for this custom list.
      **Maximum length**: 40 characters
-     **Format**: Alphanumeric characters and most symbols are allowed, except for these prohibited characters: '< > \ / : " | ? *'
+     **Format**: Alphanumeric characters and most symbols are allowed, except for these prohibited characters: '< > \\ / : " | ? *'
   """
   name: String!
 }
