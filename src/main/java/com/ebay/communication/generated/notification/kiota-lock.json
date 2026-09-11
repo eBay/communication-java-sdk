@@ -1,8 +1,8 @@
 {
   "descriptionHash": "680305A1D504F3FA121D79A8A430D3E93659A536B8F1BF456B9C5B1B38F38B4D88E84171405B3CEB8AB8D92F58833142A28FFA2BCDCAC39253EFBD231BE0A6A8",
-  "descriptionLocation": "../../../../../../../../specs/commerce_notification_v1_oas3.yaml",
+  "descriptionLocation": "../../../../../../../../specs/openapi/notification.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "NotificationApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "com.ebay.communication.generated.notification",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }
