@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the fields for the &lt;b&gt;leaveFeedback&lt;/b&gt; response for feedback that has been left.
+ * This type defines the fields for the &lt;strong&gt;leaveFeedback&lt;/strong&gt; response for the feedback.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LeaveFeedbackResponse implements AdditionalDataHolder, Parsable {

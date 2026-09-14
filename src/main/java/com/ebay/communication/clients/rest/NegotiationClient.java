@@ -22,6 +22,8 @@ import com.ebay.communication.generated.negotiation.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.io.InputStream;
+import com.microsoft.kiota.serialization.UntypedNode;
 
 public final class NegotiationClient {
     private final NegotiationApiClient kiota;
@@ -41,7 +43,7 @@ public final class NegotiationClient {
     }
 
     public CompletableFuture<PagedEligibleItemCollection> findEligibleItemsAsync(
-            String limit, String offset, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
+            Integer limit, Integer offset, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.findEligibleItems().get(config -> {

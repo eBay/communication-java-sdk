@@ -31,19 +31,19 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback normally. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by ebay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
+     * If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback of their own. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by eBay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
      */
     private Boolean automatedFeedback;
     /**
-     * This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt;
      */
-    private String commentType;
+    private FeedbackRatingValuesEnum commentType;
     /**
      * This boolean indicates whether the feedback is eligible for revision. If returned as &lt;code&gt;true&lt;/code&gt;, it means the feedback can be modified. Feedback that is older than 30 days or has already been revised once cannot be erased or further revised.
      */
     private Boolean eligibleForRevision;
     /**
-     * This type provides the details of the feedback comment left by the user.
+     * This container provides the feedback comment left by a user when submitting feedback for a seller or buyer.
      */
     private Comment feedbackComment;
     /**
@@ -51,7 +51,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
      */
     private String feedbackEnteredDate;
     /**
-     * This type specifies the amount of time elapsed associated with a feedback entry.
+     * This container represents the duration since feedback was entered, expressed as a numeric value and a unit of time in days.
      */
     private FeedbackEnteredPeriod feedbackEnteredPeriod;
     /**
@@ -67,11 +67,11 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
      */
     private Integer feedbackScore;
     /**
-     * This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStateEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;).
      */
-    private String feedbackState;
+    private FeedbackStateEnum feedbackState;
     /**
-     * This type provides the details of the feedback comment left by the user.
+     * This container provides the details of any follow-up comment left. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      */
     private Comment followupComment;
     /**
@@ -83,23 +83,23 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<Image> images;
     /**
-     * This type provides fields for a summary of the line item related to feedback.
+     * This container provides a summary of the line item associated with the feedback entry. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Certain fields within this container are returned only when the request uses the &lt;strong&gt;Authorization code grant flow&lt;/strong&gt; (user access token) and the &lt;strong&gt;user_id&lt;/strong&gt; matches the authenticated user. These fields are not returned when accessing a different &lt;strong&gt;user_id&lt;/strong&gt; or when using the &lt;strong&gt;Client credentials grant flow&lt;/strong&gt; (application access token). See &lt;a href=&quot;#h3-oauth-scope&quot;&gt;OAuth scope&lt;/a&gt; for details on the flows and required permissions.&lt;/span&gt;&lt;/p&gt;
      */
     private OrderLineItemSummary orderLineItemSummary;
     /**
-     * This type provides the details of the user who provided the feedback of a &lt;b&gt;getFeedback&lt;/b&gt; response.
+     * This container details the attributes of the user who provided the feedback.
      */
     private ProviderUserDetail providerUserDetail;
     /**
-     * If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given buy the buyer.
+     * If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given by the buyer.
      */
     private Boolean repliedBeforeFollowup;
     /**
-     * This type provides the details of the feedback comment left by the user.
+     * This container provides the details of any reply to the feedback.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      */
     private Comment replyComment;
     /**
-     * This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot; &gt;filter&lt;/a&gt; topic. The feedback provided is considered relevant to the requested &lt;b&gt;topic&lt;/b&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
+     * This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;strong&gt;filter&lt;/strong&gt; topic. The feedback provided is considered relevant to the requested &lt;strong&gt;topic&lt;/strong&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
      */
     private java.util.List<Topic> topics;
     /**
@@ -127,7 +127,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the automatedFeedback property value. If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback normally. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by ebay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
+     * Gets the automatedFeedback property value. If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback of their own. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by eBay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -135,11 +135,11 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.automatedFeedback;
     }
     /**
-     * Gets the commentType property value. This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the commentType property value. This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt;
+     * @return a {@link FeedbackRatingValuesEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCommentType() {
+    public FeedbackRatingValuesEnum getCommentType() {
         return this.commentType;
     }
     /**
@@ -151,7 +151,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.eligibleForRevision;
     }
     /**
-     * Gets the feedbackComment property value. This type provides the details of the feedback comment left by the user.
+     * Gets the feedbackComment property value. This container provides the feedback comment left by a user when submitting feedback for a seller or buyer.
      * @return a {@link Comment}
      */
     @jakarta.annotation.Nullable
@@ -167,7 +167,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.feedbackEnteredDate;
     }
     /**
-     * Gets the feedbackEnteredPeriod property value. This type specifies the amount of time elapsed associated with a feedback entry.
+     * Gets the feedbackEnteredPeriod property value. This container represents the duration since feedback was entered, expressed as a numeric value and a unit of time in days.
      * @return a {@link FeedbackEnteredPeriod}
      */
     @jakarta.annotation.Nullable
@@ -199,11 +199,11 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.feedbackScore;
     }
     /**
-     * Gets the feedbackState property value. This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStateEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the feedbackState property value. This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;).
+     * @return a {@link FeedbackStateEnum}
      */
     @jakarta.annotation.Nullable
-    public String getFeedbackState() {
+    public FeedbackStateEnum getFeedbackState() {
         return this.feedbackState;
     }
     /**
@@ -214,7 +214,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(18);
         deserializerMap.put("automatedFeedback", (n) -> { this.setAutomatedFeedback(n.getBooleanValue()); });
-        deserializerMap.put("commentType", (n) -> { this.setCommentType(n.getStringValue()); });
+        deserializerMap.put("commentType", (n) -> { this.setCommentType(n.getEnumValue(FeedbackRatingValuesEnum::forValue)); });
         deserializerMap.put("eligibleForRevision", (n) -> { this.setEligibleForRevision(n.getBooleanValue()); });
         deserializerMap.put("feedbackComment", (n) -> { this.setFeedbackComment(n.getObjectValue(Comment::createFromDiscriminatorValue)); });
         deserializerMap.put("feedbackEnteredDate", (n) -> { this.setFeedbackEnteredDate(n.getStringValue()); });
@@ -222,7 +222,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         deserializerMap.put("feedbackId", (n) -> { this.setFeedbackId(n.getStringValue()); });
         deserializerMap.put("feedbackRatings", (n) -> { this.setFeedbackRatings(n.getCollectionOfObjectValues(FeedbackRating::createFromDiscriminatorValue)); });
         deserializerMap.put("feedbackScore", (n) -> { this.setFeedbackScore(n.getIntegerValue()); });
-        deserializerMap.put("feedbackState", (n) -> { this.setFeedbackState(n.getStringValue()); });
+        deserializerMap.put("feedbackState", (n) -> { this.setFeedbackState(n.getEnumValue(FeedbackStateEnum::forValue)); });
         deserializerMap.put("followupComment", (n) -> { this.setFollowupComment(n.getObjectValue(Comment::createFromDiscriminatorValue)); });
         deserializerMap.put("hasImages", (n) -> { this.setHasImages(n.getBooleanValue()); });
         deserializerMap.put("images", (n) -> { this.setImages(n.getCollectionOfObjectValues(Image::createFromDiscriminatorValue)); });
@@ -234,7 +234,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the followupComment property value. This type provides the details of the feedback comment left by the user.
+     * Gets the followupComment property value. This container provides the details of any follow-up comment left. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      * @return a {@link Comment}
      */
     @jakarta.annotation.Nullable
@@ -258,7 +258,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.images;
     }
     /**
-     * Gets the orderLineItemSummary property value. This type provides fields for a summary of the line item related to feedback.
+     * Gets the orderLineItemSummary property value. This container provides a summary of the line item associated with the feedback entry. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Certain fields within this container are returned only when the request uses the &lt;strong&gt;Authorization code grant flow&lt;/strong&gt; (user access token) and the &lt;strong&gt;user_id&lt;/strong&gt; matches the authenticated user. These fields are not returned when accessing a different &lt;strong&gt;user_id&lt;/strong&gt; or when using the &lt;strong&gt;Client credentials grant flow&lt;/strong&gt; (application access token). See &lt;a href=&quot;#h3-oauth-scope&quot;&gt;OAuth scope&lt;/a&gt; for details on the flows and required permissions.&lt;/span&gt;&lt;/p&gt;
      * @return a {@link OrderLineItemSummary}
      */
     @jakarta.annotation.Nullable
@@ -266,7 +266,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.orderLineItemSummary;
     }
     /**
-     * Gets the providerUserDetail property value. This type provides the details of the user who provided the feedback of a &lt;b&gt;getFeedback&lt;/b&gt; response.
+     * Gets the providerUserDetail property value. This container details the attributes of the user who provided the feedback.
      * @return a {@link ProviderUserDetail}
      */
     @jakarta.annotation.Nullable
@@ -274,7 +274,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.providerUserDetail;
     }
     /**
-     * Gets the repliedBeforeFollowup property value. If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given buy the buyer.
+     * Gets the repliedBeforeFollowup property value. If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given by the buyer.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -282,7 +282,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.repliedBeforeFollowup;
     }
     /**
-     * Gets the replyComment property value. This type provides the details of the feedback comment left by the user.
+     * Gets the replyComment property value. This container provides the details of any reply to the feedback.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      * @return a {@link Comment}
      */
     @jakarta.annotation.Nullable
@@ -290,7 +290,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         return this.replyComment;
     }
     /**
-     * Gets the topics property value. This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot; &gt;filter&lt;/a&gt; topic. The feedback provided is considered relevant to the requested &lt;b&gt;topic&lt;/b&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
+     * Gets the topics property value. This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;strong&gt;filter&lt;/strong&gt; topic. The feedback provided is considered relevant to the requested &lt;strong&gt;topic&lt;/strong&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
      * @return a {@link java.util.List<Topic>}
      */
     @jakarta.annotation.Nullable
@@ -304,7 +304,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeBooleanValue("automatedFeedback", this.getAutomatedFeedback());
-        writer.writeStringValue("commentType", this.getCommentType());
+        writer.writeEnumValue("commentType", this.getCommentType());
         writer.writeBooleanValue("eligibleForRevision", this.getEligibleForRevision());
         writer.writeObjectValue("feedbackComment", this.getFeedbackComment());
         writer.writeStringValue("feedbackEnteredDate", this.getFeedbackEnteredDate());
@@ -312,7 +312,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("feedbackId", this.getFeedbackId());
         writer.writeCollectionOfObjectValues("feedbackRatings", this.getFeedbackRatings());
         writer.writeIntegerValue("feedbackScore", this.getFeedbackScore());
-        writer.writeStringValue("feedbackState", this.getFeedbackState());
+        writer.writeEnumValue("feedbackState", this.getFeedbackState());
         writer.writeObjectValue("followupComment", this.getFollowupComment());
         writer.writeBooleanValue("hasImages", this.getHasImages());
         writer.writeCollectionOfObjectValues("images", this.getImages());
@@ -331,17 +331,17 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the automatedFeedback property value. If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback normally. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by ebay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
+     * Sets the automatedFeedback property value. If the returned value is &lt;code&gt;true&lt;/code&gt;, feedback was generated and added automatically by eBay. If a seller has a feedback score 10 or less, eBay automatically leaves feedback. The buyer can choose to override the eBay feedback and leave feedback of their own. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Detailed Seller Ratings (DSRs) are not provided by eBay, only a predefined comment and a positive rating.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the automatedFeedback property.
      */
     public void setAutomatedFeedback(@jakarta.annotation.Nullable final Boolean value) {
         this.automatedFeedback = value;
     }
     /**
-     * Sets the commentType property value. This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the commentType property value. This enumerated value indicates the type of feedback: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only leave positive feedback for buyers.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the commentType property.
      */
-    public void setCommentType(@jakarta.annotation.Nullable final String value) {
+    public void setCommentType(@jakarta.annotation.Nullable final FeedbackRatingValuesEnum value) {
         this.commentType = value;
     }
     /**
@@ -352,7 +352,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         this.eligibleForRevision = value;
     }
     /**
-     * Sets the feedbackComment property value. This type provides the details of the feedback comment left by the user.
+     * Sets the feedbackComment property value. This container provides the feedback comment left by a user when submitting feedback for a seller or buyer.
      * @param value Value to set for the feedbackComment property.
      */
     public void setFeedbackComment(@jakarta.annotation.Nullable final Comment value) {
@@ -366,7 +366,7 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         this.feedbackEnteredDate = value;
     }
     /**
-     * Sets the feedbackEnteredPeriod property value. This type specifies the amount of time elapsed associated with a feedback entry.
+     * Sets the feedbackEnteredPeriod property value. This container represents the duration since feedback was entered, expressed as a numeric value and a unit of time in days.
      * @param value Value to set for the feedbackEnteredPeriod property.
      */
     public void setFeedbackEnteredPeriod(@jakarta.annotation.Nullable final FeedbackEnteredPeriod value) {
@@ -394,14 +394,14 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         this.feedbackScore = value;
     }
     /**
-     * Sets the feedbackState property value. This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStateEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the feedbackState property value. This enumerated value indicates the current state of the feedback entry (for example, &lt;code&gt;ENTERED&lt;/code&gt;).
      * @param value Value to set for the feedbackState property.
      */
-    public void setFeedbackState(@jakarta.annotation.Nullable final String value) {
+    public void setFeedbackState(@jakarta.annotation.Nullable final FeedbackStateEnum value) {
         this.feedbackState = value;
     }
     /**
-     * Sets the followupComment property value. This type provides the details of the feedback comment left by the user.
+     * Sets the followupComment property value. This container provides the details of any follow-up comment left. &lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the followupComment property.
      */
     public void setFollowupComment(@jakarta.annotation.Nullable final Comment value) {
@@ -422,35 +422,35 @@ public class FeedbackDetail implements AdditionalDataHolder, Parsable {
         this.images = value;
     }
     /**
-     * Sets the orderLineItemSummary property value. This type provides fields for a summary of the line item related to feedback.
+     * Sets the orderLineItemSummary property value. This container provides a summary of the line item associated with the feedback entry. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Certain fields within this container are returned only when the request uses the &lt;strong&gt;Authorization code grant flow&lt;/strong&gt; (user access token) and the &lt;strong&gt;user_id&lt;/strong&gt; matches the authenticated user. These fields are not returned when accessing a different &lt;strong&gt;user_id&lt;/strong&gt; or when using the &lt;strong&gt;Client credentials grant flow&lt;/strong&gt; (application access token). See &lt;a href=&quot;#h3-oauth-scope&quot;&gt;OAuth scope&lt;/a&gt; for details on the flows and required permissions.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the orderLineItemSummary property.
      */
     public void setOrderLineItemSummary(@jakarta.annotation.Nullable final OrderLineItemSummary value) {
         this.orderLineItemSummary = value;
     }
     /**
-     * Sets the providerUserDetail property value. This type provides the details of the user who provided the feedback of a &lt;b&gt;getFeedback&lt;/b&gt; response.
+     * Sets the providerUserDetail property value. This container details the attributes of the user who provided the feedback.
      * @param value Value to set for the providerUserDetail property.
      */
     public void setProviderUserDetail(@jakarta.annotation.Nullable final ProviderUserDetail value) {
         this.providerUserDetail = value;
     }
     /**
-     * Sets the repliedBeforeFollowup property value. If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given buy the buyer.
+     * Sets the repliedBeforeFollowup property value. If returned as &lt;code&gt;true&lt;/code&gt;, this boolean indicates the feedback reply was given by the seller before the follow-up comment was given by the buyer.
      * @param value Value to set for the repliedBeforeFollowup property.
      */
     public void setRepliedBeforeFollowup(@jakarta.annotation.Nullable final Boolean value) {
         this.repliedBeforeFollowup = value;
     }
     /**
-     * Sets the replyComment property value. This type provides the details of the feedback comment left by the user.
+     * Sets the replyComment property value. This container provides the details of any reply to the feedback.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;A buyer leaves follow-up comments and a seller leaves reply comments.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the replyComment property.
      */
     public void setReplyComment(@jakarta.annotation.Nullable final Comment value) {
         this.replyComment = value;
     }
     /**
-     * Sets the topics property value. This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot; &gt;filter&lt;/a&gt; topic. The feedback provided is considered relevant to the requested &lt;b&gt;topic&lt;/b&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
+     * Sets the topics property value. This array provides descriptions of AI-generated insights related to a feedback entry for the specified &lt;strong&gt;filter&lt;/strong&gt; topic. The feedback provided is considered relevant to the requested &lt;strong&gt;topic&lt;/strong&gt;. For example, when using the request parameter filter of &lt;code&gt;topics:product-satisfaction&lt;/code&gt;, the returned array might be: &lt;p&gt;&lt;pre&gt;{&lt;br&gt;  &quot;coarseTopic&quot; : &quot;product-satisfaction&quot;,&lt;br&gt;  &quot;highlightedTexts&quot; : [&lt;br&gt;    &quot;This machine is amazing&quot;,&lt;br&gt;    &quot;Very happy with this purchase&quot;&lt;br&gt;    ],&lt;br&gt;  &quot;sentiment&quot; : &quot;Positive&quot;&lt;br&gt;}&lt;/pre&gt;&lt;/p&gt;&lt;p&gt;If no topics exist for that feedback, an empty array is returned.&lt;/p&gt;
      * @param value Value to set for the topics property.
      */
     public void setTopics(@jakarta.annotation.Nullable final java.util.List<Topic> value) {

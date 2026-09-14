@@ -35,9 +35,9 @@ public class Topic implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<String> authorizationScopes;
     /**
-     * The business context associated with this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ContextEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The business context associated with this topic.
      */
-    private String context;
+    private ContextEnum context;
     /**
      * The description of the topic.
      */
@@ -47,13 +47,13 @@ public class Topic implements AdditionalDataHolder, Parsable {
      */
     private Boolean filterable;
     /**
-     * The scope of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ScopeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The scope of this topic.
      */
-    private String scope;
+    private ScopeEnum scope;
     /**
-     * The status of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:StatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The status of this topic.
      */
-    private String status;
+    private StatusEnum status;
     /**
      * The supported payloads for this topic.
      */
@@ -95,11 +95,11 @@ public class Topic implements AdditionalDataHolder, Parsable {
         return this.authorizationScopes;
     }
     /**
-     * Gets the context property value. The business context associated with this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ContextEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the context property value. The business context associated with this topic.
+     * @return a {@link ContextEnum}
      */
     @jakarta.annotation.Nullable
-    public String getContext() {
+    public ContextEnum getContext() {
         return this.context;
     }
     /**
@@ -118,11 +118,11 @@ public class Topic implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
         deserializerMap.put("authorizationScopes", (n) -> { this.setAuthorizationScopes(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("context", (n) -> { this.setContext(n.getStringValue()); });
+        deserializerMap.put("context", (n) -> { this.setContext(n.getEnumValue(ContextEnum::forValue)); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("filterable", (n) -> { this.setFilterable(n.getBooleanValue()); });
-        deserializerMap.put("scope", (n) -> { this.setScope(n.getStringValue()); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
+        deserializerMap.put("scope", (n) -> { this.setScope(n.getEnumValue(ScopeEnum::forValue)); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(StatusEnum::forValue)); });
         deserializerMap.put("supportedPayloads", (n) -> { this.setSupportedPayloads(n.getCollectionOfObjectValues(PayloadDetail::createFromDiscriminatorValue)); });
         deserializerMap.put("topicId", (n) -> { this.setTopicId(n.getStringValue()); });
         return deserializerMap;
@@ -136,19 +136,19 @@ public class Topic implements AdditionalDataHolder, Parsable {
         return this.filterable;
     }
     /**
-     * Gets the scope property value. The scope of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ScopeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the scope property value. The scope of this topic.
+     * @return a {@link ScopeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getScope() {
+    public ScopeEnum getScope() {
         return this.scope;
     }
     /**
-     * Gets the status property value. The status of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:StatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the status property value. The status of this topic.
+     * @return a {@link StatusEnum}
      */
     @jakarta.annotation.Nullable
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return this.status;
     }
     /**
@@ -174,11 +174,11 @@ public class Topic implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfPrimitiveValues("authorizationScopes", this.getAuthorizationScopes());
-        writer.writeStringValue("context", this.getContext());
+        writer.writeEnumValue("context", this.getContext());
         writer.writeStringValue("description", this.getDescription());
         writer.writeBooleanValue("filterable", this.getFilterable());
-        writer.writeStringValue("scope", this.getScope());
-        writer.writeStringValue("status", this.getStatus());
+        writer.writeEnumValue("scope", this.getScope());
+        writer.writeEnumValue("status", this.getStatus());
         writer.writeCollectionOfObjectValues("supportedPayloads", this.getSupportedPayloads());
         writer.writeStringValue("topicId", this.getTopicId());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -198,10 +198,10 @@ public class Topic implements AdditionalDataHolder, Parsable {
         this.authorizationScopes = value;
     }
     /**
-     * Sets the context property value. The business context associated with this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ContextEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the context property value. The business context associated with this topic.
      * @param value Value to set for the context property.
      */
-    public void setContext(@jakarta.annotation.Nullable final String value) {
+    public void setContext(@jakarta.annotation.Nullable final ContextEnum value) {
         this.context = value;
     }
     /**
@@ -219,17 +219,17 @@ public class Topic implements AdditionalDataHolder, Parsable {
         this.filterable = value;
     }
     /**
-     * Sets the scope property value. The scope of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ScopeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the scope property value. The scope of this topic.
      * @param value Value to set for the scope property.
      */
-    public void setScope(@jakarta.annotation.Nullable final String value) {
+    public void setScope(@jakarta.annotation.Nullable final ScopeEnum value) {
         this.scope = value;
     }
     /**
-     * Sets the status property value. The status of this topic. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:StatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the status property value. The status of this topic.
      * @param value Value to set for the status property.
      */
-    public void setStatus(@jakarta.annotation.Nullable final String value) {
+    public void setStatus(@jakarta.annotation.Nullable final StatusEnum value) {
         this.status = value;
     }
     /**

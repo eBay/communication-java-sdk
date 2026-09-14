@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the request body of the &lt;b&gt;bulkUpdateConversation&lt;/b&gt; method.
+ * This type defines the request body of the &lt;strong&gt;bulkUpdateConversation&lt;/strong&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class BulkUpdateConversationsRequest implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class BulkUpdateConversationsRequest implements AdditionalDataHolder, Par
      */
     private Map<String, Object> additionalData;
     /**
-     * This array specifies the list of conversations to update and the updated &lt;b&gt;conversationStatus&lt;/b&gt; for each.
+     * This array specifies the list of conversations to update and the updated &lt;strong&gt;conversationStatus&lt;/strong&gt; for each.
      */
     private java.util.List<BulkConversation> conversations;
     /**
@@ -59,7 +59,7 @@ public class BulkUpdateConversationsRequest implements AdditionalDataHolder, Par
         return this.additionalData;
     }
     /**
-     * Gets the conversations property value. This array specifies the list of conversations to update and the updated &lt;b&gt;conversationStatus&lt;/b&gt; for each.
+     * Gets the conversations property value. This array specifies the list of conversations to update and the updated &lt;strong&gt;conversationStatus&lt;/strong&gt; for each.
      * @return a {@link java.util.List<BulkConversation>}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class BulkUpdateConversationsRequest implements AdditionalDataHolder, Par
         this.additionalData = value;
     }
     /**
-     * Sets the conversations property value. This array specifies the list of conversations to update and the updated &lt;b&gt;conversationStatus&lt;/b&gt; for each.
+     * Sets the conversations property value. This array specifies the list of conversations to update and the updated &lt;strong&gt;conversationStatus&lt;/strong&gt; for each.
      * @param value Value to set for the conversations property.
      */
     public void setConversations(@jakarta.annotation.Nullable final java.util.List<BulkConversation> value) {

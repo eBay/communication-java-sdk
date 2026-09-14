@@ -17,6 +17,7 @@ package com.ebay.communication.generated.notification.destination;
 import com.ebay.communication.generated.notification.destination.item.WithDestinationItemRequestBuilder;
 import com.ebay.communication.generated.notification.models.DestinationRequest;
 import com.ebay.communication.generated.notification.models.DestinationSearchResponse;
+import com.ebay.communication.generated.notification.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -37,7 +38,7 @@ import java.util.Objects;
 public class DestinationRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.communication.generated.notification.destination.item collection
-     * @param destination_id The unique identifier of the destination to retrieve. Use &lt;b&gt;getDestinations&lt;/b&gt; to retrieve destination IDs.
+     * @param destination_id The unique identifier of the destination to retrieve. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-getdestinations&quot;&gt;getDestinations&lt;/a&gt; to retrieve destination IDs.
      * @return a {@link WithDestinationItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -66,6 +67,8 @@ public class DestinationRequestBuilder extends BaseRequestBuilder {
     /**
      * This method allows applications to retrieve a paginated collection of destination resources and related details. The details include the destination names, statuses, and configurations, including the endpoints and verification tokens.
      * @return a {@link DestinationSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public DestinationSearchResponse get() {
@@ -75,32 +78,47 @@ public class DestinationRequestBuilder extends BaseRequestBuilder {
      * This method allows applications to retrieve a paginated collection of destination resources and related details. The details include the destination names, statuses, and configurations, including the endpoints and verification tokens.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DestinationSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public DestinationSearchResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DestinationSearchResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, DestinationSearchResponse::createFromDiscriminatorValue);
     }
     /**
-     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;strong&gt;updateDestination&lt;/strong&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. Refer to the &lt;a href=&quot;/api-docs/commerce/notification/overview.html&quot;&gt;Notification API overview&lt;/a&gt; for more information.&lt;/span&gt;
-     * @param body A type that contains information about the destination request.
+     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-updatedestination&quot;&gt;updateDestination&lt;/a&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. See the &lt;a href=&quot;/develop/guides/sell/sell-communications-guide#retrievingeBaynotifications&quot;&gt;Communications Guide&lt;/a&gt; for more information.
+     * @param body The create destination request.
      * @return a {@link DestinationPostResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public DestinationPostResponse post(@jakarta.annotation.Nonnull final DestinationRequest body) {
         return post(body, null);
     }
     /**
-     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;strong&gt;updateDestination&lt;/strong&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. Refer to the &lt;a href=&quot;/api-docs/commerce/notification/overview.html&quot;&gt;Notification API overview&lt;/a&gt; for more information.&lt;/span&gt;
-     * @param body A type that contains information about the destination request.
+     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-updatedestination&quot;&gt;updateDestination&lt;/a&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. See the &lt;a href=&quot;/develop/guides/sell/sell-communications-guide#retrievingeBaynotifications&quot;&gt;Communications Guide&lt;/a&gt; for more information.
+     * @param body The create destination request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link DestinationPostResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public DestinationPostResponse post(@jakarta.annotation.Nonnull final DestinationRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, DestinationPostResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("409", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, DestinationPostResponse::createFromDiscriminatorValue);
     }
     /**
      * This method allows applications to retrieve a paginated collection of destination resources and related details. The details include the destination names, statuses, and configurations, including the endpoints and verification tokens.
@@ -123,8 +141,8 @@ public class DestinationRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;strong&gt;updateDestination&lt;/strong&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. Refer to the &lt;a href=&quot;/api-docs/commerce/notification/overview.html&quot;&gt;Notification API overview&lt;/a&gt; for more information.&lt;/span&gt;
-     * @param body A type that contains information about the destination request.
+     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-updatedestination&quot;&gt;updateDestination&lt;/a&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. See the &lt;a href=&quot;/develop/guides/sell/sell-communications-guide#retrievingeBaynotifications&quot;&gt;Communications Guide&lt;/a&gt; for more information.
+     * @param body The create destination request.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -132,8 +150,8 @@ public class DestinationRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;strong&gt;updateDestination&lt;/strong&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. Refer to the &lt;a href=&quot;/api-docs/commerce/notification/overview.html&quot;&gt;Notification API overview&lt;/a&gt; for more information.&lt;/span&gt;
-     * @param body A type that contains information about the destination request.
+     * This method allows applications to create a destination. A destination is an endpoint that receives HTTP push notifications.&lt;br&gt;&lt;br&gt;A single destination for all topics is valid, as is individual destinations for each topic.&lt;br&gt;&lt;br&gt;To update a destination, use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-updatedestination&quot;&gt;updateDestination&lt;/a&gt; call.&lt;br&gt;&lt;br&gt;The destination created will need to be referenced while creating or updating a subscription to a topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The destination should be created and ready to respond with the expected &lt;b&gt;challengeResponse&lt;/b&gt; for the endpoint to be registered successfully. See the &lt;a href=&quot;/develop/guides/sell/sell-communications-guide#retrievingeBaynotifications&quot;&gt;Communications Guide&lt;/a&gt; for more information.
+     * @param body The create destination request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

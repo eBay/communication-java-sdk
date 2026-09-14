@@ -36,7 +36,7 @@ import java.util.Objects;
 public class ConversationRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.communication.generated.message.conversation.item collection
-     * @param conversation_id This path parameters specifies the unique identifier of the conversation that is to be retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/api-docs/commerce/message/resources/conversation/methods/getConversations&quot; target=&quot;_blank&quot;&gt;getConversations&lt;/a&gt; method to retrieve conversation ID values.
+     * @param conversation_id This path parameters specify the unique identifier of the conversation that is to be retrieved.&lt;br&gt;&lt;br&gt;Use the &lt;a href=&quot;/develop/api/sell/message_api#sell-message_api-conversation-getconversations&quot;&gt;getConversations&lt;/a&gt; method to retrieve conversation ID values.
      * @return a {@link WithConversationItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -63,7 +63,7 @@ public class ConversationRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/conversation?conversation_type={conversation_type}{&conversation_status*,end_time*,limit*,offset*,other_party_username*,reference_id*,reference_type*,start_time*}", rawUrl);
     }
     /**
-     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_type&lt;/b&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;b&gt;limit&lt;/b&gt; and &lt;b&gt;offset&lt;/b&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
+     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_type&lt;/strong&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;strong&gt;limit&lt;/strong&gt; and &lt;strong&gt;offset&lt;/strong&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
      * @return a {@link GetAllMyConversationsResponse}
      */
     @jakarta.annotation.Nullable
@@ -71,7 +71,7 @@ public class ConversationRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_type&lt;/b&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;b&gt;limit&lt;/b&gt; and &lt;b&gt;offset&lt;/b&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
+     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_type&lt;/strong&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;strong&gt;limit&lt;/strong&gt; and &lt;strong&gt;offset&lt;/strong&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetAllMyConversationsResponse}
      */
@@ -81,7 +81,7 @@ public class ConversationRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetAllMyConversationsResponse::createFromDiscriminatorValue);
     }
     /**
-     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_type&lt;/b&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;b&gt;limit&lt;/b&gt; and &lt;b&gt;offset&lt;/b&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
+     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_type&lt;/strong&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;strong&gt;limit&lt;/strong&gt; and &lt;strong&gt;offset&lt;/strong&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -89,7 +89,7 @@ public class ConversationRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_type&lt;/b&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;b&gt;limit&lt;/b&gt; and &lt;b&gt;offset&lt;/b&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
+     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_type&lt;/strong&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;strong&gt;limit&lt;/strong&gt; and &lt;strong&gt;offset&lt;/strong&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -111,52 +111,52 @@ public class ConversationRequestBuilder extends BaseRequestBuilder {
         return new ConversationRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_type&lt;/b&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;b&gt;limit&lt;/b&gt; and &lt;b&gt;offset&lt;/b&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
+     * This method can be used to retrieve one or more conversations associated with a user.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_type&lt;/strong&gt; query parameter is required when using this method to specify if the retrieved conversations are from eBay or from members.&lt;br&gt;&lt;br&gt;The result set can also optionally be filtered by conversation status, reference, username, and/or time range. The &lt;strong&gt;limit&lt;/strong&gt; and &lt;strong&gt;offset&lt;/strong&gt; path parameters can be used to paginate the result set and control how many conversations are returned in the response.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         /**
-         * This query parameter specifies the status of the conversations being retrieved. Only conversations in the specified status will be returned.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ACTIVE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;ARCHIVE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DELETE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;READ&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;UNREAD&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+         * This query parameter specifies the status of the conversations being retrieved. Only conversations with the specified status will be returned.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ACTIVE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;ARCHIVED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DELETED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;READ&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;UNREAD&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
          */
         @jakarta.annotation.Nullable
         public String conversationStatus;
         /**
-         * This query parameter specifies the type of the conversations being retrieved. Only conversations of the specified type will be returned.&lt;br&gt;&lt;br&gt;This parameter is always required when using this method.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;FROM_EBAY&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;FROM_MEMBERS&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+         * This query parameter specifies the type of the conversations being retrieved. Only conversations of the specified type will be returned.&lt;br&gt;&lt;br&gt;This parameter is required when using this method.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;FROM_EBAY&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;FROM_MEMBERS&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
          */
         @jakarta.annotation.Nullable
         public String conversationType;
         /**
-         * This query parameter specifies the end time (in ISO 8601 format) for which to stop retrieving conversations.&lt;br&gt;&lt;br&gt;For example, if set to &lt;code&gt;2024-11-06T10:00:00.000Z&lt;/code&gt;, only messages sent before this time will be retrieved.&lt;br&gt;&lt;br&gt;&lt;b&gt;Format:&lt;/b&gt; yyyy-MM-ddThh:mm.ss.sssZ&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, this parameter is only available if the &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.&lt;/span&gt;
+         * This query parameter specifies the end time (in ISO 8601 format) for which to stop retrieving conversations.&lt;br&gt;&lt;br&gt;For example, if set to &lt;code&gt;2024-11-06T10:00:00.000Z&lt;/code&gt;, only messages sent before this time will be retrieved.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Format:&lt;/strong&gt; yyyy-MM-ddThh:mm.ss.sssZ&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Currently, this parameter is only available if the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.&lt;/span&gt;
          */
         @jakarta.annotation.Nullable
         public String endTime;
         /**
-         * The maximum number of entries that can be returned on each page of the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;b&gt;offset&lt;/b&gt; parameter to control the pagination of the output. For example, if &lt;b&gt;offset&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt; and &lt;b&gt;limit&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt;, the call retrieves entries 11 through 20 from the result set.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; 25&lt;br&gt;&lt;br&gt;&lt;b&gt;Maximum:&lt;/b&gt; 50
+         * The maximum number of entries that can be returned on each page of the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;strong&gt;offset&lt;/strong&gt; parameter to control the pagination of the output. For example, if &lt;strong&gt;offset&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt; and &lt;strong&gt;limit&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt;, the call retrieves entries 11 through 20 from the result set.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Default:&lt;/strong&gt; 25&lt;br&gt;&lt;br&gt;&lt;strong&gt;Maximum:&lt;/strong&gt; 50
          */
         @jakarta.annotation.Nullable
         public String limit;
         /**
-         * The number of reports to skip in the result set before returning the first entry in the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;b&gt;limit&lt;/b&gt; parameter to control the pagination of the output. For example, if &lt;b&gt;offset&lt;/b&gt; is set to &lt;code&gt;0&lt;/code&gt; and &lt;b&gt;limit&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt;, the first page of the response will contain the first 10 entries from the complete list retrieved by the call.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; 0
+         * The number of reports to skip in the result set before returning the first entry in the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;strong&gt;limit&lt;/strong&gt; parameter to control the pagination of the output. For example, if &lt;strong&gt;offset&lt;/strong&gt; is set to &lt;code&gt;0&lt;/code&gt; and &lt;strong&gt;limit&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt;, the first page of the response will contain the first 10 entries from the complete list retrieved by the call.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Default:&lt;/strong&gt; 0
          */
         @jakarta.annotation.Nullable
         public String offset;
         /**
-         * This query parameter specifies the user name (login name) of an eBay user for which to retrieve conversations.&lt;br&gt;&lt;br&gt;If this filter is used, only conversation(s) from the other eBay user specified through this parameter will be returned. 
+         * This query parameter specifies the username (login name) of an eBay user for which to retrieve conversations.&lt;br&gt;&lt;br&gt;If this filter is used, only conversation(s) from the other eBay user specified through this parameter will be returned.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
          */
         @jakarta.annotation.Nullable
         public String otherPartyUsername;
         /**
-         * This query parameter specifies the unique identifier of the reference (specified by the corresponding &lt;b&gt;reference_type&lt;/b&gt; value) associated with the conversation. Only conversations associated with the specified reference ID will be returned.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference, this value will be the item ID value of the listing.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If this query parameter is used, the &lt;b&gt;reference_type&lt;/b&gt; parameter must also be used to specify the type of reference this ID is associated with.&lt;/span&gt;
+         * This query parameter specifies the unique identifier of the reference (specified by the corresponding &lt;strong&gt;reference_type&lt;/strong&gt; value) associated with the conversation. Only conversations associated with the specified reference ID will be returned.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference, this value will be the item ID value of the listing.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; If this query parameter is used, the &lt;strong&gt;reference_type&lt;/strong&gt; parameter must also be used to specify the type of reference this ID is associated with.&lt;/span&gt;
          */
         @jakarta.annotation.Nullable
         public String referenceId;
         /**
-         * This query parameter specifies the type of reference associated with a conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing can then be specified through the &lt;b&gt;reference_id&lt;/b&gt; query parameter.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
+         * This query parameter specifies the type of reference associated with a conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing can then be specified through the &lt;strong&gt;reference_id&lt;/strong&gt; query parameter.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
          */
         @jakarta.annotation.Nullable
         public String referenceType;
         /**
-         * This query parameter specifies the start time (in ISO 8601 format) for which to start retrieving conversations.&lt;br&gt;&lt;br&gt;For example, if set to &lt;code&gt;2024-11-06T10:00:00.000Z&lt;/code&gt;, only messages sent after this time will be retrieved.&lt;br&gt;&lt;br&gt;&lt;b&gt;Format:&lt;/b&gt; yyyy-MM-ddThh:mm.ss.sssZ&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Currently, this parameter is only available if the &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.&lt;/span&gt;
+         * This query parameter specifies the start time (in ISO 8601 format) for which to start retrieving conversations.&lt;br&gt;&lt;br&gt;For example, if set to &lt;code&gt;2024-11-06T10:00:00.000Z&lt;/code&gt;, only messages sent after this time will be retrieved.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Format:&lt;/strong&gt; yyyy-MM-ddThh:mm.ss.sssZ&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Currently, this parameter is only available if the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is &lt;code&gt;FROM_MEMBERS&lt;/code&gt;.&lt;/span&gt;
          */
         @jakarta.annotation.Nullable
         public String startTime;

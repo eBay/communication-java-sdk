@@ -31,7 +31,7 @@ public class User implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;!-- This field is populated only when the full user name cannot be used.--&gt;
+     * The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt; &lt;!-- This field is populated only when the full user name cannot be used.--&gt;
      */
     private String maskedUsername;
     /**
@@ -69,7 +69,7 @@ public class User implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the maskedUsername property value. The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;!-- This field is populated only when the full user name cannot be used.--&gt;
+     * Gets the maskedUsername property value. The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt; &lt;!-- This field is populated only when the full user name cannot be used.--&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class User implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the maskedUsername property value. The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;!-- This field is populated only when the full user name cannot be used.--&gt;
+     * Sets the maskedUsername property value. The masked user name is a user name that has certain characters hidden for privacy of the user.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt; &lt;!-- This field is populated only when the full user name cannot be used.--&gt;
      * @param value Value to set for the maskedUsername property.
      */
     public void setMaskedUsername(@jakarta.annotation.Nullable final String value) {

@@ -35,7 +35,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
      */
     private Integer count;
     /**
-     * The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request. This is the maximum number of line items, as filtered, awaiting feedback to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;b&gt;limit&lt;/b&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;b&gt;limit&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;25&lt;/p&gt;
+     * The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request. This is the maximum number of line items awaiting feedback, as filtered, to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;strong&gt;limit&lt;/strong&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;strong&gt;limit&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;25&lt;/p&gt;
      */
     private Integer limit;
     /**
@@ -43,7 +43,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
      */
     private String next;
     /**
-     * The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;b&gt;offset&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;0&lt;/p&gt;
+     * The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;strong&gt;offset&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;0&lt;/p&gt;
      */
     private Integer offset;
     /**
@@ -102,7 +102,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request. This is the maximum number of line items, as filtered, awaiting feedback to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;b&gt;limit&lt;/b&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;b&gt;limit&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;25&lt;/p&gt;
+     * Gets the limit property value. The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request. This is the maximum number of line items awaiting feedback, as filtered, to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;strong&gt;limit&lt;/strong&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;strong&gt;limit&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;25&lt;/p&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -118,7 +118,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
         return this.next;
     }
     /**
-     * Gets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;b&gt;offset&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;0&lt;/p&gt;
+     * Gets the offset property value. The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;strong&gt;offset&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;0&lt;/p&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -170,7 +170,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
         this.count = value;
     }
     /**
-     * Sets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request. This is the maximum number of line items, as filtered, awaiting feedback to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;b&gt;limit&lt;/b&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;b&gt;limit&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;25&lt;/p&gt;
+     * Sets the limit property value. The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request. This is the maximum number of line items awaiting feedback, as filtered, to return per page from the result set. This field indicates the number of line items returned per page of data. &lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;If this is the last or only page of the result set, the page may contain fewer line items than the &lt;strong&gt;limit&lt;/strong&gt; value. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;If a &lt;strong&gt;limit&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;25&lt;/code&gt;, returning up to 25 line items on each page.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;25&lt;/p&gt;
      * @param value Value to set for the limit property.
      */
     public void setLimit(@jakarta.annotation.Nullable final Integer value) {
@@ -184,7 +184,7 @@ public class Pagination implements AdditionalDataHolder, Parsable {
         this.next = value;
     }
     /**
-     * Sets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;b&gt;offset&lt;/b&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;b&gt;Default: &lt;/b&gt;0&lt;/p&gt;
+     * Sets the offset property value. The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request. This field indicates how many results were skipped in the response. If an &lt;strong&gt;offset&lt;/strong&gt; parameter was not included in the request, this value will default to &lt;code&gt;0&lt;/code&gt;, returning the first page of results.&lt;p&gt;&lt;strong&gt;Default: &lt;/strong&gt;0&lt;/p&gt;
      * @param value Value to set for the offset property.
      */
     public void setOffset(@jakarta.annotation.Nullable final Integer value) {

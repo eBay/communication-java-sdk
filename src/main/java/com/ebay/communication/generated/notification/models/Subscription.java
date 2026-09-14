@@ -43,13 +43,13 @@ public class Subscription implements AdditionalDataHolder, Parsable {
      */
     private String filterId;
     /**
-     * A type that describes the details of the subscription payload.
+     * The payload associated with this subscription.
      */
     private SubscriptionPayloadDetail payload;
     /**
-     * The status of this subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The status of this subscription.
      */
-    private String status;
+    private SubscriptionStatusEnum status;
     /**
      * The unique identifier for the subscription.
      */
@@ -109,7 +109,7 @@ public class Subscription implements AdditionalDataHolder, Parsable {
         deserializerMap.put("destinationId", (n) -> { this.setDestinationId(n.getStringValue()); });
         deserializerMap.put("filterId", (n) -> { this.setFilterId(n.getStringValue()); });
         deserializerMap.put("payload", (n) -> { this.setPayload(n.getObjectValue(SubscriptionPayloadDetail::createFromDiscriminatorValue)); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(SubscriptionStatusEnum::forValue)); });
         deserializerMap.put("subscriptionId", (n) -> { this.setSubscriptionId(n.getStringValue()); });
         deserializerMap.put("topicId", (n) -> { this.setTopicId(n.getStringValue()); });
         return deserializerMap;
@@ -123,7 +123,7 @@ public class Subscription implements AdditionalDataHolder, Parsable {
         return this.filterId;
     }
     /**
-     * Gets the payload property value. A type that describes the details of the subscription payload.
+     * Gets the payload property value. The payload associated with this subscription.
      * @return a {@link SubscriptionPayloadDetail}
      */
     @jakarta.annotation.Nullable
@@ -131,11 +131,11 @@ public class Subscription implements AdditionalDataHolder, Parsable {
         return this.payload;
     }
     /**
-     * Gets the status property value. The status of this subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the status property value. The status of this subscription.
+     * @return a {@link SubscriptionStatusEnum}
      */
     @jakarta.annotation.Nullable
-    public String getStatus() {
+    public SubscriptionStatusEnum getStatus() {
         return this.status;
     }
     /**
@@ -164,7 +164,7 @@ public class Subscription implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("destinationId", this.getDestinationId());
         writer.writeStringValue("filterId", this.getFilterId());
         writer.writeObjectValue("payload", this.getPayload());
-        writer.writeStringValue("status", this.getStatus());
+        writer.writeEnumValue("status", this.getStatus());
         writer.writeStringValue("subscriptionId", this.getSubscriptionId());
         writer.writeStringValue("topicId", this.getTopicId());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -198,17 +198,17 @@ public class Subscription implements AdditionalDataHolder, Parsable {
         this.filterId = value;
     }
     /**
-     * Sets the payload property value. A type that describes the details of the subscription payload.
+     * Sets the payload property value. The payload associated with this subscription.
      * @param value Value to set for the payload property.
      */
     public void setPayload(@jakarta.annotation.Nullable final SubscriptionPayloadDetail value) {
         this.payload = value;
     }
     /**
-     * Sets the status property value. The status of this subscription. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the status property value. The status of this subscription.
      * @param value Value to set for the status property.
      */
-    public void setStatus(@jakarta.annotation.Nullable final String value) {
+    public void setStatus(@jakarta.annotation.Nullable final SubscriptionStatusEnum value) {
         this.status = value;
     }
     /**

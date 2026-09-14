@@ -31,15 +31,15 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This field provides the unique identifier for the listing associated with the feedback entry. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * This field provides the unique identifier for the listing associated with the feedback entry. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      */
     private String listingId;
     /**
-     * This type provides details about the price of the listing awaiting feedback.
+     * This container provides the sale price of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      */
     private ListingPrice listingPrice;
     /**
-     * This field contains the title of the listing. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * This field contains the title of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      */
     private String listingTitle;
     /**
@@ -47,11 +47,11 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<OrderLineItemAttribute> orderLineItemAttributes;
     /**
-     * The unique identifier of the line item for this feedback. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * The unique identifier of the line item for this feedback. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      */
     private String orderLineItemId;
     /**
-     * This type specifies the amount of time elapsed and the threshold associated with a transaction.
+     * This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days
      */
     private TransactionPeriod transactionPeriod;
     /**
@@ -94,7 +94,7 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the listingId property value. This field provides the unique identifier for the listing associated with the feedback entry. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Gets the listingId property value. This field provides the unique identifier for the listing associated with the feedback entry. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -102,7 +102,7 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         return this.listingId;
     }
     /**
-     * Gets the listingPrice property value. This type provides details about the price of the listing awaiting feedback.
+     * Gets the listingPrice property value. This container provides the sale price of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @return a {@link ListingPrice}
      */
     @jakarta.annotation.Nullable
@@ -110,7 +110,7 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         return this.listingPrice;
     }
     /**
-     * Gets the listingTitle property value. This field contains the title of the listing. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Gets the listingTitle property value. This field contains the title of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -126,7 +126,7 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         return this.orderLineItemAttributes;
     }
     /**
-     * Gets the orderLineItemId property value. The unique identifier of the line item for this feedback. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Gets the orderLineItemId property value. The unique identifier of the line item for this feedback. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -134,7 +134,7 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         return this.orderLineItemId;
     }
     /**
-     * Gets the transactionPeriod property value. This type specifies the amount of time elapsed and the threshold associated with a transaction.
+     * Gets the transactionPeriod property value. This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days
      * @return a {@link TransactionPeriod}
      */
     @jakarta.annotation.Nullable
@@ -163,21 +163,21 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the listingId property value. This field provides the unique identifier for the listing associated with the feedback entry. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Sets the listingId property value. This field provides the unique identifier for the listing associated with the feedback entry. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @param value Value to set for the listingId property.
      */
     public void setListingId(@jakarta.annotation.Nullable final String value) {
         this.listingId = value;
     }
     /**
-     * Sets the listingPrice property value. This type provides details about the price of the listing awaiting feedback.
+     * Sets the listingPrice property value. This container provides the sale price of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @param value Value to set for the listingPrice property.
      */
     public void setListingPrice(@jakarta.annotation.Nullable final ListingPrice value) {
         this.listingPrice = value;
     }
     /**
-     * Sets the listingTitle property value. This field contains the title of the listing. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Sets the listingTitle property value. This field contains the title of the listing. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @param value Value to set for the listingTitle property.
      */
     public void setListingTitle(@jakarta.annotation.Nullable final String value) {
@@ -191,14 +191,14 @@ public class OrderLineItemSummary implements AdditionalDataHolder, Parsable {
         this.orderLineItemAttributes = value;
     }
     /**
-     * Sets the orderLineItemId property value. The unique identifier of the line item for this feedback. Conditionally returned based on the authorization flow and user context. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary&quot;&gt;orderLineItemSummary&lt;/a&gt; for details on when this field is included.
+     * Sets the orderLineItemId property value. The unique identifier of the line item for this feedback. It is conditionally returned based on the authorization flow and user context. See &lt;strong&gt;orderLineItemSummary&lt;/strong&gt; for details on when this field is included.
      * @param value Value to set for the orderLineItemId property.
      */
     public void setOrderLineItemId(@jakarta.annotation.Nullable final String value) {
         this.orderLineItemId = value;
     }
     /**
-     * Sets the transactionPeriod property value. This type specifies the amount of time elapsed and the threshold associated with a transaction.
+     * Sets the transactionPeriod property value. This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days
      * @param value Value to set for the transactionPeriod property.
      */
     public void setTransactionPeriod(@jakarta.annotation.Nullable final TransactionPeriod value) {

@@ -35,9 +35,9 @@ public class FeedbackRatingSummary implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<RatingSummaryByRatingType> ratingSummaryByRatingType;
     /**
-     * This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience.
      */
-    private String ratingType;
+    private FeedbackRatingTypeEnum ratingType;
     /**
      * Instantiates a new {@link FeedbackRatingSummary} and sets the default values.
      */
@@ -70,7 +70,7 @@ public class FeedbackRatingSummary implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("ratingSummaryByRatingType", (n) -> { this.setRatingSummaryByRatingType(n.getCollectionOfObjectValues(RatingSummaryByRatingType::createFromDiscriminatorValue)); });
-        deserializerMap.put("ratingType", (n) -> { this.setRatingType(n.getStringValue()); });
+        deserializerMap.put("ratingType", (n) -> { this.setRatingType(n.getEnumValue(FeedbackRatingTypeEnum::forValue)); });
         return deserializerMap;
     }
     /**
@@ -82,11 +82,11 @@ public class FeedbackRatingSummary implements AdditionalDataHolder, Parsable {
         return this.ratingSummaryByRatingType;
     }
     /**
-     * Gets the ratingType property value. This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ratingType property value. This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience.
+     * @return a {@link FeedbackRatingTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRatingType() {
+    public FeedbackRatingTypeEnum getRatingType() {
         return this.ratingType;
     }
     /**
@@ -96,7 +96,7 @@ public class FeedbackRatingSummary implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("ratingSummaryByRatingType", this.getRatingSummaryByRatingType());
-        writer.writeStringValue("ratingType", this.getRatingType());
+        writer.writeEnumValue("ratingType", this.getRatingType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -114,10 +114,10 @@ public class FeedbackRatingSummary implements AdditionalDataHolder, Parsable {
         this.ratingSummaryByRatingType = value;
     }
     /**
-     * Sets the ratingType property value. This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ratingType property value. This enumerated value indicates the type of rating being summarized. For example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating applies to the overall transaction experience.
      * @param value Value to set for the ratingType property.
      */
-    public void setRatingType(@jakarta.annotation.Nullable final String value) {
+    public void setRatingType(@jakarta.annotation.Nullable final FeedbackRatingTypeEnum value) {
         this.ratingType = value;
     }
 }

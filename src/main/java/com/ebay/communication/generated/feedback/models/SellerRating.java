@@ -31,11 +31,11 @@ public class SellerRating implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:KeyEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;).
      */
-    private String key;
+    private KeyEnum key;
     /**
-     * The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with the &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
+     * The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
      */
     private String value;
     /**
@@ -69,20 +69,20 @@ public class SellerRating implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("key", (n) -> { this.setKey(n.getStringValue()); });
+        deserializerMap.put("key", (n) -> { this.setKey(n.getEnumValue(KeyEnum::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the key property value. The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:KeyEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the key property value. The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;).
+     * @return a {@link KeyEnum}
      */
     @jakarta.annotation.Nullable
-    public String getKey() {
+    public KeyEnum getKey() {
         return this.key;
     }
     /**
-     * Gets the value property value. The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with the &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
+     * Gets the value property value. The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class SellerRating implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("key", this.getKey());
+        writer.writeEnumValue("key", this.getKey());
         writer.writeStringValue("value", this.getValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,14 +107,14 @@ public class SellerRating implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the key property value. The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:KeyEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the key property value. The enumerated value of the category being rated, such as delivery timeliness (&lt;code&gt;ON_TIME_DELIVERY&lt;/code&gt;).
      * @param value Value to set for the key property.
      */
-    public void setKey(@jakarta.annotation.Nullable final String value) {
+    public void setKey(@jakarta.annotation.Nullable final KeyEnum value) {
         this.key = value;
     }
     /**
-     * Sets the value property value. The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with the &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
+     * Sets the value property value. The value assigned for the selected category. Use a value of &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; being the lowest rating and &lt;code&gt;5&lt;/code&gt; being the highest.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final String value) {

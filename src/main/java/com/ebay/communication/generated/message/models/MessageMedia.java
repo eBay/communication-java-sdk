@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type specifies the type of message media sent when sending a message.
+ * This type specifies the format of media that was included when sending a message.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MessageMedia implements AdditionalDataHolder, Parsable {
@@ -35,7 +35,7 @@ public class MessageMedia implements AdditionalDataHolder, Parsable {
      */
     private String mediaName;
     /**
-     * The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+     * The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
      */
     private String mediaType;
     /**
@@ -87,7 +87,7 @@ public class MessageMedia implements AdditionalDataHolder, Parsable {
         return this.mediaName;
     }
     /**
-     * Gets the mediaType property value. The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+     * Gets the mediaType property value. The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -128,7 +128,7 @@ public class MessageMedia implements AdditionalDataHolder, Parsable {
         this.mediaName = value;
     }
     /**
-     * Sets the mediaType property value. The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+     * Sets the mediaType property value. The type of media attached to the message.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;IMAGE&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;PDF&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DOC&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
      * @param value Value to set for the mediaType property.
      */
     public void setMediaType(@jakarta.annotation.Nullable final String value) {

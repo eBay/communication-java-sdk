@@ -22,6 +22,8 @@ import com.ebay.communication.generated.message.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.io.InputStream;
+import com.microsoft.kiota.serialization.UntypedNode;
 
 public final class MessageClient {
     private final MessageApiClient kiota;
