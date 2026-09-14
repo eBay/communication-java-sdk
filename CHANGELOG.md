@@ -1,27 +1,12 @@
 # ChangeLog
 
-## 2.0.0 (09/14/2026)
+## 0.2.0 (09/14/2026)
 
-**Breaking changes**
-- The following operations changed signature on `NegotiationClient`:
-  - `findEligibleItemsAsync`: `(String, String, String, String, RequestOptions)` → `(Integer, Integer, String, String, RequestOptions)`
+Consolidated experimental release.
 
-## 1.0.0 (09/14/2026)
+- REST clients: `FeedbackClient`, `MessageClient`, `NegotiationClient`, `NotificationClient`.
+- Includes the current API definitions, regenerated clients, and wrapper updates.
+- Preserves existing wrapper parameter order where signatures allow it.
+- Aligns wrapper query parameter types with the generated Kiota clients.
 
-**Breaking changes**
-- The following members were removed from `CommunicationClient`:
-  - `graphQL`
-- The following operations changed signature on `FeedbackClient`:
-  - `getFeedbackAsync`: `(String, RequestOptions)` → `(String, String, String, String, String, String, String, String, String, String, String, RequestOptions)`
-  - `getFeedbackRatingSummaryAsync`: `(String, RequestOptions)` → `(String, String, String, RequestOptions)`
-  - `getItemsAwaitingFeedbackAsync`: `(String, RequestOptions)` → `(String, String, String, String, String, RequestOptions)`
-- The following operations changed signature on `MessageClient`:
-  - `getConversationAsync`: `(String, String, RequestOptions)` → `(String, String, String, String, String, RequestOptions)`
-  - `getConversationsAsync`: `(String, RequestOptions)` → `(String, String, String, String, String, String, String, String, String, String, RequestOptions)`
-- The following operations changed signature on `NegotiationClient`:
-  - `findEligibleItemsAsync`: `(String, RequestOptions)` → `(String, String, String, String, RequestOptions)`
-  - `sendOfferToInterestedBuyersAsync`: `(CreateOffersRequest, String, RequestOptions)` → `(CreateOffersRequest, String, String, RequestOptions)`
-- The following operations changed signature on `NotificationClient`:
-  - `getDestinationsAsync`: `(String, RequestOptions)` → `(String, String, String, RequestOptions)`
-  - `getSubscriptionsAsync`: `(String, RequestOptions)` → `(String, String, String, RequestOptions)`
-  - `getTopicsAsync`: `(String, RequestOptions)` → `(String, String, String, RequestOptions)`
+This entry establishes the consolidated experimental baseline.
