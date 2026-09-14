@@ -26,3 +26,6 @@ jobs:
 
       - name: Build
         run: ./gradlew build --no-daemon
+
+      - name: Static analysis
+        run: ./gradlew lint --no-daemon
