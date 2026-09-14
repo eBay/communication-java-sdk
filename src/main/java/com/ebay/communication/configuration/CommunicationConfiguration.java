@@ -14,6 +14,7 @@
 
 package com.ebay.communication.configuration;
 
+import jakarta.annotation.Nullable;
 import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,7 +31,7 @@ public final class CommunicationConfiguration {
     private final String negotiationBaseUrl;
     private final String graphQLBaseUrl;
 
-    private String accessToken;  // static fallback; per-call token takes precedence
+    private @Nullable String accessToken;  // static fallback; per-call token takes precedence
     private boolean diagnosticLogging = false;
 
     /**
@@ -101,7 +102,7 @@ public final class CommunicationConfiguration {
      * captured in heap dumps or exposed via reflection. Prefer per-call token passing via
      * {@code TokenContext.runWith()} for sensitive multi-tenant scenarios.
      */
-    public String getAccessToken() { return accessToken; }
+    public @Nullable String getAccessToken() { return accessToken; }
 
     /**
      * Sets the static fallback access token.
@@ -109,7 +110,7 @@ public final class CommunicationConfiguration {
      * <b>Security note:</b> Access tokens stored in heap memory may be captured in heap dumps
      * or exposed via reflection. Prefer per-call token passing where possible.
      */
-    public void setAccessToken(String accessToken) { this.accessToken = accessToken; }
+    public void setAccessToken(@Nullable String accessToken) { this.accessToken = accessToken; }
 
     public boolean isDiagnosticLogging() { return diagnosticLogging; }
     public void setDiagnosticLogging(boolean diagnosticLogging) { this.diagnosticLogging = diagnosticLogging; }
