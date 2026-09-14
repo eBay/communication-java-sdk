@@ -43,7 +43,7 @@ src/main/java/com/ebay/communication/
 
 ```kotlin
 dependencies {
-    implementation("com.ebay:communication-sdk:1.0.0")
+    implementation("com.ebay:communication-sdk:0.2.0")
 }
 ```
 
