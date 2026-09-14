@@ -14,6 +14,7 @@
 
 package com.ebay.communication.generated.notification.subscription.item;
 
+import com.ebay.communication.generated.notification.models.Error;
 import com.ebay.communication.generated.notification.models.Subscription;
 import com.ebay.communication.generated.notification.models.UpdateSubscriptionRequest;
 import com.ebay.communication.generated.notification.subscription.item.disable.DisableRequestBuilder;
@@ -87,6 +88,9 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * This method allows applications to delete a subscription. Subscriptions can be deleted regardless of status.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     public void delete() {
         delete(null);
@@ -94,45 +98,75 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
     /**
      * This method allows applications to delete a subscription. Subscriptions can be deleted regardless of status.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        this.requestAdapter.sendPrimitive(requestInfo, errorMapping, Void.class);
     }
     /**
-     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;strong&gt;getSubscriptions&lt;/strong&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
+     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-getsubscriptions&quot;&gt;getSubscriptions&lt;/a&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @return a {@link Subscription}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Subscription get() {
         return get(null);
     }
     /**
-     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;strong&gt;getSubscriptions&lt;/strong&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
+     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-getsubscriptions&quot;&gt;getSubscriptions&lt;/a&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Subscription}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Subscription get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Subscription::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Subscription::createFromDiscriminatorValue);
     }
     /**
-     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;b&gt;disableSubscription&lt;/b&gt; and &lt;b&gt;enableSubscription&lt;/b&gt; methods.
-     * @param body A type that describes the details of the update subscription request.
+     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt;methods.
+     * @param body The create subscription request.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     public void put(@jakarta.annotation.Nonnull final UpdateSubscriptionRequest body) {
         put(body, null);
     }
     /**
-     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;b&gt;disableSubscription&lt;/b&gt; and &lt;b&gt;enableSubscription&lt;/b&gt; methods.
-     * @param body A type that describes the details of the update subscription request.
+     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt;methods.
+     * @param body The create subscription request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     public void put(@jakarta.annotation.Nonnull final UpdateSubscriptionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("409", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        this.requestAdapter.sendPrimitive(requestInfo, errorMapping, Void.class);
     }
     /**
      * This method allows applications to delete a subscription. Subscriptions can be deleted regardless of status.
@@ -151,10 +185,11 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**
-     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;strong&gt;getSubscriptions&lt;/strong&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
+     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-getsubscriptions&quot;&gt;getSubscriptions&lt;/a&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -162,7 +197,7 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;strong&gt;getSubscriptions&lt;/strong&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
+     * This method allows applications to retrieve subscription details for the specified subscription.&lt;br&gt;&lt;br&gt;Specify the subscription to retrieve using the &lt;strong&gt;subscription_id&lt;/strong&gt;. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-getsubscriptions&quot;&gt;getSubscriptions&lt;/a&gt; method to browse all subscriptions if you do not know the &lt;strong&gt;subscription_id&lt;/strong&gt;.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -174,8 +209,8 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;b&gt;disableSubscription&lt;/b&gt; and &lt;b&gt;enableSubscription&lt;/b&gt; methods.
-     * @param body A type that describes the details of the update subscription request.
+     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt;methods.
+     * @param body The create subscription request.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -183,8 +218,8 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
         return toPutRequestInformation(body, null);
     }
     /**
-     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;b&gt;disableSubscription&lt;/b&gt; and &lt;b&gt;enableSubscription&lt;/b&gt; methods.
-     * @param body A type that describes the details of the update subscription request.
+     * This method allows applications to update a subscription. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This call returns an error if an application is not authorized to subscribe to a topic.&lt;/span&gt;&lt;br&gt;&lt;br&gt;You can pause and restart a subscription. See the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt; and &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt;methods.
+     * @param body The create subscription request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -193,6 +228,7 @@ public class WithSubscriptionItemRequestBuilder extends BaseRequestBuilder {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides fields available to leave feedback in the &lt;b&gt;leaveFeedback&lt;/b&gt; request.
+ * This type provides fields available to leave feedback in the &lt;strong&gt;leaveFeedback&lt;/strong&gt; request.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
@@ -31,13 +31,13 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters&lt;/p&gt;
+     * Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters&lt;/p&gt;
      */
     private String commentText;
     /**
-     * Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt;
      */
-    private String commentType;
+    private FeedbackRatingValuesEnum commentType;
     /**
      * Use this array to optionally list up to 5 images attached to the feedback.
      */
@@ -83,7 +83,7 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the commentText property value. Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters&lt;/p&gt;
+     * Gets the commentText property value. Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters&lt;/p&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -91,11 +91,11 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
         return this.commentText;
     }
     /**
-     * Gets the commentType property value. Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the commentType property value. Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt;
+     * @return a {@link FeedbackRatingValuesEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCommentType() {
+    public FeedbackRatingValuesEnum getCommentType() {
         return this.commentType;
     }
     /**
@@ -106,7 +106,7 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("commentText", (n) -> { this.setCommentText(n.getStringValue()); });
-        deserializerMap.put("commentType", (n) -> { this.setCommentType(n.getStringValue()); });
+        deserializerMap.put("commentType", (n) -> { this.setCommentType(n.getEnumValue(FeedbackRatingValuesEnum::forValue)); });
         deserializerMap.put("images", (n) -> { this.setImages(n.getCollectionOfObjectValues(Image::createFromDiscriminatorValue)); });
         deserializerMap.put("listingId", (n) -> { this.setListingId(n.getStringValue()); });
         deserializerMap.put("orderLineItemId", (n) -> { this.setOrderLineItemId(n.getStringValue()); });
@@ -161,7 +161,7 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("commentText", this.getCommentText());
-        writer.writeStringValue("commentType", this.getCommentType());
+        writer.writeEnumValue("commentType", this.getCommentType());
         writer.writeCollectionOfObjectValues("images", this.getImages());
         writer.writeStringValue("listingId", this.getListingId());
         writer.writeStringValue("orderLineItemId", this.getOrderLineItemId());
@@ -177,17 +177,17 @@ public class LeaveFeedbackRequest implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the commentText property value. Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters&lt;/p&gt;
+     * Sets the commentText property value. Use this field to provide the feedback left by the user, describing their experience with the line item of the transaction. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;p&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters&lt;/p&gt;
      * @param value Value to set for the commentText property.
      */
     public void setCommentText(@jakarta.annotation.Nullable final String value) {
         this.commentText = value;
     }
     /**
-     * Sets the commentType property value. Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValuesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the commentType property value. Set this enumerated value to indicate the overall rating of the transaction: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, or &lt;code&gt;NEGATIVE&lt;/code&gt;.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Sellers can only provide positive feedback.&lt;/span&gt;&lt;/p&gt;
      * @param value Value to set for the commentType property.
      */
-    public void setCommentType(@jakarta.annotation.Nullable final String value) {
+    public void setCommentType(@jakarta.annotation.Nullable final FeedbackRatingValuesEnum value) {
         this.commentType = value;
     }
     /**

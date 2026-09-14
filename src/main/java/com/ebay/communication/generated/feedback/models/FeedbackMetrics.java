@@ -31,11 +31,11 @@ public class FeedbackMetrics implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;b&gt;metricValue&lt;/b&gt; for the value of the returned feedback. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackAggregationTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;strong&gt;metricValue&lt;/strong&gt; for the value of the returned feedback.
      */
-    private String metricName;
+    private FeedbackAggregationTypeEnum metricName;
     /**
-     * The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;b&gt;metricName&lt;/b&gt; (see &lt;b&gt;metricName&lt;/b&gt; for interpretation and units).
+     * The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;strong&gt;metricName&lt;/strong&gt; (see &lt;strong&gt;metricName&lt;/strong&gt; for interpretation and units).
      */
     private Double metricValue;
     /**
@@ -69,20 +69,20 @@ public class FeedbackMetrics implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("metricName", (n) -> { this.setMetricName(n.getStringValue()); });
+        deserializerMap.put("metricName", (n) -> { this.setMetricName(n.getEnumValue(FeedbackAggregationTypeEnum::forValue)); });
         deserializerMap.put("metricValue", (n) -> { this.setMetricValue(n.getDoubleValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the metricName property value. This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;b&gt;metricValue&lt;/b&gt; for the value of the returned feedback. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackAggregationTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the metricName property value. This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;strong&gt;metricValue&lt;/strong&gt; for the value of the returned feedback.
+     * @return a {@link FeedbackAggregationTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getMetricName() {
+    public FeedbackAggregationTypeEnum getMetricName() {
         return this.metricName;
     }
     /**
-     * Gets the metricValue property value. The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;b&gt;metricName&lt;/b&gt; (see &lt;b&gt;metricName&lt;/b&gt; for interpretation and units).
+     * Gets the metricValue property value. The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;strong&gt;metricName&lt;/strong&gt; (see &lt;strong&gt;metricName&lt;/strong&gt; for interpretation and units).
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class FeedbackMetrics implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("metricName", this.getMetricName());
+        writer.writeEnumValue("metricName", this.getMetricName());
         writer.writeDoubleValue("metricValue", this.getMetricValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,14 +107,14 @@ public class FeedbackMetrics implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the metricName property value. This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;b&gt;metricValue&lt;/b&gt; for the value of the returned feedback. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackAggregationTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the metricName property value. This enumerated value specifies the type of feedback aggregation. For example, &lt;code&gt;AVG&lt;/code&gt; would indicate the feedback returned represents the average value of the feedback. See &lt;strong&gt;metricValue&lt;/strong&gt; for the value of the returned feedback.
      * @param value Value to set for the metricName property.
      */
-    public void setMetricName(@jakarta.annotation.Nullable final String value) {
+    public void setMetricName(@jakarta.annotation.Nullable final FeedbackAggregationTypeEnum value) {
         this.metricName = value;
     }
     /**
-     * Sets the metricValue property value. The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;b&gt;metricName&lt;/b&gt; (see &lt;b&gt;metricName&lt;/b&gt; for interpretation and units).
+     * Sets the metricValue property value. The decimal value of the specified metric. For example, 55.8 would represent a value associated with the &lt;strong&gt;metricName&lt;/strong&gt; (see &lt;strong&gt;metricName&lt;/strong&gt; for interpretation and units).
      * @param value Value to set for the metricValue property.
      */
     public void setMetricValue(@jakarta.annotation.Nullable final Double value) {

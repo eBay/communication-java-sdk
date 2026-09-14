@@ -14,6 +14,7 @@
 
 package com.ebay.communication.generated.notification.subscription.item.filter.item;
 
+import com.ebay.communication.generated.notification.models.Error;
 import com.ebay.communication.generated.notification.models.SubscriptionFilter;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
@@ -49,22 +50,39 @@ public class WithFilterItemRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/subscription/{subscription_id}/filter/{filter_id}", rawUrl);
     }
     /**
-     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;code&gt;PENDING&lt;/code&gt; status can not be disabled. However, a new filter can be created instead with the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-createsubscriptionfilter&quot;&gt;createSubscriptionFilter&lt;/a&gt;  method and this new filter will override the &lt;code&gt;PENDING&lt;/code&gt; filter.&lt;/span&gt;
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     public void delete() {
         delete(null);
     }
     /**
-     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;code&gt;PENDING&lt;/code&gt; status can not be disabled. However, a new filter can be created instead with the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-createsubscriptionfilter&quot;&gt;createSubscriptionFilter&lt;/a&gt;  method and this new filter will override the &lt;code&gt;PENDING&lt;/code&gt; filter.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     public void delete(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toDeleteRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("403", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        this.requestAdapter.sendPrimitive(requestInfo, errorMapping, Void.class);
     }
     /**
      * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
      * @return a {@link SubscriptionFilter}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionFilter get() {
@@ -74,14 +92,23 @@ public class WithFilterItemRequestBuilder extends BaseRequestBuilder {
      * This method allows applications to retrieve the filter details for the specified subscription filter.&lt;br&gt;&lt;br&gt;Specify the subscription filter to retrieve by using the &lt;strong&gt;subscription_id&lt;/strong&gt; and the &lt;strong&gt;filter_id&lt;/strong&gt; associated with the subscription filter. The &lt;strong&gt;filter_id&lt;/strong&gt; can be found in the response body for the &lt;strong&gt;getSubscription&lt;/strong&gt; method, if there is a filter applied on the subscription.&lt;br&gt;&lt;br&gt;Filters allow applications to only be sent notifications that match a provided criteria. Notifications that do not match this criteria will not be sent to the destination.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SubscriptionFilter}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionFilter get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SubscriptionFilter::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("403", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, SubscriptionFilter::createFromDiscriminatorValue);
     }
     /**
-     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;code&gt;PENDING&lt;/code&gt; status can not be disabled. However, a new filter can be created instead with the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-createsubscriptionfilter&quot;&gt;createSubscriptionFilter&lt;/a&gt;  method and this new filter will override the &lt;code&gt;PENDING&lt;/code&gt; filter.&lt;/span&gt;
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -89,7 +116,7 @@ public class WithFilterItemRequestBuilder extends BaseRequestBuilder {
         return toDeleteRequestInformation(null);
     }
     /**
-     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;strong&gt;PENDING&lt;/strong&gt; status can not be disabled. However, a new filter can be created instead with the &lt;strong&gt;createSubscriptionFilter&lt;/strong&gt; method and this new filter will override the &lt;strong&gt;PENDING&lt;/strong&gt; filter.&lt;/span&gt;
+     * This method allows applications to disable the active filter on a subscription, so that a new subscription filter may be added.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Subscription filters in &lt;code&gt;PENDING&lt;/code&gt; status can not be disabled. However, a new filter can be created instead with the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-createsubscriptionfilter&quot;&gt;createSubscriptionFilter&lt;/a&gt;  method and this new filter will override the &lt;code&gt;PENDING&lt;/code&gt; filter.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -97,6 +124,7 @@ public class WithFilterItemRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toDeleteRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<DeleteRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.DELETE, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, DeleteRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**

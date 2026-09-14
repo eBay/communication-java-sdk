@@ -15,6 +15,7 @@
 package com.ebay.communication.generated.notification.subscription;
 
 import com.ebay.communication.generated.notification.models.CreateSubscriptionRequest;
+import com.ebay.communication.generated.notification.models.Error;
 import com.ebay.communication.generated.notification.models.SubscriptionSearchResponse;
 import com.ebay.communication.generated.notification.subscription.item.WithSubscriptionItemRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -37,7 +38,7 @@ import java.util.Objects;
 public class SubscriptionRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.communication.generated.notification.subscription.item collection
-     * @param subscription_id The unique identifier of the subscription to retrieve. Use &lt;b&gt;getSubscriptions&lt;/b&gt; to retrieve subscription IDs.
+     * @param subscription_id The unique identifier of the subscription to retrieve. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-getsubscriptions&quot;&gt;getSubscriptions&lt;/a&gt; to retrieve subscription IDs.
      * @return a {@link WithSubscriptionItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -66,6 +67,8 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
     /**
      * This method allows applications to retrieve a list of all subscriptions. The list returned is a paginated collection of subscription resources.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @return a {@link SubscriptionSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionSearchResponse get() {
@@ -75,32 +78,50 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
      * This method allows applications to retrieve a list of all subscriptions. The list returned is a paginated collection of subscription resources.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SubscriptionSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionSearchResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SubscriptionSearchResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, SubscriptionSearchResponse::createFromDiscriminatorValue);
     }
     /**
-     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;b&gt;enableSubscription&lt;/b&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
-     * @param body This type contains information about a subscription request.
+     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
+     * @param body The create subscription request.
      * @return a {@link SubscriptionPostResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionPostResponse post(@jakarta.annotation.Nonnull final CreateSubscriptionRequest body) {
         return post(body, null);
     }
     /**
-     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;b&gt;enableSubscription&lt;/b&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
-     * @param body This type contains information about a subscription request.
+     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
+     * @param body The create subscription request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link SubscriptionPostResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 403 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public SubscriptionPostResponse post(@jakarta.annotation.Nonnull final CreateSubscriptionRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, SubscriptionPostResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("403", Error::createFromDiscriminatorValue);
+        errorMapping.put("409", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, SubscriptionPostResponse::createFromDiscriminatorValue);
     }
     /**
      * This method allows applications to retrieve a list of all subscriptions. The list returned is a paginated collection of subscription resources.&lt;br&gt;&lt;br&gt;Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.
@@ -123,8 +144,8 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
         return requestInfo;
     }
     /**
-     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;b&gt;enableSubscription&lt;/b&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
-     * @param body This type contains information about a subscription request.
+     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
+     * @param body The create subscription request.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -132,8 +153,8 @@ public class SubscriptionRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(body, null);
     }
     /**
-     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;b&gt;enableSubscription&lt;/b&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
-     * @param body This type contains information about a subscription request.
+     * This method allows applications to create a subscription for a topic and supported schema version. Subscriptions allow applications to express interest in notifications and keep receiving the information relevant to their business.&lt;br&gt;&lt;br&gt;Each application and topic-schema pairing to a subscription should have a 1:1 cardinality.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it (see the &lt;b&gt;test&lt;/b&gt; method), and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; If an application is not authorized to subscribe to a topic, for example, if your authorization does not include the list of scopes required for the topic, an error code of 195011 is returned.&lt;/span&gt;
+     * @param body The create subscription request.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */

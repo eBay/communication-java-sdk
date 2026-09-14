@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the fields for the &lt;b&gt;getFeedbackRatingSummary&lt;/b&gt; response.
+ * This type defines the fields for the &lt;strong&gt;getFeedbackRatingSummary&lt;/strong&gt; response.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetFeedbackRatingSummaryResponse implements AdditionalDataHolder, Parsable {

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides the details of the user who provided the feedback of a &lt;b&gt;getFeedback&lt;/b&gt; response.
+ * This type provides the details of the user who provided the feedback of a &lt;strong&gt;getFeedback&lt;/strong&gt; response.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
@@ -31,23 +31,23 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This integer indicates the feedback score of the feedback provider at the time of providing this specific feedback.
+     * This integer indicates the feedback score of the feedback provider at the time the specific feedback was left.
      */
     private Integer feedbackScore;
     /**
-     * This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStarTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;).
      */
-    private String feedbackStar;
+    private FeedbackStarTypeEnum feedbackStar;
     /**
-     * This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
      */
-    private String role;
+    private UserRoleEnum role;
     /**
      * This array lists additional attributes that relate to the user (such as verification status).
      */
     private java.util.List<ProviderUserDetailUserAttributes> userAttributes;
     /**
-     * This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String userId;
     /**
@@ -75,7 +75,7 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the feedbackScore property value. This integer indicates the feedback score of the feedback provider at the time of providing this specific feedback.
+     * Gets the feedbackScore property value. This integer indicates the feedback score of the feedback provider at the time the specific feedback was left.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -83,11 +83,11 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
         return this.feedbackScore;
     }
     /**
-     * Gets the feedbackStar property value. This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStarTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the feedbackStar property value. This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;).
+     * @return a {@link FeedbackStarTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getFeedbackStar() {
+    public FeedbackStarTypeEnum getFeedbackStar() {
         return this.feedbackStar;
     }
     /**
@@ -98,18 +98,18 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("feedbackScore", (n) -> { this.setFeedbackScore(n.getIntegerValue()); });
-        deserializerMap.put("feedbackStar", (n) -> { this.setFeedbackStar(n.getStringValue()); });
-        deserializerMap.put("role", (n) -> { this.setRole(n.getStringValue()); });
+        deserializerMap.put("feedbackStar", (n) -> { this.setFeedbackStar(n.getEnumValue(FeedbackStarTypeEnum::forValue)); });
+        deserializerMap.put("role", (n) -> { this.setRole(n.getEnumValue(UserRoleEnum::forValue)); });
         deserializerMap.put("userAttributes", (n) -> { this.setUserAttributes(n.getCollectionOfObjectValues(ProviderUserDetailUserAttributes::createFromDiscriminatorValue)); });
         deserializerMap.put("userId", (n) -> { this.setUserId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the role property value. This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the role property value. This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
+     * @return a {@link UserRoleEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRole() {
+    public UserRoleEnum getRole() {
         return this.role;
     }
     /**
@@ -121,7 +121,7 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
         return this.userAttributes;
     }
     /**
-     * Gets the userId property value. This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * Gets the userId property value. This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -135,8 +135,8 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeIntegerValue("feedbackScore", this.getFeedbackScore());
-        writer.writeStringValue("feedbackStar", this.getFeedbackStar());
-        writer.writeStringValue("role", this.getRole());
+        writer.writeEnumValue("feedbackStar", this.getFeedbackStar());
+        writer.writeEnumValue("role", this.getRole());
         writer.writeCollectionOfObjectValues("userAttributes", this.getUserAttributes());
         writer.writeStringValue("userId", this.getUserId());
         writer.writeAdditionalData(this.getAdditionalData());
@@ -149,24 +149,24 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the feedbackScore property value. This integer indicates the feedback score of the feedback provider at the time of providing this specific feedback.
+     * Sets the feedbackScore property value. This integer indicates the feedback score of the feedback provider at the time the specific feedback was left.
      * @param value Value to set for the feedbackScore property.
      */
     public void setFeedbackScore(@jakarta.annotation.Nullable final Integer value) {
         this.feedbackScore = value;
     }
     /**
-     * Sets the feedbackStar property value. This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackStarTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the feedbackStar property value. This enumerated value provides the visual star representation of the feedback score (for example, &lt;code&gt;YELLOW_STAR&lt;/code&gt;).
      * @param value Value to set for the feedbackStar property.
      */
-    public void setFeedbackStar(@jakarta.annotation.Nullable final String value) {
+    public void setFeedbackStar(@jakarta.annotation.Nullable final FeedbackStarTypeEnum value) {
         this.feedbackStar = value;
     }
     /**
-     * Sets the role property value. This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the role property value. This enumerated value indicates the user&apos;s role in the transaction (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
      * @param value Value to set for the role property.
      */
-    public void setRole(@jakarta.annotation.Nullable final String value) {
+    public void setRole(@jakarta.annotation.Nullable final UserRoleEnum value) {
         this.role = value;
     }
     /**
@@ -177,7 +177,7 @@ public class ProviderUserDetail implements AdditionalDataHolder, Parsable {
         this.userAttributes = value;
     }
     /**
-     * Sets the userId property value. This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * Sets the userId property value. This field indicates the unique identifier of the user who gave the feedback.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Select developers will not receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the userId property.
      */
     public void setUserId(@jakarta.annotation.Nullable final String value) {

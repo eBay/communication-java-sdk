@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines message details for a conversation.
+ * This type defines the message details for a conversation.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class MessageDetail implements AdditionalDataHolder, Parsable {
@@ -51,11 +51,11 @@ public class MessageDetail implements AdditionalDataHolder, Parsable {
      */
     private Boolean readStatus;
     /**
-     * The eBay username of the message recipient.
+     * The eBay username of the message recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String recipientUsername;
     /**
-     * The eBay username of the message sender.
+     * The eBay username of the message sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String senderUsername;
     /**
@@ -144,7 +144,7 @@ public class MessageDetail implements AdditionalDataHolder, Parsable {
         return this.readStatus;
     }
     /**
-     * Gets the recipientUsername property value. The eBay username of the message recipient.
+     * Gets the recipientUsername property value. The eBay username of the message recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -152,7 +152,7 @@ public class MessageDetail implements AdditionalDataHolder, Parsable {
         return this.recipientUsername;
     }
     /**
-     * Gets the senderUsername property value. The eBay username of the message sender.
+     * Gets the senderUsername property value. The eBay username of the message sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -226,14 +226,14 @@ public class MessageDetail implements AdditionalDataHolder, Parsable {
         this.readStatus = value;
     }
     /**
-     * Sets the recipientUsername property value. The eBay username of the message recipient.
+     * Sets the recipientUsername property value. The eBay username of the message recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the recipientUsername property.
      */
     public void setRecipientUsername(@jakarta.annotation.Nullable final String value) {
         this.recipientUsername = value;
     }
     /**
-     * Sets the senderUsername property value. The eBay username of the message sender.
+     * Sets the senderUsername property value. The eBay username of the message sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the senderUsername property.
      */
     public void setSenderUsername(@jakarta.annotation.Nullable final String value) {

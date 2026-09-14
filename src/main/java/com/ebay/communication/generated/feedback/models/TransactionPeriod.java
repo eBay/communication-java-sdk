@@ -31,13 +31,13 @@ public class TransactionPeriod implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This type provides fields for the time period on which the feedback summary is calculated.
+     * This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days.
      */
     private Period period;
     /**
-     * This enumerated value indicates whether a transaction &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary.transactionPeriod.period&quot; &gt;period&lt;/a&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:ThresholdTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates whether a transaction &lt;strong&gt;period&lt;/strong&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold.
      */
-    private String thresholdType;
+    private ThresholdTypeEnum thresholdType;
     /**
      * Instantiates a new {@link TransactionPeriod} and sets the default values.
      */
@@ -70,11 +70,11 @@ public class TransactionPeriod implements AdditionalDataHolder, Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("period", (n) -> { this.setPeriod(n.getObjectValue(Period::createFromDiscriminatorValue)); });
-        deserializerMap.put("thresholdType", (n) -> { this.setThresholdType(n.getStringValue()); });
+        deserializerMap.put("thresholdType", (n) -> { this.setThresholdType(n.getEnumValue(ThresholdTypeEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the period property value. This type provides fields for the time period on which the feedback summary is calculated.
+     * Gets the period property value. This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days.
      * @return a {@link Period}
      */
     @jakarta.annotation.Nullable
@@ -82,11 +82,11 @@ public class TransactionPeriod implements AdditionalDataHolder, Parsable {
         return this.period;
     }
     /**
-     * Gets the thresholdType property value. This enumerated value indicates whether a transaction &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary.transactionPeriod.period&quot; &gt;period&lt;/a&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:ThresholdTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the thresholdType property value. This enumerated value indicates whether a transaction &lt;strong&gt;period&lt;/strong&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold.
+     * @return a {@link ThresholdTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getThresholdType() {
+    public ThresholdTypeEnum getThresholdType() {
         return this.thresholdType;
     }
     /**
@@ -96,7 +96,7 @@ public class TransactionPeriod implements AdditionalDataHolder, Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeObjectValue("period", this.getPeriod());
-        writer.writeStringValue("thresholdType", this.getThresholdType());
+        writer.writeEnumValue("thresholdType", this.getThresholdType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -107,17 +107,17 @@ public class TransactionPeriod implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the period property value. This type provides fields for the time period on which the feedback summary is calculated.
+     * Sets the period property value. This container indicates if the time since the item was bought on eBay is less than, more than, or equal to 90 days.
      * @param value Value to set for the period property.
      */
     public void setPeriod(@jakarta.annotation.Nullable final Period value) {
         this.period = value;
     }
     /**
-     * Sets the thresholdType property value. This enumerated value indicates whether a transaction &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.orderLineItemSummary.transactionPeriod.period&quot; &gt;period&lt;/a&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:ThresholdTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the thresholdType property value. This enumerated value indicates whether a transaction &lt;strong&gt;period&lt;/strong&gt; exceeds, falls short, or matches the threshold. You can use this field to trigger specific logic or actions based on whether a transaction period exceeds, falls short, or matches the threshold.
      * @param value Value to set for the thresholdType property.
      */
-    public void setThresholdType(@jakarta.annotation.Nullable final String value) {
+    public void setThresholdType(@jakarta.annotation.Nullable final ThresholdTypeEnum value) {
         this.thresholdType = value;
     }
 }

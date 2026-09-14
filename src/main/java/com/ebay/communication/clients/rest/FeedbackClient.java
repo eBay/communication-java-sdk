@@ -22,6 +22,8 @@ import com.ebay.communication.generated.feedback.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.io.InputStream;
+import com.microsoft.kiota.serialization.UntypedNode;
 
 public final class FeedbackClient {
     private final FeedbackApiClient kiota;
@@ -96,13 +98,14 @@ public final class FeedbackClient {
         }));
     }
 
-    public CompletableFuture<Object> respondToFeedbackAsync(
+    public CompletableFuture<Void> respondToFeedbackAsync(
             RespondToFeedbackRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.respondToFeedback().post(body, config -> {
+            kiota.respondToFeedback().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
+            return null;
         }));
     }
 }

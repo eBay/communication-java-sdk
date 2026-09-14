@@ -31,9 +31,9 @@ public class TimeDuration implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * A time-measurement unit that specifies a singular period of time.  &lt;br&gt;&lt;br&gt;A span of time is defined when you apply the value specified in the &lt;b&gt;value&lt;/b&gt; field to the value specified for &lt;b&gt;unit&lt;/b&gt;.  &lt;br&gt;&lt;br&gt;Time-measurement units can be YEAR, MONTH, DAY, and so on. See &lt;b&gt;TimeDurationUnitEnum&lt;/b&gt; for a complete list of possible time-measurement units. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:TimeDurationUnitEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * An enum value that specifies the time-measurement unit that&apos;s used to express a time span.
      */
-    private String unit;
+    private TimeDurationUnitEnum unit;
     /**
      * An integer that represents an amount of time, as measured by the time-measurement unit specified in the &lt;b&gt;unit&lt;/b&gt; field.
      */
@@ -69,16 +69,16 @@ public class TimeDuration implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("unit", (n) -> { this.setUnit(n.getStringValue()); });
+        deserializerMap.put("unit", (n) -> { this.setUnit(n.getEnumValue(TimeDurationUnitEnum::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getIntegerValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the unit property value. A time-measurement unit that specifies a singular period of time.  &lt;br&gt;&lt;br&gt;A span of time is defined when you apply the value specified in the &lt;b&gt;value&lt;/b&gt; field to the value specified for &lt;b&gt;unit&lt;/b&gt;.  &lt;br&gt;&lt;br&gt;Time-measurement units can be YEAR, MONTH, DAY, and so on. See &lt;b&gt;TimeDurationUnitEnum&lt;/b&gt; for a complete list of possible time-measurement units. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:TimeDurationUnitEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the unit property value. An enum value that specifies the time-measurement unit that&apos;s used to express a time span.
+     * @return a {@link TimeDurationUnitEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUnit() {
+    public TimeDurationUnitEnum getUnit() {
         return this.unit;
     }
     /**
@@ -95,7 +95,7 @@ public class TimeDuration implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("unit", this.getUnit());
+        writer.writeEnumValue("unit", this.getUnit());
         writer.writeIntegerValue("value", this.getValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,10 +107,10 @@ public class TimeDuration implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the unit property value. A time-measurement unit that specifies a singular period of time.  &lt;br&gt;&lt;br&gt;A span of time is defined when you apply the value specified in the &lt;b&gt;value&lt;/b&gt; field to the value specified for &lt;b&gt;unit&lt;/b&gt;.  &lt;br&gt;&lt;br&gt;Time-measurement units can be YEAR, MONTH, DAY, and so on. See &lt;b&gt;TimeDurationUnitEnum&lt;/b&gt; for a complete list of possible time-measurement units. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:TimeDurationUnitEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the unit property value. An enum value that specifies the time-measurement unit that&apos;s used to express a time span.
      * @param value Value to set for the unit property.
      */
-    public void setUnit(@jakarta.annotation.Nullable final String value) {
+    public void setUnit(@jakarta.annotation.Nullable final TimeDurationUnitEnum value) {
         this.unit = value;
     }
     /**

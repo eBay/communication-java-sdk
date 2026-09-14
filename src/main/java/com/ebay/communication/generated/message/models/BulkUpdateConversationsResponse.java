@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the response payload of the &lt;b&gt;bulkUpdateConversation&lt;/b&gt; method.
+ * This type defines the response payload of the &lt;strong&gt;bulkUpdateConversation&lt;/strong&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class BulkUpdateConversationsResponse implements AdditionalDataHolder, Parsable {
@@ -31,11 +31,11 @@ public class BulkUpdateConversationsResponse implements AdditionalDataHolder, Pa
      */
     private Map<String, Object> additionalData;
     /**
-     * This type defines the metadata, such as successes and failures, associated with a bulk conversation status update.
+     * This container returns metadata from the call, such as how many conversations were updated, how many succeeded, and how many failed.
      */
     private ConversationsMetadata conversationsMetadata;
     /**
-     * This array returns a list of each conversation specified in the request, and if the requested update was successful or failed.
+     * This array returns a list of each conversation specified in the request and if the requested update was successful or failed.
      */
     private java.util.List<ConversationsResponse> conversationsResponse;
     /**
@@ -63,7 +63,7 @@ public class BulkUpdateConversationsResponse implements AdditionalDataHolder, Pa
         return this.additionalData;
     }
     /**
-     * Gets the conversationsMetadata property value. This type defines the metadata, such as successes and failures, associated with a bulk conversation status update.
+     * Gets the conversationsMetadata property value. This container returns metadata from the call, such as how many conversations were updated, how many succeeded, and how many failed.
      * @return a {@link ConversationsMetadata}
      */
     @jakarta.annotation.Nullable
@@ -71,7 +71,7 @@ public class BulkUpdateConversationsResponse implements AdditionalDataHolder, Pa
         return this.conversationsMetadata;
     }
     /**
-     * Gets the conversationsResponse property value. This array returns a list of each conversation specified in the request, and if the requested update was successful or failed.
+     * Gets the conversationsResponse property value. This array returns a list of each conversation specified in the request and if the requested update was successful or failed.
      * @return a {@link java.util.List<ConversationsResponse>}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class BulkUpdateConversationsResponse implements AdditionalDataHolder, Pa
         this.additionalData = value;
     }
     /**
-     * Sets the conversationsMetadata property value. This type defines the metadata, such as successes and failures, associated with a bulk conversation status update.
+     * Sets the conversationsMetadata property value. This container returns metadata from the call, such as how many conversations were updated, how many succeeded, and how many failed.
      * @param value Value to set for the conversationsMetadata property.
      */
     public void setConversationsMetadata(@jakarta.annotation.Nullable final ConversationsMetadata value) {
         this.conversationsMetadata = value;
     }
     /**
-     * Sets the conversationsResponse property value. This array returns a list of each conversation specified in the request, and if the requested update was successful or failed.
+     * Sets the conversationsResponse property value. This array returns a list of each conversation specified in the request and if the requested update was successful or failed.
      * @param value Value to set for the conversationsResponse property.
      */
     public void setConversationsResponse(@jakarta.annotation.Nullable final java.util.List<ConversationsResponse> value) {

@@ -22,12 +22,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines fields for user feedback collection, including acceptable values, a default preselection value, and an early feedback message. It also provides fields to enable the template, and limits and options for freetext character, multi-value rating, and other similar features.
+ * This type defines fields for user feedback collection, including acceptable values, a default preselection value, and an early feedback message. It also provides fields to enable the template as well as limits and options for freetext characters, multi-value rating, and other similar features.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsable {
     /**
-     * This array contains a list of available values for use in a particular rating, and whether the value is enabled. Provided if &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
+     * This array contains a list of available values for use in a particular rating and whether the value is enabled. This is provided if &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
      */
     private java.util.List<FeedbackRatingAcceptableValue> acceptableValues;
     /**
@@ -47,7 +47,7 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
      */
     private Boolean enabled;
     /**
-     * The maximum number of characters allowed to be used for a rating that uses free text. It is only applicable for a rating whose &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;b&gt;Maximum: &lt;/b&gt;500&lt;/p&gt;
+     * The maximum number of characters allowed to be used for a rating that uses freetext. It is only applicable for a rating whose &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;strong&gt;Maximum: &lt;/strong&gt;500&lt;/p&gt;
      */
     private Integer maximumCharactersAllowed;
     /**
@@ -55,17 +55,17 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
      */
     private Boolean multiValueRating;
     /**
-     * This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;b&gt;ratingTemplates&lt;/b&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;strong&gt;ratingTemplates&lt;/strong&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience.
      */
-    private String ratingKey;
+    private FeedbackRatingTypeEnum ratingKey;
     /**
-     * This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;b&gt;Rate this transaction&lt;/b&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;b&gt;ratingKey&lt;/b&gt;.
+     * This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;strong&gt;Rate this transaction&lt;/strong&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;strong&gt;ratingKey&lt;/strong&gt;.
      */
     private String ratingLabel;
     /**
-     * This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If set to &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt;, is returned here, more information on the supported values will be returned under the &lt;b&gt;acceptableValues&lt;/b&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned here, the maximum number of characters supported can be seen in the &lt;b&gt;maximumCharactersAllowed&lt;/b&gt; field.&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValueTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt; is returned, more information on the supported values will be returned under the &lt;strong&gt;acceptableValues&lt;/strong&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned, the maximum number of characters supported can be seen in the &lt;strong&gt;maximumCharactersAllowed&lt;/strong&gt; field.&lt;/p&gt;
      */
-    private String ratingValueType;
+    private FeedbackRatingValueTypeEnum ratingValueType;
     /**
      * If returned as &lt;code&gt;true&lt;/code&gt;, this rating type is required when leaving feedback.
      */
@@ -87,7 +87,7 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         return new FeedbackRatingTemplateType();
     }
     /**
-     * Gets the acceptableValues property value. This array contains a list of available values for use in a particular rating, and whether the value is enabled. Provided if &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
+     * Gets the acceptableValues property value. This array contains a list of available values for use in a particular rating and whether the value is enabled. This is provided if &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
      * @return a {@link java.util.List<FeedbackRatingAcceptableValue>}
      */
     @jakarta.annotation.Nullable
@@ -139,14 +139,14 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         deserializerMap.put("enabled", (n) -> { this.setEnabled(n.getBooleanValue()); });
         deserializerMap.put("maximumCharactersAllowed", (n) -> { this.setMaximumCharactersAllowed(n.getIntegerValue()); });
         deserializerMap.put("multiValueRating", (n) -> { this.setMultiValueRating(n.getBooleanValue()); });
-        deserializerMap.put("ratingKey", (n) -> { this.setRatingKey(n.getStringValue()); });
+        deserializerMap.put("ratingKey", (n) -> { this.setRatingKey(n.getEnumValue(FeedbackRatingTypeEnum::forValue)); });
         deserializerMap.put("ratingLabel", (n) -> { this.setRatingLabel(n.getStringValue()); });
-        deserializerMap.put("ratingValueType", (n) -> { this.setRatingValueType(n.getStringValue()); });
+        deserializerMap.put("ratingValueType", (n) -> { this.setRatingValueType(n.getEnumValue(FeedbackRatingValueTypeEnum::forValue)); });
         deserializerMap.put("required", (n) -> { this.setRequired(n.getBooleanValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the maximumCharactersAllowed property value. The maximum number of characters allowed to be used for a rating that uses free text. It is only applicable for a rating whose &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;b&gt;Maximum: &lt;/b&gt;500&lt;/p&gt;
+     * Gets the maximumCharactersAllowed property value. The maximum number of characters allowed to be used for a rating that uses freetext. It is only applicable for a rating whose &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;strong&gt;Maximum: &lt;/strong&gt;500&lt;/p&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -162,15 +162,15 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         return this.multiValueRating;
     }
     /**
-     * Gets the ratingKey property value. This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;b&gt;ratingTemplates&lt;/b&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ratingKey property value. This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;strong&gt;ratingTemplates&lt;/strong&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience.
+     * @return a {@link FeedbackRatingTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRatingKey() {
+    public FeedbackRatingTypeEnum getRatingKey() {
         return this.ratingKey;
     }
     /**
-     * Gets the ratingLabel property value. This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;b&gt;Rate this transaction&lt;/b&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;b&gt;ratingKey&lt;/b&gt;.
+     * Gets the ratingLabel property value. This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;strong&gt;Rate this transaction&lt;/strong&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;strong&gt;ratingKey&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -178,11 +178,11 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         return this.ratingLabel;
     }
     /**
-     * Gets the ratingValueType property value. This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If set to &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt;, is returned here, more information on the supported values will be returned under the &lt;b&gt;acceptableValues&lt;/b&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned here, the maximum number of characters supported can be seen in the &lt;b&gt;maximumCharactersAllowed&lt;/b&gt; field.&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValueTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ratingValueType property value. This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt; is returned, more information on the supported values will be returned under the &lt;strong&gt;acceptableValues&lt;/strong&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned, the maximum number of characters supported can be seen in the &lt;strong&gt;maximumCharactersAllowed&lt;/strong&gt; field.&lt;/p&gt;
+     * @return a {@link FeedbackRatingValueTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRatingValueType() {
+    public FeedbackRatingValueTypeEnum getRatingValueType() {
         return this.ratingValueType;
     }
     /**
@@ -205,14 +205,14 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         writer.writeBooleanValue("enabled", this.getEnabled());
         writer.writeIntegerValue("maximumCharactersAllowed", this.getMaximumCharactersAllowed());
         writer.writeBooleanValue("multiValueRating", this.getMultiValueRating());
-        writer.writeStringValue("ratingKey", this.getRatingKey());
+        writer.writeEnumValue("ratingKey", this.getRatingKey());
         writer.writeStringValue("ratingLabel", this.getRatingLabel());
-        writer.writeStringValue("ratingValueType", this.getRatingValueType());
+        writer.writeEnumValue("ratingValueType", this.getRatingValueType());
         writer.writeBooleanValue("required", this.getRequired());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
-     * Sets the acceptableValues property value. This array contains a list of available values for use in a particular rating, and whether the value is enabled. Provided if &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
+     * Sets the acceptableValues property value. This array contains a list of available values for use in a particular rating and whether the value is enabled. This is provided if &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;RANGE&lt;/code&gt; or &lt;code&gt;PREDEFINED&lt;/code&gt;.&lt;p&gt;The following is an example of a predefined list:&lt;pre&gt;[&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;POSITIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Positive&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEUTRAL&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Neutral&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  },&lt;br&gt;  {&lt;br&gt;    &quot;value&quot;: &quot;NEGATIVE&quot;,&lt;br&gt;    &quot;valueLabel&quot;: &quot;Negative&quot;,&lt;br&gt;    &quot;enabled&quot;: true&lt;br&gt;  }&lt;/br&gt;]&lt;/pre&gt;For other examples, see the &lt;a href=&quot;/develop/guides-v2/communications/sell-communications-guide#using-rating-templates&quot;  target=&quot;_blank&quot;&gt;Using rating templates&lt;/a&gt;.
      * @param value Value to set for the acceptableValues property.
      */
     public void setAcceptableValues(@jakarta.annotation.Nullable final java.util.List<FeedbackRatingAcceptableValue> value) {
@@ -247,7 +247,7 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         this.enabled = value;
     }
     /**
-     * Sets the maximumCharactersAllowed property value. The maximum number of characters allowed to be used for a rating that uses free text. It is only applicable for a rating whose &lt;b&gt;ratingValueType&lt;/b&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;b&gt;Maximum: &lt;/b&gt;500&lt;/p&gt;
+     * Sets the maximumCharactersAllowed property value. The maximum number of characters allowed to be used for a rating that uses freetext. It is only applicable for a rating whose &lt;strong&gt;ratingValueType&lt;/strong&gt; is &lt;code&gt;FREETEXT&lt;/code&gt;. &lt;p&gt;&lt;strong&gt;Maximum: &lt;/strong&gt;500&lt;/p&gt;
      * @param value Value to set for the maximumCharactersAllowed property.
      */
     public void setMaximumCharactersAllowed(@jakarta.annotation.Nullable final Integer value) {
@@ -261,24 +261,24 @@ public class FeedbackRatingTemplateType implements AdditionalDataHolder, Parsabl
         this.multiValueRating = value;
     }
     /**
-     * Sets the ratingKey property value. This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;b&gt;ratingTemplates&lt;/b&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ratingKey property value. This enumerated value indicates the type of rating that is tracked for the seller. All of the metadata returned under each node for the &lt;strong&gt;ratingTemplates&lt;/strong&gt; array will apply to this rating type. For example, the value &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; indicates the rating is for the overall transaction experience.
      * @param value Value to set for the ratingKey property.
      */
-    public void setRatingKey(@jakarta.annotation.Nullable final String value) {
+    public void setRatingKey(@jakarta.annotation.Nullable final FeedbackRatingTypeEnum value) {
         this.ratingKey = value;
     }
     /**
-     * Sets the ratingLabel property value. This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;b&gt;Rate this transaction&lt;/b&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;b&gt;ratingKey&lt;/b&gt;.
+     * Sets the ratingLabel property value. This field provides more details about and/or provides guidance on the corresponding rating type. For example, the rating label of &lt;strong&gt;Rate this transaction&lt;/strong&gt; describes the feedback for the user to enter for an &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt; &lt;strong&gt;ratingKey&lt;/strong&gt;.
      * @param value Value to set for the ratingLabel property.
      */
     public void setRatingLabel(@jakarta.annotation.Nullable final String value) {
         this.ratingLabel = value;
     }
     /**
-     * Sets the ratingValueType property value. This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If set to &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt;, is returned here, more information on the supported values will be returned under the &lt;b&gt;acceptableValues&lt;/b&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned here, the maximum number of characters supported can be seen in the &lt;b&gt;maximumCharactersAllowed&lt;/b&gt; field.&lt;/p&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingValueTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ratingValueType property value. This enumerated value indicates the type of data used to provide the specific feedback rating.&lt;br&gt;&lt;p&gt;If &lt;code&gt;PREDEFINED&lt;/code&gt; or &lt;code&gt;RANGE&lt;/code&gt; is returned, more information on the supported values will be returned under the &lt;strong&gt;acceptableValues&lt;/strong&gt; array. If &lt;code&gt;FREETEXT&lt;/code&gt; is returned, the maximum number of characters supported can be seen in the &lt;strong&gt;maximumCharactersAllowed&lt;/strong&gt; field.&lt;/p&gt;
      * @param value Value to set for the ratingValueType property.
      */
-    public void setRatingValueType(@jakarta.annotation.Nullable final String value) {
+    public void setRatingValueType(@jakarta.annotation.Nullable final FeedbackRatingValueTypeEnum value) {
         this.ratingValueType = value;
     }
     /**

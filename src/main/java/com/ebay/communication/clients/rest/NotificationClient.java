@@ -22,6 +22,8 @@ import com.ebay.communication.generated.notification.models.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.io.InputStream;
+import com.microsoft.kiota.serialization.UntypedNode;
 
 public final class NotificationClient {
     private final NotificationApiClient kiota;
@@ -73,13 +75,14 @@ public final class NotificationClient {
         }));
     }
 
-    public CompletableFuture<Object> createDestinationAsync(
+    public CompletableFuture<Void> createDestinationAsync(
             DestinationRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.destination().post(body, config -> {
+            kiota.destination().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
+            return null;
         }));
     }
 
@@ -137,23 +140,25 @@ public final class NotificationClient {
         }));
     }
 
-    public CompletableFuture<Object> createSubscriptionAsync(
+    public CompletableFuture<Void> createSubscriptionAsync(
             CreateSubscriptionRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.subscription().post(body, config -> {
+            kiota.subscription().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
+            return null;
         }));
     }
 
-    public CompletableFuture<Object> createSubscriptionFilterAsync(
+    public CompletableFuture<Void> createSubscriptionFilterAsync(
             String subscriptionId, CreateSubscriptionFilterRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.subscription().bySubscription_id(Params.requireValid("subscriptionId", subscriptionId)).filter().post(body, config -> {
+            kiota.subscription().bySubscription_id(Params.requireValid("subscriptionId", subscriptionId)).filter().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
+            return null;
         }));
     }
 
@@ -232,14 +237,13 @@ public final class NotificationClient {
         }));
     }
 
-    public CompletableFuture<Void> testSubscriptionAsync(
+    public CompletableFuture<com.ebay.communication.generated.notification.models.Error> testSubscriptionAsync(
             String subscriptionId, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            kiota.subscription().bySubscription_id(Params.requireValid("subscriptionId", subscriptionId)).test().post(config -> {
+            return kiota.subscription().bySubscription_id(Params.requireValid("subscriptionId", subscriptionId)).test().post(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
-            return null;
         }));
     }
 

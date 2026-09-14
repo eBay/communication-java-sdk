@@ -14,6 +14,7 @@
 
 package com.ebay.communication.generated.notification.subscription.item.enable;
 
+import com.ebay.communication.generated.notification.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -48,21 +49,34 @@ public class EnableRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/subscription/{subscription_id}/enable", rawUrl);
     }
     /**
-     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;strong&gt;disableSubscription&lt;/strong&gt;.
+     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt;.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     public void post() {
         post(null);
     }
     /**
-     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;strong&gt;disableSubscription&lt;/strong&gt;.
+     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt;.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 409 status code
+     * @throws Error When receiving a 500 status code
      */
     public void post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("409", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        this.requestAdapter.sendPrimitive(requestInfo, errorMapping, Void.class);
     }
     /**
-     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;strong&gt;disableSubscription&lt;/strong&gt;.
+     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt;.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -70,7 +84,7 @@ public class EnableRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(null);
     }
     /**
-     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;strong&gt;disableSubscription&lt;/strong&gt;.
+     * This method allows applications to enable a disabled subscription. To pause (or disable) an enabled subscription, call &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-disablesubscription&quot;&gt;disableSubscription&lt;/a&gt;.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -78,6 +92,7 @@ public class EnableRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**

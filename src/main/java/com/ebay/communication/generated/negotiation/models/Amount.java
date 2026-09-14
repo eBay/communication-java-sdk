@@ -31,11 +31,11 @@ public class Amount implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The base currency applied to the &lt;b&gt;value&lt;/b&gt; field to establish a monetary amount.  &lt;br&gt;&lt;br&gt;The currency is represented as a 3-letter &lt;a href=&quot;http://www.currency-iso.org/en/home/tables/table-a1.html&quot; title=&quot;www.currency-iso.org&quot; target=&quot;_blank&quot;&gt;ISO4217&lt;/a&gt; currency code. For example, the code for the Canadian Dollar is &lt;code&gt;CAD&lt;/code&gt;.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; The default currency of the eBay marketplace that hosts the listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated type lists the three-letter &lt;a href=&quot;http://www.iso.org/iso/home/standards/currency_codes.htm&quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; codes representing the supported world currencies.
      */
-    private String currency;
+    private CurrencyCodeEnum currency;
     /**
-     * The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.
+     * The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; For listings on the following marketplaces, a comma (&lt;code&gt;,&lt;/code&gt;) must be used as the decimal separator:&lt;br&gt;&lt;ul&gt;&lt;li&gt;France&lt;/li&gt;&lt;li&gt;Canada (French Language)&lt;/li&gt;&lt;li&gt;Germany&lt;/li&gt;&lt;li&gt;Italy&lt;/li&gt;&lt;li&gt;Spain&lt;/li&gt;&lt;/ul&gt;All other sites should use a period (&lt;code&gt;.&lt;/code&gt;) as the decimal separator. If the incorrect decimal separator is used, the decimal point will be ignored.&lt;/p&gt;&lt;/div&gt;
      */
     private String value;
     /**
@@ -63,11 +63,11 @@ public class Amount implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the currency property value. The base currency applied to the &lt;b&gt;value&lt;/b&gt; field to establish a monetary amount.  &lt;br&gt;&lt;br&gt;The currency is represented as a 3-letter &lt;a href=&quot;http://www.currency-iso.org/en/home/tables/table-a1.html&quot; title=&quot;www.currency-iso.org&quot; target=&quot;_blank&quot;&gt;ISO4217&lt;/a&gt; currency code. For example, the code for the Canadian Dollar is &lt;code&gt;CAD&lt;/code&gt;.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; The default currency of the eBay marketplace that hosts the listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the currency property value. This enumerated type lists the three-letter &lt;a href=&quot;http://www.iso.org/iso/home/standards/currency_codes.htm&quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; codes representing the supported world currencies.
+     * @return a {@link CurrencyCodeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getCurrency() {
+    public CurrencyCodeEnum getCurrency() {
         return this.currency;
     }
     /**
@@ -77,12 +77,12 @@ public class Amount implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
+        deserializerMap.put("currency", (n) -> { this.setCurrency(n.getEnumValue(CurrencyCodeEnum::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the value property value. The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.
+     * Gets the value property value. The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; For listings on the following marketplaces, a comma (&lt;code&gt;,&lt;/code&gt;) must be used as the decimal separator:&lt;br&gt;&lt;ul&gt;&lt;li&gt;France&lt;/li&gt;&lt;li&gt;Canada (French Language)&lt;/li&gt;&lt;li&gt;Germany&lt;/li&gt;&lt;li&gt;Italy&lt;/li&gt;&lt;li&gt;Spain&lt;/li&gt;&lt;/ul&gt;All other sites should use a period (&lt;code&gt;.&lt;/code&gt;) as the decimal separator. If the incorrect decimal separator is used, the decimal point will be ignored.&lt;/p&gt;&lt;/div&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class Amount implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("currency", this.getCurrency());
+        writer.writeEnumValue("currency", this.getCurrency());
         writer.writeStringValue("value", this.getValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,14 +107,14 @@ public class Amount implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the currency property value. The base currency applied to the &lt;b&gt;value&lt;/b&gt; field to establish a monetary amount.  &lt;br&gt;&lt;br&gt;The currency is represented as a 3-letter &lt;a href=&quot;http://www.currency-iso.org/en/home/tables/table-a1.html&quot; title=&quot;www.currency-iso.org&quot; target=&quot;_blank&quot;&gt;ISO4217&lt;/a&gt; currency code. For example, the code for the Canadian Dollar is &lt;code&gt;CAD&lt;/code&gt;.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; The default currency of the eBay marketplace that hosts the listing. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/bas:CurrencyCodeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the currency property value. This enumerated type lists the three-letter &lt;a href=&quot;http://www.iso.org/iso/home/standards/currency_codes.htm&quot; target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; codes representing the supported world currencies.
      * @param value Value to set for the currency property.
      */
-    public void setCurrency(@jakarta.annotation.Nullable final String value) {
+    public void setCurrency(@jakarta.annotation.Nullable final CurrencyCodeEnum value) {
         this.currency = value;
     }
     /**
-     * Sets the value property value. The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.
+     * Sets the value property value. The monetary amount in the specified &lt;b&gt;currency&lt;/b&gt;.&lt;br&gt;&lt;br&gt;&lt;div class=&quot;msgbox_important&quot;&gt;&lt;p class=&quot;msgbox_importantInDiv&quot; data-mc-autonum=&quot;&amp;lt;b&amp;gt;&amp;lt;span style=&amp;quot;color: #dd1e31;&amp;quot; class=&amp;quot;mcFormatColor&amp;quot;&amp;gt;Important! &amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;&quot;&gt;&lt;span class=&quot;autonumber&quot;&gt;&lt;span&gt;&lt;b&gt;&lt;span style=&quot;color: #dd1e31;&quot; class=&quot;mcFormatColor&quot;&gt;Important!&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/span&gt; For listings on the following marketplaces, a comma (&lt;code&gt;,&lt;/code&gt;) must be used as the decimal separator:&lt;br&gt;&lt;ul&gt;&lt;li&gt;France&lt;/li&gt;&lt;li&gt;Canada (French Language)&lt;/li&gt;&lt;li&gt;Germany&lt;/li&gt;&lt;li&gt;Italy&lt;/li&gt;&lt;li&gt;Spain&lt;/li&gt;&lt;/ul&gt;All other sites should use a period (&lt;code&gt;.&lt;/code&gt;) as the decimal separator. If the incorrect decimal separator is used, the decimal point will be ignored.&lt;/p&gt;&lt;/div&gt;
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final String value) {
