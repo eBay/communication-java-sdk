@@ -50,7 +50,7 @@ public class WithConversationItemRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/conversation/{conversation_id}?conversation_type={conversation_type}{&limit*,offset*}", rawUrl);
     }
     /**
-     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_id&lt;/b&gt; of the conversation for which to retrieve messages is required as path parameters, and the and &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is required as a query parameter.
+     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_id&lt;/strong&gt; of the conversation for which to retrieve messages is required as a path parameter and the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is required as a query parameter.
      * @return a {@link GetMessagesByConversationIdResponse}
      */
     @jakarta.annotation.Nullable
@@ -58,7 +58,7 @@ public class WithConversationItemRequestBuilder extends BaseRequestBuilder {
         return get(null);
     }
     /**
-     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_id&lt;/b&gt; of the conversation for which to retrieve messages is required as path parameters, and the and &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is required as a query parameter.
+     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_id&lt;/strong&gt; of the conversation for which to retrieve messages is required as a path parameter and the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is required as a query parameter.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link GetMessagesByConversationIdResponse}
      */
@@ -68,7 +68,7 @@ public class WithConversationItemRequestBuilder extends BaseRequestBuilder {
         return this.requestAdapter.send(requestInfo, null, GetMessagesByConversationIdResponse::createFromDiscriminatorValue);
     }
     /**
-     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_id&lt;/b&gt; of the conversation for which to retrieve messages is required as path parameters, and the and &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is required as a query parameter.
+     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_id&lt;/strong&gt; of the conversation for which to retrieve messages is required as a path parameter and the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is required as a query parameter.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -76,7 +76,7 @@ public class WithConversationItemRequestBuilder extends BaseRequestBuilder {
         return toGetRequestInformation(null);
     }
     /**
-     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_id&lt;/b&gt; of the conversation for which to retrieve messages is required as path parameters, and the and &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is required as a query parameter.
+     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_id&lt;/strong&gt; of the conversation for which to retrieve messages is required as a path parameter and the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is required as a query parameter.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -98,22 +98,22 @@ public class WithConversationItemRequestBuilder extends BaseRequestBuilder {
         return new WithConversationItemRequestBuilder(rawUrl, requestAdapter);
     }
     /**
-     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;b&gt;conversation_id&lt;/b&gt; of the conversation for which to retrieve messages is required as path parameters, and the and &lt;b&gt;conversation_type&lt;/b&gt; of the conversation is required as a query parameter.
+     * This method can be used to retrieve messages within a specific conversation.&lt;br&gt;&lt;br&gt;The &lt;strong&gt;conversation_id&lt;/strong&gt; of the conversation for which to retrieve messages is required as a path parameter and the &lt;strong&gt;conversation_type&lt;/strong&gt; of the conversation is required as a query parameter.
      */
     @jakarta.annotation.Generated("com.microsoft.kiota")
     public class GetQueryParameters implements QueryParameters {
         /**
-         * This query parameter specifies the type of the conversation being retrieved.&lt;br&gt;&lt;br&gt;This parameter is always required when using the this method.&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;FROM_EBAY&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;FROM_MEMBERS&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+         * This query parameter specifies the type of the conversation being retrieved.&lt;br&gt;&lt;br&gt;This parameter is always required when using this method.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Valid values:&lt;/strong&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;FROM_EBAY&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;FROM_MEMBERS&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
          */
         @jakarta.annotation.Nullable
         public String conversationType;
         /**
-         * The maximum number of entries that can be returned on each page of the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;b&gt;offset&lt;/b&gt; parameter to control the pagination of the output. For example, if &lt;b&gt;offset&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt; and &lt;b&gt;limit&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt;, the call retrieves entries 11 through 20 from the result set.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; 25&lt;br&gt;&lt;br&gt;&lt;b&gt;Maximum:&lt;/b&gt; 50
+         * The maximum number of entries that can be returned on each page of the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;strong&gt;offset&lt;/strong&gt; parameter to control the pagination of the output. For example, if &lt;strong&gt;offset&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt; and &lt;strong&gt;limit&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt;, the call retrieves entries 11 through 20 from the result set.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Default:&lt;/strong&gt; 25&lt;br&gt;&lt;br&gt;&lt;strong&gt;Maximum:&lt;/strong&gt; 50
          */
         @jakarta.annotation.Nullable
         public String limit;
         /**
-         * The number of reports to skip in the result set before returning the first entry in the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;b&gt;limit&lt;/b&gt; parameter to control the pagination of the output. For example, if &lt;b&gt;offset&lt;/b&gt; is set to &lt;code&gt;0&lt;/code&gt; and &lt;b&gt;limit&lt;/b&gt; is set to &lt;code&gt;10&lt;/code&gt;, the first page of the response will contain the first 10 entries from the complete list retrieved by the call.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;b&gt;Default:&lt;/b&gt; 0
+         * The number of reports to skip in the result set before returning the first entry in the paginated response.&lt;br&gt;&lt;br&gt;Use this parameter in conjunction with the &lt;strong&gt;limit&lt;/strong&gt; parameter to control the pagination of the output. For example, if &lt;strong&gt;offset&lt;/strong&gt; is set to &lt;code&gt;0&lt;/code&gt; and &lt;strong&gt;limit&lt;/strong&gt; is set to &lt;code&gt;10&lt;/code&gt;, the first page of the response will contain the first 10 entries from the complete list retrieved by the call.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; This feature employs a zero-based list, where the first item in the list has an offset of &lt;code&gt;0&lt;/code&gt;.&lt;/span&gt;&lt;br&gt;If this parameter is omitted, the default value is used.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Default:&lt;/strong&gt; 0
          */
         @jakarta.annotation.Nullable
         public String offset;

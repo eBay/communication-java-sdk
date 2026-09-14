@@ -31,9 +31,9 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The supported delivery protocols. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The supported delivery protocols.
      */
-    private String deliveryProtocol;
+    private ProtocolEnum deliveryProtocol;
     /**
      * A deprecation indicator.
      */
@@ -41,7 +41,7 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
     /**
      * The supported format. Presently, &lt;code&gt;JSON&lt;/code&gt; is the only supported format.
      */
-    private java.util.List<String> format;
+    private java.util.List<FormatTypeEnum> format;
     /**
      * The supported schema version.
      */
@@ -71,11 +71,11 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the deliveryProtocol property value. The supported delivery protocols. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the deliveryProtocol property value. The supported delivery protocols.
+     * @return a {@link ProtocolEnum}
      */
     @jakarta.annotation.Nullable
-    public String getDeliveryProtocol() {
+    public ProtocolEnum getDeliveryProtocol() {
         return this.deliveryProtocol;
     }
     /**
@@ -93,18 +93,18 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("deliveryProtocol", (n) -> { this.setDeliveryProtocol(n.getStringValue()); });
+        deserializerMap.put("deliveryProtocol", (n) -> { this.setDeliveryProtocol(n.getEnumValue(ProtocolEnum::forValue)); });
         deserializerMap.put("deprecated", (n) -> { this.setDeprecated(n.getBooleanValue()); });
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getCollectionOfPrimitiveValues(String.class)); });
+        deserializerMap.put("format", (n) -> { this.setFormat(n.getCollectionOfEnumValues(FormatTypeEnum::forValue)); });
         deserializerMap.put("schemaVersion", (n) -> { this.setSchemaVersion(n.getStringValue()); });
         return deserializerMap;
     }
     /**
      * Gets the format property value. The supported format. Presently, &lt;code&gt;JSON&lt;/code&gt; is the only supported format.
-     * @return a {@link java.util.List<String>}
+     * @return a {@link java.util.List<FormatTypeEnum>}
      */
     @jakarta.annotation.Nullable
-    public java.util.List<String> getFormat() {
+    public java.util.List<FormatTypeEnum> getFormat() {
         return this.format;
     }
     /**
@@ -121,9 +121,9 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("deliveryProtocol", this.getDeliveryProtocol());
+        writer.writeEnumValue("deliveryProtocol", this.getDeliveryProtocol());
         writer.writeBooleanValue("deprecated", this.getDeprecated());
-        writer.writeCollectionOfPrimitiveValues("format", this.getFormat());
+        writer.writeCollectionOfEnumValues("format", this.getFormat());
         writer.writeStringValue("schemaVersion", this.getSchemaVersion());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -135,10 +135,10 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the deliveryProtocol property value. The supported delivery protocols. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the deliveryProtocol property value. The supported delivery protocols.
      * @param value Value to set for the deliveryProtocol property.
      */
-    public void setDeliveryProtocol(@jakarta.annotation.Nullable final String value) {
+    public void setDeliveryProtocol(@jakarta.annotation.Nullable final ProtocolEnum value) {
         this.deliveryProtocol = value;
     }
     /**
@@ -152,7 +152,7 @@ public class PayloadDetail implements AdditionalDataHolder, Parsable {
      * Sets the format property value. The supported format. Presently, &lt;code&gt;JSON&lt;/code&gt; is the only supported format.
      * @param value Value to set for the format property.
      */
-    public void setFormat(@jakarta.annotation.Nullable final java.util.List<String> value) {
+    public void setFormat(@jakarta.annotation.Nullable final java.util.List<FormatTypeEnum> value) {
         this.format = value;
     }
     /**

@@ -20,22 +20,22 @@ echo "Generating Communication Java SDK with Kiota..."
 rm -rf src/main/java/com/ebay/communication/generated
 
 echo "Generating FeedbackApiClient..."
-kiota generate -l java -d specs/openapi/feedback.yaml \
+kiota generate -l java -d specs/openapi/feedback.json \
   -c FeedbackApiClient -n com.ebay.communication.generated.feedback \
   -o src/main/java/com/ebay/communication/generated/feedback --ebc --co
 
 echo "Generating MessageApiClient..."
-kiota generate -l java -d specs/openapi/message.yaml \
+kiota generate -l java -d specs/openapi/message.json \
   -c MessageApiClient -n com.ebay.communication.generated.message \
   -o src/main/java/com/ebay/communication/generated/message --ebc --co
 
 echo "Generating NegotiationApiClient..."
-kiota generate -l java -d specs/openapi/negotiation.yaml \
+kiota generate -l java -d specs/openapi/negotiation.json \
   -c NegotiationApiClient -n com.ebay.communication.generated.negotiation \
   -o src/main/java/com/ebay/communication/generated/negotiation --ebc --co
 
 echo "Generating NotificationApiClient..."
-kiota generate -l java -d specs/openapi/notification.yaml \
+kiota generate -l java -d specs/openapi/notification.json \
   -c NotificationApiClient -n com.ebay.communication.generated.notification \
   -o src/main/java/com/ebay/communication/generated/notification --ebc --co
 

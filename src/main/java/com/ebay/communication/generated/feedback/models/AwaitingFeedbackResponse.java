@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the fields for the &lt;b&gt;getItemsAwaitingFeedback&lt;/b&gt; response.
+ * This type defines the fields for the &lt;strong&gt;getItemsAwaitingFeedback&lt;/strong&gt; response.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
      */
     private Map<String, Object> additionalData;
     /**
-     * This type returns the number of line items awaiting feedback.
+     * This container returns the number of line items awaiting feedback. The &lt;strong&gt;asSeller&lt;/strong&gt; and &lt;strong&gt;asBuyer&lt;/strong&gt; fields return the total count of items awaiting feedback as seller and buyer and are not affected by the &lt;strong&gt;userRole&lt;/strong&gt; filter.
      */
     private ItemsAwaitingFeedbackCount itemsAwaitingFeedbackCount;
     /**
@@ -39,7 +39,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
      */
     private java.util.List<AwaitingFeedback> lineItems;
     /**
-     * This type provides pagination information for the returned line items.
+     * This container provides pagination information for the returned line items awaiting feedback (as filtered).
      */
     private Pagination pagination;
     /**
@@ -79,7 +79,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
         return deserializerMap;
     }
     /**
-     * Gets the itemsAwaitingFeedbackCount property value. This type returns the number of line items awaiting feedback.
+     * Gets the itemsAwaitingFeedbackCount property value. This container returns the number of line items awaiting feedback. The &lt;strong&gt;asSeller&lt;/strong&gt; and &lt;strong&gt;asBuyer&lt;/strong&gt; fields return the total count of items awaiting feedback as seller and buyer and are not affected by the &lt;strong&gt;userRole&lt;/strong&gt; filter.
      * @return a {@link ItemsAwaitingFeedbackCount}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
         return this.lineItems;
     }
     /**
-     * Gets the pagination property value. This type provides pagination information for the returned line items.
+     * Gets the pagination property value. This container provides pagination information for the returned line items awaiting feedback (as filtered).
      * @return a {@link Pagination}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
         this.additionalData = value;
     }
     /**
-     * Sets the itemsAwaitingFeedbackCount property value. This type returns the number of line items awaiting feedback.
+     * Sets the itemsAwaitingFeedbackCount property value. This container returns the number of line items awaiting feedback. The &lt;strong&gt;asSeller&lt;/strong&gt; and &lt;strong&gt;asBuyer&lt;/strong&gt; fields return the total count of items awaiting feedback as seller and buyer and are not affected by the &lt;strong&gt;userRole&lt;/strong&gt; filter.
      * @param value Value to set for the itemsAwaitingFeedbackCount property.
      */
     public void setItemsAwaitingFeedbackCount(@jakarta.annotation.Nullable final ItemsAwaitingFeedbackCount value) {
@@ -135,7 +135,7 @@ public class AwaitingFeedbackResponse implements AdditionalDataHolder, Parsable 
         this.lineItems = value;
     }
     /**
-     * Sets the pagination property value. This type provides pagination information for the returned line items.
+     * Sets the pagination property value. This container provides pagination information for the returned line items awaiting feedback (as filtered).
      * @param value Value to set for the pagination property.
      */
     public void setPagination(@jakarta.annotation.Nullable final Pagination value) {

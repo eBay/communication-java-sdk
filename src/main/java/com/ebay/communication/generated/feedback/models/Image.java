@@ -31,7 +31,7 @@ public class Image implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This field provides the URL of an attached image and is included in the response whenever an image is attached.
+     * This field provides the URL of an attached image and is included in the response whenever an image is attached to the feedback.
      */
     private String url;
     /**
@@ -69,7 +69,7 @@ public class Image implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the url property value. This field provides the URL of an attached image and is included in the response whenever an image is attached.
+     * Gets the url property value. This field provides the URL of an attached image and is included in the response whenever an image is attached to the feedback.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class Image implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the url property value. This field provides the URL of an attached image and is included in the response whenever an image is attached.
+     * Sets the url property value. This field provides the URL of an attached image and is included in the response whenever an image is attached to the feedback.
      * @param value Value to set for the url property.
      */
     public void setUrl(@jakarta.annotation.Nullable final String value) {

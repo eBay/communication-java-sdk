@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides field for an array listing the distribution values of the feedback ratings.
+ * This type provides fields for an array listing the distribution values of the feedback ratings.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedbackRatingValueDistribution implements AdditionalDataHolder, Parsable {
@@ -31,11 +31,11 @@ public class FeedbackRatingValueDistribution implements AdditionalDataHolder, Pa
      */
     private Map<String, Object> additionalData;
     /**
-     * An integer representing the number of occurrences for a specific feedback rating &lt;b&gt;value&lt;/b&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;b&gt;value&lt;/b&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;b&gt;count&lt;/b&gt; represents three positive ratings were returned.
+     * An integer representing the number of occurrences for a specific feedback rating &lt;strong&gt;value&lt;/strong&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;strong&gt;value&lt;/strong&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;strong&gt;count&lt;/strong&gt; represents three positive ratings were returned.
      */
     private Integer count;
     /**
-     * A string indicating the specific feedback rating value. Supported values include: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
+     * A string indicating the specific feedback rating value. Supported values include &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
      */
     private String value;
     /**
@@ -63,7 +63,7 @@ public class FeedbackRatingValueDistribution implements AdditionalDataHolder, Pa
         return this.additionalData;
     }
     /**
-     * Gets the count property value. An integer representing the number of occurrences for a specific feedback rating &lt;b&gt;value&lt;/b&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;b&gt;value&lt;/b&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;b&gt;count&lt;/b&gt; represents three positive ratings were returned.
+     * Gets the count property value. An integer representing the number of occurrences for a specific feedback rating &lt;strong&gt;value&lt;/strong&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;strong&gt;value&lt;/strong&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;strong&gt;count&lt;/strong&gt; represents three positive ratings were returned.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class FeedbackRatingValueDistribution implements AdditionalDataHolder, Pa
         return deserializerMap;
     }
     /**
-     * Gets the value property value. A string indicating the specific feedback rating value. Supported values include: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
+     * Gets the value property value. A string indicating the specific feedback rating value. Supported values include &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class FeedbackRatingValueDistribution implements AdditionalDataHolder, Pa
         this.additionalData = value;
     }
     /**
-     * Sets the count property value. An integer representing the number of occurrences for a specific feedback rating &lt;b&gt;value&lt;/b&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;b&gt;value&lt;/b&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;b&gt;count&lt;/b&gt; represents three positive ratings were returned.
+     * Sets the count property value. An integer representing the number of occurrences for a specific feedback rating &lt;strong&gt;value&lt;/strong&gt;. For example, for the &lt;code&gt;POSITIVE&lt;/code&gt; &lt;strong&gt;value&lt;/strong&gt;, a &lt;code&gt;3&lt;/code&gt; returned as the &lt;strong&gt;count&lt;/strong&gt; represents three positive ratings were returned.
      * @param value Value to set for the count property.
      */
     public void setCount(@jakarta.annotation.Nullable final Integer value) {
         this.count = value;
     }
     /**
-     * Sets the value property value. A string indicating the specific feedback rating value. Supported values include: &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
+     * Sets the value property value. A string indicating the specific feedback rating value. Supported values include &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEUTRAL&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, &lt;code&gt;1&lt;/code&gt;, &lt;code&gt;2&lt;/code&gt;, &lt;code&gt;3&lt;/code&gt;, &lt;code&gt;4&lt;/code&gt;, and &lt;code&gt;5&lt;/code&gt;.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final String value) {

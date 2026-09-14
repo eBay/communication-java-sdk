@@ -21,6 +21,9 @@ import com.microsoft.kiota.serialization.SerializationWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+/**
+ * This type defines filter details for the specified subscription filter.
+ */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
     /**
@@ -40,9 +43,9 @@ public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
      */
     private SubscriptionFilterFilterSchema filterSchema;
     /**
-     * The status of this subscription filter. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionFilterStatus&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The status of this subscription filter.
      */
-    private String filterStatus;
+    private SubscriptionFilterStatus filterStatus;
     /**
      * The unique identifier for the subscription.
      */
@@ -89,7 +92,7 @@ public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
         deserializerMap.put("creationDate", (n) -> { this.setCreationDate(n.getStringValue()); });
         deserializerMap.put("filterId", (n) -> { this.setFilterId(n.getStringValue()); });
         deserializerMap.put("filterSchema", (n) -> { this.setFilterSchema(n.getObjectValue(SubscriptionFilterFilterSchema::createFromDiscriminatorValue)); });
-        deserializerMap.put("filterStatus", (n) -> { this.setFilterStatus(n.getStringValue()); });
+        deserializerMap.put("filterStatus", (n) -> { this.setFilterStatus(n.getEnumValue(SubscriptionFilterStatus::forValue)); });
         deserializerMap.put("subscriptionId", (n) -> { this.setSubscriptionId(n.getStringValue()); });
         return deserializerMap;
     }
@@ -110,11 +113,11 @@ public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
         return this.filterSchema;
     }
     /**
-     * Gets the filterStatus property value. The status of this subscription filter. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionFilterStatus&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the filterStatus property value. The status of this subscription filter.
+     * @return a {@link SubscriptionFilterStatus}
      */
     @jakarta.annotation.Nullable
-    public String getFilterStatus() {
+    public SubscriptionFilterStatus getFilterStatus() {
         return this.filterStatus;
     }
     /**
@@ -134,7 +137,7 @@ public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
         writer.writeStringValue("creationDate", this.getCreationDate());
         writer.writeStringValue("filterId", this.getFilterId());
         writer.writeObjectValue("filterSchema", this.getFilterSchema());
-        writer.writeStringValue("filterStatus", this.getFilterStatus());
+        writer.writeEnumValue("filterStatus", this.getFilterStatus());
         writer.writeStringValue("subscriptionId", this.getSubscriptionId());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -167,10 +170,10 @@ public class SubscriptionFilter implements AdditionalDataHolder, Parsable {
         this.filterSchema = value;
     }
     /**
-     * Sets the filterStatus property value. The status of this subscription filter. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionFilterStatus&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the filterStatus property value. The status of this subscription filter.
      * @param value Value to set for the filterStatus property.
      */
-    public void setFilterStatus(@jakarta.annotation.Nullable final String value) {
+    public void setFilterStatus(@jakarta.annotation.Nullable final SubscriptionFilterStatus value) {
         this.filterStatus = value;
     }
     /**

@@ -31,11 +31,11 @@ public class FeedbackEnteredPeriod implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The unit for the feedback entry period&apos;s &lt;b&gt;value&lt;/b&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
+     * The unit for the feedback entry period&apos;s &lt;strong&gt;value&lt;/strong&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
      */
     private String unit;
     /**
-     * The value for the feedback entry period, specified in units of &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
+     * The value for the feedback entry period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
      */
     private Integer value;
     /**
@@ -74,7 +74,7 @@ public class FeedbackEnteredPeriod implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the unit property value. The unit for the feedback entry period&apos;s &lt;b&gt;value&lt;/b&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
+     * Gets the unit property value. The unit for the feedback entry period&apos;s &lt;strong&gt;value&lt;/strong&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class FeedbackEnteredPeriod implements AdditionalDataHolder, Parsable {
         return this.unit;
     }
     /**
-     * Gets the value property value. The value for the feedback entry period, specified in units of &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
+     * Gets the value property value. The value for the feedback entry period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class FeedbackEnteredPeriod implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the unit property value. The unit for the feedback entry period&apos;s &lt;b&gt;value&lt;/b&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
+     * Sets the unit property value. The unit for the feedback entry period&apos;s &lt;strong&gt;value&lt;/strong&gt;. Supported value: &lt;code&gt;DAY&lt;/code&gt;.
      * @param value Value to set for the unit property.
      */
     public void setUnit(@jakarta.annotation.Nullable final String value) {
         this.unit = value;
     }
     /**
-     * Sets the value property value. The value for the feedback entry period, specified in units of &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
+     * Sets the value property value. The value for the feedback entry period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final Integer value) {

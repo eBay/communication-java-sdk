@@ -31,11 +31,11 @@ public class OrderLineItemAttribute implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This enumerated value indicates an attribute of the line item. The &lt;b&gt;value&lt;/b&gt; field indicates if the attribute applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:OrderLineItemAttributesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates an attribute of the line item. The &lt;strong&gt;value&lt;/strong&gt; field indicates if the attribute applies.
      */
-    private String name;
+    private OrderLineItemAttributesEnum name;
     /**
-     * If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;b&gt;name&lt;/b&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
+     * If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;strong&gt;name&lt;/strong&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
      */
     private String value;
     /**
@@ -69,20 +69,20 @@ public class OrderLineItemAttribute implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
+        deserializerMap.put("name", (n) -> { this.setName(n.getEnumValue(OrderLineItemAttributesEnum::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the name property value. This enumerated value indicates an attribute of the line item. The &lt;b&gt;value&lt;/b&gt; field indicates if the attribute applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:OrderLineItemAttributesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the name property value. This enumerated value indicates an attribute of the line item. The &lt;strong&gt;value&lt;/strong&gt; field indicates if the attribute applies.
+     * @return a {@link OrderLineItemAttributesEnum}
      */
     @jakarta.annotation.Nullable
-    public String getName() {
+    public OrderLineItemAttributesEnum getName() {
         return this.name;
     }
     /**
-     * Gets the value property value. If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;b&gt;name&lt;/b&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
+     * Gets the value property value. If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;strong&gt;name&lt;/strong&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class OrderLineItemAttribute implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("name", this.getName());
+        writer.writeEnumValue("name", this.getName());
         writer.writeStringValue("value", this.getValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,14 +107,14 @@ public class OrderLineItemAttribute implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the name property value. This enumerated value indicates an attribute of the line item. The &lt;b&gt;value&lt;/b&gt; field indicates if the attribute applies. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:OrderLineItemAttributesEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the name property value. This enumerated value indicates an attribute of the line item. The &lt;strong&gt;value&lt;/strong&gt; field indicates if the attribute applies.
      * @param value Value to set for the name property.
      */
-    public void setName(@jakarta.annotation.Nullable final String value) {
+    public void setName(@jakarta.annotation.Nullable final OrderLineItemAttributesEnum value) {
         this.name = value;
     }
     /**
-     * Sets the value property value. If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;b&gt;name&lt;/b&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
+     * Sets the value property value. If returned as &lt;code&gt;true&lt;/code&gt;, the line item attribute &lt;strong&gt;name&lt;/strong&gt; applies; if returned as &lt;code&gt;false&lt;/code&gt;, the attribute does not apply.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final String value) {

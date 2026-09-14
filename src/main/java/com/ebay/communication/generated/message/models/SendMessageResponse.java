@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the response payload of the &lt;b&gt;sendMessage&lt;/b&gt; method.
+ * This type defines the response payload of the &lt;strong&gt;sendMessage&lt;/strong&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class SendMessageResponse implements AdditionalDataHolder, Parsable {
@@ -31,7 +31,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The date, in ISO 8601 format, the message was sent.
+     * The date the message was sent in ISO 8601 format.
      */
     private String createdDate;
     /**
@@ -47,15 +47,15 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<MessageMedia> messageMedia;
     /**
-     * The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read by the recipient.
+     * The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read. If returned as &lt;code&gt;false&lt;/code&gt;, the message has not been read.
      */
     private Boolean readStatus;
     /**
-     * The eBay username of the recipient.
+     * The eBay username of the recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String recipientUserName;
     /**
-     * The eBay username of the sender.
+     * The eBay username of the sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String senderUserName;
     /**
@@ -87,7 +87,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the createdDate property value. The date, in ISO 8601 format, the message was sent.
+     * Gets the createdDate property value. The date the message was sent in ISO 8601 format.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -136,7 +136,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         return this.messageMedia;
     }
     /**
-     * Gets the readStatus property value. The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read by the recipient.
+     * Gets the readStatus property value. The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read. If returned as &lt;code&gt;false&lt;/code&gt;, the message has not been read.
      * @return a {@link Boolean}
      */
     @jakarta.annotation.Nullable
@@ -144,7 +144,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         return this.readStatus;
     }
     /**
-     * Gets the recipientUserName property value. The eBay username of the recipient.
+     * Gets the recipientUserName property value. The eBay username of the recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -152,7 +152,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         return this.recipientUserName;
     }
     /**
-     * Gets the senderUserName property value. The eBay username of the sender.
+     * Gets the senderUserName property value. The eBay username of the sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -191,7 +191,7 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the createdDate property value. The date, in ISO 8601 format, the message was sent.
+     * Sets the createdDate property value. The date the message was sent in ISO 8601 format.
      * @param value Value to set for the createdDate property.
      */
     public void setCreatedDate(@jakarta.annotation.Nullable final String value) {
@@ -219,21 +219,21 @@ public class SendMessageResponse implements AdditionalDataHolder, Parsable {
         this.messageMedia = value;
     }
     /**
-     * Sets the readStatus property value. The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read by the recipient.
+     * Sets the readStatus property value. The read status of the message.&lt;br&gt;&lt;br&gt;If returned as &lt;code&gt;true&lt;/code&gt;, the message has been read. If returned as &lt;code&gt;false&lt;/code&gt;, the message has not been read.
      * @param value Value to set for the readStatus property.
      */
     public void setReadStatus(@jakarta.annotation.Nullable final Boolean value) {
         this.readStatus = value;
     }
     /**
-     * Sets the recipientUserName property value. The eBay username of the recipient.
+     * Sets the recipientUserName property value. The eBay username of the recipient.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the recipientUserName property.
      */
     public void setRecipientUserName(@jakarta.annotation.Nullable final String value) {
         this.recipientUserName = value;
     }
     /**
-     * Sets the senderUserName property value. The eBay username of the sender.
+     * Sets the senderUserName property value. The eBay username of the sender.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the senderUserName property.
      */
     public void setSenderUserName(@jakarta.annotation.Nullable final String value) {

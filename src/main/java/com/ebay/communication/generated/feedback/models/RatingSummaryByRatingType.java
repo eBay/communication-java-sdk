@@ -39,13 +39,13 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
      */
     private java.util.List<FeedbackRatingValueDistribution> feedbackRatingValueDistribution;
     /**
-     * This type provides fields for the time period on which the feedback summary is calculated.
+     * The time period on which the feedback summary is calculated.
      */
     private Period period;
     /**
-     * This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
      */
-    private String userRoleType;
+    private UserRoleEnum userRoleType;
     /**
      * Instantiates a new {@link RatingSummaryByRatingType} and sets the default values.
      */
@@ -96,11 +96,11 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         deserializerMap.put("feedbackMetrics", (n) -> { this.setFeedbackMetrics(n.getCollectionOfObjectValues(FeedbackMetrics::createFromDiscriminatorValue)); });
         deserializerMap.put("feedbackRatingValueDistribution", (n) -> { this.setFeedbackRatingValueDistribution(n.getCollectionOfObjectValues(FeedbackRatingValueDistribution::createFromDiscriminatorValue)); });
         deserializerMap.put("period", (n) -> { this.setPeriod(n.getObjectValue(Period::createFromDiscriminatorValue)); });
-        deserializerMap.put("userRoleType", (n) -> { this.setUserRoleType(n.getStringValue()); });
+        deserializerMap.put("userRoleType", (n) -> { this.setUserRoleType(n.getEnumValue(UserRoleEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the period property value. This type provides fields for the time period on which the feedback summary is calculated.
+     * Gets the period property value. The time period on which the feedback summary is calculated.
      * @return a {@link Period}
      */
     @jakarta.annotation.Nullable
@@ -108,11 +108,11 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         return this.period;
     }
     /**
-     * Gets the userRoleType property value. This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the userRoleType property value. This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
+     * @return a {@link UserRoleEnum}
      */
     @jakarta.annotation.Nullable
-    public String getUserRoleType() {
+    public UserRoleEnum getUserRoleType() {
         return this.userRoleType;
     }
     /**
@@ -124,7 +124,7 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         writer.writeCollectionOfObjectValues("feedbackMetrics", this.getFeedbackMetrics());
         writer.writeCollectionOfObjectValues("feedbackRatingValueDistribution", this.getFeedbackRatingValueDistribution());
         writer.writeObjectValue("period", this.getPeriod());
-        writer.writeStringValue("userRoleType", this.getUserRoleType());
+        writer.writeEnumValue("userRoleType", this.getUserRoleType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -149,17 +149,17 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         this.feedbackRatingValueDistribution = value;
     }
     /**
-     * Sets the period property value. This type provides fields for the time period on which the feedback summary is calculated.
+     * Sets the period property value. The time period on which the feedback summary is calculated.
      * @param value Value to set for the period property.
      */
     public void setPeriod(@jakarta.annotation.Nullable final Period value) {
         this.period = value;
     }
     /**
-     * Sets the userRoleType property value. This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:UserRoleEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the userRoleType property value. This enumerated value indicates the user&apos;s role in the feedback  (&lt;code&gt;BUYER&lt;/code&gt; or &lt;code&gt;SELLER&lt;/code&gt;).
      * @param value Value to set for the userRoleType property.
      */
-    public void setUserRoleType(@jakarta.annotation.Nullable final String value) {
+    public void setUserRoleType(@jakarta.annotation.Nullable final UserRoleEnum value) {
         this.userRoleType = value;
     }
 }

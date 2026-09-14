@@ -31,19 +31,19 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
      */
     private Map<String, Object> additionalData;
     /**
-     * The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;b&gt;getDestinations&lt;/b&gt; method to retrieve destination IDs.
+     * The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-getdestinations&quot;&gt;getDestinations&lt;/a&gt;  method to retrieve destination IDs.
      */
     private String destinationId;
     /**
-     * A type that describes the details of the subscription payload.
+     * The payload associated with the notification topic. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; to get the supported payload for the topic.
      */
     private SubscriptionPayloadDetail payload;
     /**
-     * Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;.
      */
-    private String status;
+    private SubscriptionStatusEnum status;
     /**
-     * The unique identifier of the notification topic to subscribe to. Use &lt;b&gt;getTopics&lt;/b&gt; to get topic IDs.
+     * The unique identifier of the notification topic to subscribe to. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; to get topic IDs.
      */
     private String topicId;
     /**
@@ -71,7 +71,7 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
         return this.additionalData;
     }
     /**
-     * Gets the destinationId property value. The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;b&gt;getDestinations&lt;/b&gt; method to retrieve destination IDs.
+     * Gets the destinationId property value. The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-getdestinations&quot;&gt;getDestinations&lt;/a&gt;  method to retrieve destination IDs.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -87,12 +87,12 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("destinationId", (n) -> { this.setDestinationId(n.getStringValue()); });
         deserializerMap.put("payload", (n) -> { this.setPayload(n.getObjectValue(SubscriptionPayloadDetail::createFromDiscriminatorValue)); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(SubscriptionStatusEnum::forValue)); });
         deserializerMap.put("topicId", (n) -> { this.setTopicId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the payload property value. A type that describes the details of the subscription payload.
+     * Gets the payload property value. The payload associated with the notification topic. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; to get the supported payload for the topic.
      * @return a {@link SubscriptionPayloadDetail}
      */
     @jakarta.annotation.Nullable
@@ -100,15 +100,15 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
         return this.payload;
     }
     /**
-     * Gets the status property value. Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the status property value. Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;.
+     * @return a {@link SubscriptionStatusEnum}
      */
     @jakarta.annotation.Nullable
-    public String getStatus() {
+    public SubscriptionStatusEnum getStatus() {
         return this.status;
     }
     /**
-     * Gets the topicId property value. The unique identifier of the notification topic to subscribe to. Use &lt;b&gt;getTopics&lt;/b&gt; to get topic IDs.
+     * Gets the topicId property value. The unique identifier of the notification topic to subscribe to. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; to get topic IDs.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -123,7 +123,7 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
         Objects.requireNonNull(writer);
         writer.writeStringValue("destinationId", this.getDestinationId());
         writer.writeObjectValue("payload", this.getPayload());
-        writer.writeStringValue("status", this.getStatus());
+        writer.writeEnumValue("status", this.getStatus());
         writer.writeStringValue("topicId", this.getTopicId());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -135,28 +135,28 @@ public class CreateSubscriptionRequest implements AdditionalDataHolder, Parsable
         this.additionalData = value;
     }
     /**
-     * Sets the destinationId property value. The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;b&gt;getDestinations&lt;/b&gt; method to retrieve destination IDs.
+     * Sets the destinationId property value. The unique identifier of the destination endpoint that will receive notifications associated with this subscription. Use the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-destination-getdestinations&quot;&gt;getDestinations&lt;/a&gt;  method to retrieve destination IDs.
      * @param value Value to set for the destinationId property.
      */
     public void setDestinationId(@jakarta.annotation.Nullable final String value) {
         this.destinationId = value;
     }
     /**
-     * Sets the payload property value. A type that describes the details of the subscription payload.
+     * Sets the payload property value. The payload associated with the notification topic. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; to get the supported payload for the topic.
      * @param value Value to set for the payload property.
      */
     public void setPayload(@jakarta.annotation.Nullable final SubscriptionPayloadDetail value) {
         this.payload = value;
     }
     /**
-     * Sets the status property value. Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:SubscriptionStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the status property value. Set the status of the subscription to &lt;code&gt;ENABLED&lt;/code&gt; or &lt;code&gt;DISABLED&lt;/code&gt;.
      * @param value Value to set for the status property.
      */
-    public void setStatus(@jakarta.annotation.Nullable final String value) {
+    public void setStatus(@jakarta.annotation.Nullable final SubscriptionStatusEnum value) {
         this.status = value;
     }
     /**
-     * Sets the topicId property value. The unique identifier of the notification topic to subscribe to. Use &lt;b&gt;getTopics&lt;/b&gt; to get topic IDs.
+     * Sets the topicId property value. The unique identifier of the notification topic to subscribe to. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; to get topic IDs.
      * @param value Value to set for the topicId property.
      */
     public void setTopicId(@jakarta.annotation.Nullable final String value) {

@@ -31,15 +31,15 @@ public class SubscriptionPayloadDetail implements AdditionalDataHolder, Parsable
      */
     private Map<String, Object> additionalData;
     /**
-     * The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt;
      */
-    private String deliveryProtocol;
+    private ProtocolEnum deliveryProtocol;
     /**
-     * The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:FormatTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt;
      */
-    private String format;
+    private FormatTypeEnum format;
     /**
-     * The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;b&gt;getTopics&lt;/b&gt; or &lt;b&gt;getTopic&lt;/b&gt; response.
+     * The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; response.
      */
     private String schemaVersion;
     /**
@@ -67,11 +67,11 @@ public class SubscriptionPayloadDetail implements AdditionalDataHolder, Parsable
         return this.additionalData;
     }
     /**
-     * Gets the deliveryProtocol property value. The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the deliveryProtocol property value. The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt;
+     * @return a {@link ProtocolEnum}
      */
     @jakarta.annotation.Nullable
-    public String getDeliveryProtocol() {
+    public ProtocolEnum getDeliveryProtocol() {
         return this.deliveryProtocol;
     }
     /**
@@ -81,21 +81,21 @@ public class SubscriptionPayloadDetail implements AdditionalDataHolder, Parsable
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("deliveryProtocol", (n) -> { this.setDeliveryProtocol(n.getStringValue()); });
-        deserializerMap.put("format", (n) -> { this.setFormat(n.getStringValue()); });
+        deserializerMap.put("deliveryProtocol", (n) -> { this.setDeliveryProtocol(n.getEnumValue(ProtocolEnum::forValue)); });
+        deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(FormatTypeEnum::forValue)); });
         deserializerMap.put("schemaVersion", (n) -> { this.setSchemaVersion(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the format property value. The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:FormatTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the format property value. The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt;
+     * @return a {@link FormatTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getFormat() {
+    public FormatTypeEnum getFormat() {
         return this.format;
     }
     /**
-     * Gets the schemaVersion property value. The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;b&gt;getTopics&lt;/b&gt; or &lt;b&gt;getTopic&lt;/b&gt; response.
+     * Gets the schemaVersion property value. The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; response.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -108,8 +108,8 @@ public class SubscriptionPayloadDetail implements AdditionalDataHolder, Parsable
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("deliveryProtocol", this.getDeliveryProtocol());
-        writer.writeStringValue("format", this.getFormat());
+        writer.writeEnumValue("deliveryProtocol", this.getDeliveryProtocol());
+        writer.writeEnumValue("format", this.getFormat());
         writer.writeStringValue("schemaVersion", this.getSchemaVersion());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -121,21 +121,21 @@ public class SubscriptionPayloadDetail implements AdditionalDataHolder, Parsable
         this.additionalData = value;
     }
     /**
-     * Sets the deliveryProtocol property value. The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:ProtocolEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the deliveryProtocol property value. The supported delivery protocol of the notification topic.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; &lt;code&gt;HTTPS&lt;/code&gt; is currently the only supported delivery protocol of all notification topics. &lt;/span&gt;
      * @param value Value to set for the deliveryProtocol property.
      */
-    public void setDeliveryProtocol(@jakarta.annotation.Nullable final String value) {
+    public void setDeliveryProtocol(@jakarta.annotation.Nullable final ProtocolEnum value) {
         this.deliveryProtocol = value;
     }
     /**
-     * Sets the format property value. The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:FormatTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the format property value. The supported data format of the payload.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; JSON is currently the only supported format for all notification topics.&lt;/span&gt;
      * @param value Value to set for the format property.
      */
-    public void setFormat(@jakarta.annotation.Nullable final String value) {
+    public void setFormat(@jakarta.annotation.Nullable final FormatTypeEnum value) {
         this.format = value;
     }
     /**
-     * Sets the schemaVersion property value. The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;b&gt;getTopics&lt;/b&gt; or &lt;b&gt;getTopic&lt;/b&gt; response.
+     * Sets the schemaVersion property value. The supported schema version for the notification topic. See the &lt;b&gt;supportedPayloads.schemaVersion&lt;/b&gt; field for the topic in &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; or &lt;a href=&quot;/api-docs/commerce/notification/resources/topic/methods/getTopic&quot;&gt;getTopic&lt;/a&gt; response.
      * @param value Value to set for the schemaVersion property.
      */
     public void setSchemaVersion(@jakarta.annotation.Nullable final String value) {

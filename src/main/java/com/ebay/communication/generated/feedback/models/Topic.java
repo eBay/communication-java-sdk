@@ -31,7 +31,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The main topic (or category) detected in the comment. See the available &lt;b&gt;topics&lt;/b&gt; in &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot;&gt;filter&lt;/a&gt;.
+     * The main topic (or category) detected in the comment. See the available &lt;strong&gt;topics&lt;/strong&gt; in the &lt;strong&gt;filter&lt;/strong&gt; query parameter.
      */
     private String coarseTopic;
     /**
@@ -39,7 +39,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
      */
     private String fineTopic;
     /**
-     * This array lists any text snippets, phrases, or examples, from the feedback that supports the detected topic.
+     * This array lists any text snippets, phrases, or examples from the feedback that supports the detected topic.
      */
     private java.util.List<String> highlightedTexts;
     /**
@@ -71,7 +71,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the coarseTopic property value. The main topic (or category) detected in the comment. See the available &lt;b&gt;topics&lt;/b&gt; in &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot;&gt;filter&lt;/a&gt;.
+     * Gets the coarseTopic property value. The main topic (or category) detected in the comment. See the available &lt;strong&gt;topics&lt;/strong&gt; in the &lt;strong&gt;filter&lt;/strong&gt; query parameter.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -100,7 +100,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
         return this.fineTopic;
     }
     /**
-     * Gets the highlightedTexts property value. This array lists any text snippets, phrases, or examples, from the feedback that supports the detected topic.
+     * Gets the highlightedTexts property value. This array lists any text snippets, phrases, or examples from the feedback that supports the detected topic.
      * @return a {@link java.util.List<String>}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the coarseTopic property value. The main topic (or category) detected in the comment. See the available &lt;b&gt;topics&lt;/b&gt; in &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot;&gt;filter&lt;/a&gt;.
+     * Sets the coarseTopic property value. The main topic (or category) detected in the comment. See the available &lt;strong&gt;topics&lt;/strong&gt; in the &lt;strong&gt;filter&lt;/strong&gt; query parameter.
      * @param value Value to set for the coarseTopic property.
      */
     public void setCoarseTopic(@jakarta.annotation.Nullable final String value) {
@@ -149,7 +149,7 @@ public class Topic implements AdditionalDataHolder, Parsable {
         this.fineTopic = value;
     }
     /**
-     * Sets the highlightedTexts property value. This array lists any text snippets, phrases, or examples, from the feedback that supports the detected topic.
+     * Sets the highlightedTexts property value. This array lists any text snippets, phrases, or examples from the feedback that supports the detected topic.
      * @param value Value to set for the highlightedTexts property.
      */
     public void setHighlightedTexts(@jakarta.annotation.Nullable final java.util.List<String> value) {

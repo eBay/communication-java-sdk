@@ -14,6 +14,7 @@
 
 package com.ebay.communication.generated.notification.subscription.item.test;
 
+import com.ebay.communication.generated.notification.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -48,21 +49,35 @@ public class TestRequestBuilder extends BaseRequestBuilder {
         super(requestAdapter, "{+baseurl}/subscription/{subscription_id}/test", rawUrl);
     }
     /**
-     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;strong&gt;enableSubscription&lt;/strong&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
+     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
+     * @return a {@link Error}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
-    public void post() {
-        post(null);
+    @jakarta.annotation.Nullable
+    public Error post() {
+        return post(null);
     }
     /**
-     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;strong&gt;enableSubscription&lt;/strong&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
+     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @return a {@link Error}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
-    public void post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+    @jakarta.annotation.Nullable
+    public Error post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Error::createFromDiscriminatorValue);
     }
     /**
-     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;strong&gt;enableSubscription&lt;/strong&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
+     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -70,7 +85,7 @@ public class TestRequestBuilder extends BaseRequestBuilder {
         return toPostRequestInformation(null);
     }
     /**
-     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;strong&gt;enableSubscription&lt;/strong&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
+     * This method triggers a mocked test payload that includes a notification ID, publish date, and so on. Use this method to test your subscription end-to-end.&lt;br&gt;&lt;br&gt;You can create the subscription in disabled mode, test it using this method, and when everything is ready, you can enable the subscription (see the &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-subscription-enablesubscription&quot;&gt;enableSubscription&lt;/a&gt; method).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Use the &lt;strong&gt;notificationId&lt;/strong&gt; to tell the difference between a test payload and a real payload.&lt;/span&gt;
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -78,6 +93,7 @@ public class TestRequestBuilder extends BaseRequestBuilder {
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
     }
     /**

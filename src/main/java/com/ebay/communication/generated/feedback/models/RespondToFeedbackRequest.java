@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * The type that defines the fields for the &lt;b&gt;respondToFeedback&lt;/b&gt; request.
+ * The type that defines the fields for the &lt;strong&gt;respondToFeedback&lt;/strong&gt; request.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable {
@@ -31,21 +31,21 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
      */
     private Map<String, Object> additionalData;
     /**
-     * Use this field to provide the unique identifier for the feedback being responded to, used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackId&quot;  target=&quot;_blank&quot;&gt;feedbackId&lt;/a&gt; field).
+     * Use this field to provide the unique identifier for the feedback being responded to. It is used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (strong&gt;feedbackId&lt;/strong&gt; field).
      */
     private String feedbackId;
     /**
-     * Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.providerUserDetail.userId&quot;  target=&quot;_blank&quot;&gt;userId&lt;/a&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (&lt;strong&gt;userId&lt;/strong&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String recipientUserId;
     /**
-     * Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters.
+     * Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters.
      */
     private String responseText;
     /**
-     * Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:ResponseTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;).
      */
-    private String responseType;
+    private ResponseTypeEnum responseType;
     /**
      * Instantiates a new {@link RespondToFeedbackRequest} and sets the default values.
      */
@@ -71,7 +71,7 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         return this.additionalData;
     }
     /**
-     * Gets the feedbackId property value. Use this field to provide the unique identifier for the feedback being responded to, used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackId&quot;  target=&quot;_blank&quot;&gt;feedbackId&lt;/a&gt; field).
+     * Gets the feedbackId property value. Use this field to provide the unique identifier for the feedback being responded to. It is used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (strong&gt;feedbackId&lt;/strong&gt; field).
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -88,11 +88,11 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         deserializerMap.put("feedbackId", (n) -> { this.setFeedbackId(n.getStringValue()); });
         deserializerMap.put("recipientUserId", (n) -> { this.setRecipientUserId(n.getStringValue()); });
         deserializerMap.put("responseText", (n) -> { this.setResponseText(n.getStringValue()); });
-        deserializerMap.put("responseType", (n) -> { this.setResponseType(n.getStringValue()); });
+        deserializerMap.put("responseType", (n) -> { this.setResponseType(n.getEnumValue(ResponseTypeEnum::forValue)); });
         return deserializerMap;
     }
     /**
-     * Gets the recipientUserId property value. Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.providerUserDetail.userId&quot;  target=&quot;_blank&quot;&gt;userId&lt;/a&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * Gets the recipientUserId property value. Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (&lt;strong&gt;userId&lt;/strong&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -100,7 +100,7 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         return this.recipientUserId;
     }
     /**
-     * Gets the responseText property value. Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters.
+     * Gets the responseText property value. Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -108,11 +108,11 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         return this.responseText;
     }
     /**
-     * Gets the responseType property value. Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:ResponseTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the responseType property value. Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;).
+     * @return a {@link ResponseTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getResponseType() {
+    public ResponseTypeEnum getResponseType() {
         return this.responseType;
     }
     /**
@@ -124,7 +124,7 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         writer.writeStringValue("feedbackId", this.getFeedbackId());
         writer.writeStringValue("recipientUserId", this.getRecipientUserId());
         writer.writeStringValue("responseText", this.getResponseText());
-        writer.writeStringValue("responseType", this.getResponseType());
+        writer.writeEnumValue("responseType", this.getResponseType());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -135,31 +135,31 @@ public class RespondToFeedbackRequest implements AdditionalDataHolder, Parsable 
         this.additionalData = value;
     }
     /**
-     * Sets the feedbackId property value. Use this field to provide the unique identifier for the feedback being responded to, used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackId&quot;  target=&quot;_blank&quot;&gt;feedbackId&lt;/a&gt; field).
+     * Sets the feedbackId property value. Use this field to provide the unique identifier for the feedback being responded to. It is used to specify the feedback entry associated with the feedback response. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (strong&gt;feedbackId&lt;/strong&gt; field).
      * @param value Value to set for the feedbackId property.
      */
     public void setFeedbackId(@jakarta.annotation.Nullable final String value) {
         this.feedbackId = value;
     }
     /**
-     * Sets the recipientUserId property value. Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback&quot;  target=&quot;_blank&quot;&gt;getFeedback&lt;/a&gt; method (&lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.providerUserDetail.userId&quot;  target=&quot;_blank&quot;&gt;userId&lt;/a&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
+     * Sets the recipientUserId property value. Use this field to provide the identifier of the user who provided the original feedback. This value can be returned using the &lt;strong&gt;getFeedback&lt;/strong&gt; method (&lt;strong&gt;userId&lt;/strong&gt; field).&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Both usernames and public user IDs will be accepted in this field. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot; target=&quot;_blank&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the recipientUserId property.
      */
     public void setRecipientUserId(@jakarta.annotation.Nullable final String value) {
         this.recipientUserId = value;
     }
     /**
-     * Sets the responseText property value. Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;b&gt;Maximum length:&lt;/b&gt; 500 characters.
+     * Sets the responseText property value. Use this field to provide the text content of the response. This field is used to provide additional context or address the feedback given by the order partner. No HTML formatting or personal information (such as phone numbers) is permitted.&lt;br&gt;&lt;br&gt;&lt;strong&gt;Maximum length:&lt;/strong&gt; 500 characters.
      * @param value Value to set for the responseText property.
      */
     public void setResponseText(@jakarta.annotation.Nullable final String value) {
         this.responseText = value;
     }
     /**
-     * Sets the responseType property value. Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/api:ResponseTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the responseType property value. Set this enumerated value to describe the type of response being submitted (for example, a &lt;code&gt;REPLY&lt;/code&gt; or a &lt;code&gt;FOLLOW_UP&lt;/code&gt;).
      * @param value Value to set for the responseType property.
      */
-    public void setResponseType(@jakarta.annotation.Nullable final String value) {
+    public void setResponseType(@jakarta.annotation.Nullable final ResponseTypeEnum value) {
         this.responseType = value;
     }
 }
