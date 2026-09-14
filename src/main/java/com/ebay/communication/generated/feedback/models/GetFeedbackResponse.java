@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the fields for the &lt;b&gt;getFeedback&lt;/b&gt; response.
+ * This type defines the fields for the &lt;strong&gt;getFeedback&lt;/strong&gt; response.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetFeedbackResponse implements AdditionalDataHolder, Parsable {
@@ -35,7 +35,7 @@ public class GetFeedbackResponse implements AdditionalDataHolder, Parsable {
      */
     private java.util.List<FeedbackDetail> feedbackEntries;
     /**
-     * This type provides pagination information for the returned line items.
+     * This container provides pagination information for the returned feedback response (as filtered).
      */
     private Pagination pagination;
     /**
@@ -82,7 +82,7 @@ public class GetFeedbackResponse implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the pagination property value. This type provides pagination information for the returned line items.
+     * Gets the pagination property value. This container provides pagination information for the returned feedback response (as filtered).
      * @return a {@link Pagination}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class GetFeedbackResponse implements AdditionalDataHolder, Parsable {
         this.feedbackEntries = value;
     }
     /**
-     * Sets the pagination property value. This type provides pagination information for the returned line items.
+     * Sets the pagination property value. This container provides pagination information for the returned feedback response (as filtered).
      * @param value Value to set for the pagination property.
      */
     public void setPagination(@jakarta.annotation.Nullable final Pagination value) {

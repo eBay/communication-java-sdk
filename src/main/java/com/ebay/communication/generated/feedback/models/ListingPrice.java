@@ -31,11 +31,11 @@ public class ListingPrice implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      */
     private String currency;
     /**
-     * This field contains the numerical value of the listing price in the currency specified in the &lt;b&gt;currency&lt;/b&gt; field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * This field contains the numerical value of the listing price in the currency specified in the &lt;strong&gt;currency&lt;/strong&gt; field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      */
     private Double value;
     /**
@@ -63,7 +63,7 @@ public class ListingPrice implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the currency property value. This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * Gets the currency property value. This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class ListingPrice implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the value property value. This field contains the numerical value of the listing price in the currency specified in the &lt;b&gt;currency&lt;/b&gt; field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * Gets the value property value. This field contains the numerical value of the listing price in the currency specified in the &lt;strong&gt;currency&lt;/strong&gt; field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      * @return a {@link Double}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class ListingPrice implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the currency property value. This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * Sets the currency property value. This field provides the three-letter &lt;a href=&quot;https://www.iso.org/iso-4217-currency-codes.html&quot;  target=&quot;_blank&quot;&gt;ISO 4217&lt;/a&gt; code that represents the currency of the amount in the value field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      * @param value Value to set for the currency property.
      */
     public void setCurrency(@jakarta.annotation.Nullable final String value) {
         this.currency = value;
     }
     /**
-     * Sets the value property value. This field contains the numerical value of the listing price in the currency specified in the &lt;b&gt;currency&lt;/b&gt; field. Both the &lt;b&gt;value&lt;/b&gt; and &lt;b&gt;currency&lt;/b&gt; fields are always returned when expressing prices.
+     * Sets the value property value. This field contains the numerical value of the listing price in the currency specified in the &lt;strong&gt;currency&lt;/strong&gt; field. Both the &lt;strong&gt;value&lt;/strong&gt; and &lt;strong&gt;currency&lt;/strong&gt; fields are always returned when expressing prices.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final Double value) {

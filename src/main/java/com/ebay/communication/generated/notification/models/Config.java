@@ -31,7 +31,7 @@ public class Config implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;b&gt;getConfig&lt;/b&gt; can be used to get the email address currently being used for alerts.
+     * This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-config-getconfig&quot;&gt;getConfig&lt;/a&gt; can be used to get the email address currently being used for alerts.
      */
     private String alertEmail;
     /**
@@ -59,7 +59,7 @@ public class Config implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the alertEmail property value. This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;b&gt;getConfig&lt;/b&gt; can be used to get the email address currently being used for alerts.
+     * Gets the alertEmail property value. This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-config-getconfig&quot;&gt;getConfig&lt;/a&gt; can be used to get the email address currently being used for alerts.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -93,7 +93,7 @@ public class Config implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the alertEmail property value. This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;b&gt;getConfig&lt;/b&gt; can be used to get the email address currently being used for alerts.
+     * Sets the alertEmail property value. This field is used to add or modify an email address that will be used for Notification API alerts associated with the application. &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-config-getconfig&quot;&gt;getConfig&lt;/a&gt; can be used to get the email address currently being used for alerts.
      * @param value Value to set for the alertEmail property.
      */
     public void setAlertEmail(@jakarta.annotation.Nullable final String value) {

@@ -43,7 +43,7 @@ public class Offer implements AdditionalDataHolder, Parsable {
      */
     private String creationDate;
     /**
-     * The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.
+     * The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      */
     private String initiatedBy;
     /**
@@ -67,13 +67,13 @@ public class Offer implements AdditionalDataHolder, Parsable {
      */
     private String offerId;
     /**
-     * The current state, or status, of an offer.  &lt;br&gt;&lt;br&gt;Status states include &lt;code&gt;PENDING&lt;/code&gt;, &lt;code&gt;COUNTERED&lt;/code&gt;, &lt;code&gt;ACCEPTED&lt;/code&gt;, and &lt;code&gt;DECLINED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The status of the offer that was extended to a buyer.
      */
-    private String offerStatus;
+    private OfferStatusEnum offerStatus;
     /**
-     * The type of offer being made. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enum describes the types of offers that can be made in a buyer-seller discount negotiation.
      */
-    private String offerType;
+    private OfferTypeEnum offerType;
     /**
      * A unique, eBay-assigned ID for the revision of the offer.
      */
@@ -142,13 +142,13 @@ public class Offer implements AdditionalDataHolder, Parsable {
         deserializerMap.put("offerDuration", (n) -> { this.setOfferDuration(n.getObjectValue(TimeDuration::createFromDiscriminatorValue)); });
         deserializerMap.put("offeredItems", (n) -> { this.setOfferedItems(n.getCollectionOfObjectValues(OfferedItem::createFromDiscriminatorValue)); });
         deserializerMap.put("offerId", (n) -> { this.setOfferId(n.getStringValue()); });
-        deserializerMap.put("offerStatus", (n) -> { this.setOfferStatus(n.getStringValue()); });
-        deserializerMap.put("offerType", (n) -> { this.setOfferType(n.getStringValue()); });
+        deserializerMap.put("offerStatus", (n) -> { this.setOfferStatus(n.getEnumValue(OfferStatusEnum::forValue)); });
+        deserializerMap.put("offerType", (n) -> { this.setOfferType(n.getEnumValue(OfferTypeEnum::forValue)); });
         deserializerMap.put("revision", (n) -> { this.setRevision(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the initiatedBy property value. The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.
+     * Gets the initiatedBy property value. The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -196,19 +196,19 @@ public class Offer implements AdditionalDataHolder, Parsable {
         return this.offerId;
     }
     /**
-     * Gets the offerStatus property value. The current state, or status, of an offer.  &lt;br&gt;&lt;br&gt;Status states include &lt;code&gt;PENDING&lt;/code&gt;, &lt;code&gt;COUNTERED&lt;/code&gt;, &lt;code&gt;ACCEPTED&lt;/code&gt;, and &lt;code&gt;DECLINED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the offerStatus property value. The status of the offer that was extended to a buyer.
+     * @return a {@link OfferStatusEnum}
      */
     @jakarta.annotation.Nullable
-    public String getOfferStatus() {
+    public OfferStatusEnum getOfferStatus() {
         return this.offerStatus;
     }
     /**
-     * Gets the offerType property value. The type of offer being made. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the offerType property value. This enum describes the types of offers that can be made in a buyer-seller discount negotiation.
+     * @return a {@link OfferTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getOfferType() {
+    public OfferTypeEnum getOfferType() {
         return this.offerType;
     }
     /**
@@ -234,8 +234,8 @@ public class Offer implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue("offerDuration", this.getOfferDuration());
         writer.writeCollectionOfObjectValues("offeredItems", this.getOfferedItems());
         writer.writeStringValue("offerId", this.getOfferId());
-        writer.writeStringValue("offerStatus", this.getOfferStatus());
-        writer.writeStringValue("offerType", this.getOfferType());
+        writer.writeEnumValue("offerStatus", this.getOfferStatus());
+        writer.writeEnumValue("offerType", this.getOfferType());
         writer.writeStringValue("revision", this.getRevision());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -268,7 +268,7 @@ public class Offer implements AdditionalDataHolder, Parsable {
         this.creationDate = value;
     }
     /**
-     * Sets the initiatedBy property value. The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.
+     * Sets the initiatedBy property value. The eBay &lt;b&gt;UserName&lt;/b&gt; of the user (seller) who initiated the offer.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; Effective September 26, 2025, select developers will no longer receive username data for U.S. users through this field. Instead, an immutable user ID will be returned in its place. For more information, please refer to &lt;a href=&quot;/api-docs/static/data-handling-update.html&quot;&gt;Data Handling Compliance&lt;/a&gt;.&lt;/span&gt;
      * @param value Value to set for the initiatedBy property.
      */
     public void setInitiatedBy(@jakarta.annotation.Nullable final String value) {
@@ -310,17 +310,17 @@ public class Offer implements AdditionalDataHolder, Parsable {
         this.offerId = value;
     }
     /**
-     * Sets the offerStatus property value. The current state, or status, of an offer.  &lt;br&gt;&lt;br&gt;Status states include &lt;code&gt;PENDING&lt;/code&gt;, &lt;code&gt;COUNTERED&lt;/code&gt;, &lt;code&gt;ACCEPTED&lt;/code&gt;, and &lt;code&gt;DECLINED&lt;/code&gt;. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the offerStatus property value. The status of the offer that was extended to a buyer.
      * @param value Value to set for the offerStatus property.
      */
-    public void setOfferStatus(@jakarta.annotation.Nullable final String value) {
+    public void setOfferStatus(@jakarta.annotation.Nullable final OfferStatusEnum value) {
         this.offerStatus = value;
     }
     /**
-     * Sets the offerType property value. The type of offer being made. For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/sell/negotiation/types/api:OfferTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the offerType property value. This enum describes the types of offers that can be made in a buyer-seller discount negotiation.
      * @param value Value to set for the offerType property.
      */
-    public void setOfferType(@jakarta.annotation.Nullable final String value) {
+    public void setOfferType(@jakarta.annotation.Nullable final OfferTypeEnum value) {
         this.offerType = value;
     }
     /**

@@ -31,7 +31,7 @@ public class ConversationsMetadata implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * The total amount of conversations being updated.
+     * The total number of conversations being updated.
      */
     private Integer totalConversationsCount;
     /**
@@ -79,7 +79,7 @@ public class ConversationsMetadata implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the totalConversationsCount property value. The total amount of conversations being updated.
+     * Gets the totalConversationsCount property value. The total number of conversations being updated.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -121,7 +121,7 @@ public class ConversationsMetadata implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the totalConversationsCount property value. The total amount of conversations being updated.
+     * Sets the totalConversationsCount property value. The total number of conversations being updated.
      * @param value Value to set for the totalConversationsCount property.
      */
     public void setTotalConversationsCount(@jakarta.annotation.Nullable final Integer value) {

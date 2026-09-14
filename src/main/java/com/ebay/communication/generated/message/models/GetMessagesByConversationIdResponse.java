@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type defines the response payload of the &lt;b&gt;getConversation&lt;/b&gt; method.
+ * This type defines the response payload of the &lt;strong&gt;getConversation&lt;/strong&gt; method.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class GetMessagesByConversationIdResponse implements AdditionalDataHolder, Parsable {
@@ -47,7 +47,7 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
      */
     private String href;
     /**
-     * The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     * The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request.
      */
     private Integer limit;
     /**
@@ -59,11 +59,11 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
      */
     private String next;
     /**
-     * The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     * The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request.
      */
     private Integer offset;
     /**
-     * The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     * The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is a previous page of results in the result set.
      */
     private String prev;
     /**
@@ -146,7 +146,7 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
         return this.href;
     }
     /**
-     * Gets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     * Gets the limit property value. The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -170,7 +170,7 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
         return this.next;
     }
     /**
-     * Gets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     * Gets the offset property value. The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -178,7 +178,7 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
         return this.offset;
     }
     /**
-     * Gets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     * Gets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is a previous page of results in the result set.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -247,7 +247,7 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
         this.href = value;
     }
     /**
-     * Sets the limit property value. The value of the &lt;b&gt;limit&lt;/b&gt; parameter submitted in the request.
+     * Sets the limit property value. The value of the &lt;strong&gt;limit&lt;/strong&gt; parameter submitted in the request.
      * @param value Value to set for the limit property.
      */
     public void setLimit(@jakarta.annotation.Nullable final Integer value) {
@@ -268,14 +268,14 @@ public class GetMessagesByConversationIdResponse implements AdditionalDataHolder
         this.next = value;
     }
     /**
-     * Sets the offset property value. The value of the &lt;b&gt;offset&lt;/b&gt; parameter submitted in the request.
+     * Sets the offset property value. The value of the &lt;strong&gt;offset&lt;/strong&gt; parameter submitted in the request.
      * @param value Value to set for the offset property.
      */
     public void setOffset(@jakarta.annotation.Nullable final Integer value) {
         this.offset = value;
     }
     /**
-     * Sets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This is only retuned if there is a previous page of results in the result set.
+     * Sets the prev property value. The URI for the previous page of results.&lt;br&gt;&lt;br&gt;This value is only returned if there is a previous page of results in the result set.
      * @param value Value to set for the prev property.
      */
     public void setPrev(@jakarta.annotation.Nullable final String value) {

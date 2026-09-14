@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "4D840E9EF8DAB558CEEF1B7B8D02024665178221CA5BB1C7A22AD9FB652EEE8DE2373C3618567C28BA5FDF656C30481B45113C69E00CE77DEF2702B0B2C613BB",
-  "descriptionLocation": "../../../../../../../../specs/openapi/feedback.yaml",
+  "descriptionHash": "F1D67B4B277C3A339C9D182EE2A268CD07B4DDDA9914B5BEF4BAB56C3475D1F60F1D3F38E303C7729159A175C624A8B2906E63032DEBA187FB3E80FF3744831F",
+  "descriptionLocation": "../../../../../../../../specs/openapi/feedback.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.1",
+  "kiotaVersion": "1.35.0",
   "clientClassName": "FeedbackApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "com.ebay.communication.generated.feedback",
@@ -30,5 +30,6 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

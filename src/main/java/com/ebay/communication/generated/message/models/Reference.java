@@ -31,11 +31,11 @@ public class Reference implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
+     * This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
      */
     private String referenceId;
     /**
-     * This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; is supported.
+     * This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      */
     private String referenceType;
     /**
@@ -74,7 +74,7 @@ public class Reference implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
+     * Gets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class Reference implements AdditionalDataHolder, Parsable {
         return this.referenceId;
     }
     /**
-     * Gets the referenceType property value. This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; is supported.
+     * Gets the referenceType property value. This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class Reference implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
+     * Sets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;For example, in the case of a &lt;code&gt;LISTING&lt;/code&gt; reference type, this value will be the item ID value of the listing.
      * @param value Value to set for the referenceId property.
      */
     public void setReferenceId(@jakarta.annotation.Nullable final String value) {
         this.referenceId = value;
     }
     /**
-     * Sets the referenceType property value. This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; is supported.
+     * Sets the referenceType property value. This value indicates the reference type to associate with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      * @param value Value to set for the referenceType property.
      */
     public void setReferenceType(@jakarta.annotation.Nullable final String value) {

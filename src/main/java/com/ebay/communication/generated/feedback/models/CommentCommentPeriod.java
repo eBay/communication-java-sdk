@@ -31,11 +31,11 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * Unit of time for the &lt;b&gt;value&lt;/b&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;YEAR&lt;/code&gt;.
+     * Unit of time for the &lt;strong&gt;value&lt;/strong&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt; or &lt;code&gt;YEAR&lt;/code&gt;.
      */
     private String unit;
     /**
-     * Value of the time period expressed in the period contained in the &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackComment.commentPeriod&quot;&gt;commentPeriod&lt;/a&gt; container for more information.&lt;/p&gt;
+     * Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      */
     private Integer value;
     /**
@@ -74,7 +74,7 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the unit property value. Unit of time for the &lt;b&gt;value&lt;/b&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;YEAR&lt;/code&gt;.
+     * Gets the unit property value. Unit of time for the &lt;strong&gt;value&lt;/strong&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt; or &lt;code&gt;YEAR&lt;/code&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -82,7 +82,7 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
         return this.unit;
     }
     /**
-     * Gets the value property value. Value of the time period expressed in the period contained in the &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackComment.commentPeriod&quot;&gt;commentPeriod&lt;/a&gt; container for more information.&lt;/p&gt;
+     * Gets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -107,14 +107,14 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the unit property value. Unit of time for the &lt;b&gt;value&lt;/b&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;YEAR&lt;/code&gt;.
+     * Sets the unit property value. Unit of time for the &lt;strong&gt;value&lt;/strong&gt;. Supported values: &lt;code&gt;DAY&lt;/code&gt; or &lt;code&gt;YEAR&lt;/code&gt;.
      * @param value Value to set for the unit property.
      */
     public void setUnit(@jakarta.annotation.Nullable final String value) {
         this.unit = value;
     }
     /**
-     * Sets the value property value. Value of the time period expressed in the period contained in the &lt;b&gt;unit&lt;/b&gt;. Supported values: &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#response.feedbackEntries.feedbackComment.commentPeriod&quot;&gt;commentPeriod&lt;/a&gt; container for more information.&lt;/p&gt;
+     * Sets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final Integer value) {

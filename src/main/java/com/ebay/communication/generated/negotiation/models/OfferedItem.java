@@ -31,7 +31,7 @@ public class OfferedItem implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This value denotes the percentage that the listing in the offer will be discounted from its original listed price.  &lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5&lt;/code&gt;  &lt;br&gt;&lt;br&gt;&lt;i&gt;Required if&lt;/i&gt; you do not specify a &lt;b&gt;price&lt;/b&gt; value.
+     * This value denotes the percentage (as either a whole number or decimal value) that the listing in the offer will be discounted from its original listed price.&lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.&lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5.0&lt;/code&gt;  &lt;br&gt;&lt;br&gt;This field is &lt;i&gt;required&lt;/i&gt; if you do not specify a &lt;b&gt;price&lt;/b&gt; value.
      */
     private String discountPercentage;
     /**
@@ -71,7 +71,7 @@ public class OfferedItem implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the discountPercentage property value. This value denotes the percentage that the listing in the offer will be discounted from its original listed price.  &lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5&lt;/code&gt;  &lt;br&gt;&lt;br&gt;&lt;i&gt;Required if&lt;/i&gt; you do not specify a &lt;b&gt;price&lt;/b&gt; value.
+     * Gets the discountPercentage property value. This value denotes the percentage (as either a whole number or decimal value) that the listing in the offer will be discounted from its original listed price.&lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.&lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5.0&lt;/code&gt;  &lt;br&gt;&lt;br&gt;This field is &lt;i&gt;required&lt;/i&gt; if you do not specify a &lt;b&gt;price&lt;/b&gt; value.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class OfferedItem implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the discountPercentage property value. This value denotes the percentage that the listing in the offer will be discounted from its original listed price.  &lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5&lt;/code&gt;  &lt;br&gt;&lt;br&gt;&lt;i&gt;Required if&lt;/i&gt; you do not specify a &lt;b&gt;price&lt;/b&gt; value.
+     * Sets the discountPercentage property value. This value denotes the percentage (as either a whole number or decimal value) that the listing in the offer will be discounted from its original listed price.&lt;br&gt;&lt;br&gt;The seller can specify either the exact price of the discounted items with the &lt;b&gt;price&lt;/b&gt; field or they can use this field to specify the percentage that the listing will be discounted, but not both.&lt;br&gt;&lt;br&gt;&lt;b&gt;Minimum:&lt;/b&gt; &lt;code&gt;5.0&lt;/code&gt;  &lt;br&gt;&lt;br&gt;This field is &lt;i&gt;required&lt;/i&gt; if you do not specify a &lt;b&gt;price&lt;/b&gt; value.
      * @param value Value to set for the discountPercentage property.
      */
     public void setDiscountPercentage(@jakarta.annotation.Nullable final String value) {

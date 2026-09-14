@@ -31,7 +31,7 @@ public class Destination implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * A type that contains information about the delivery configuration.
+     * The configuration associated with this destination.
      */
     private DeliveryConfig deliveryConfig;
     /**
@@ -43,9 +43,9 @@ public class Destination implements AdditionalDataHolder, Parsable {
      */
     private String name;
     /**
-     * The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;b&gt;MARKED_DOWN&lt;/b&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:DestinationStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;MARKED_DOWN&lt;/code&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
      */
-    private String status;
+    private DestinationStatusEnum status;
     /**
      * Instantiates a new {@link Destination} and sets the default values.
      */
@@ -71,7 +71,7 @@ public class Destination implements AdditionalDataHolder, Parsable {
         return this.additionalData;
     }
     /**
-     * Gets the deliveryConfig property value. A type that contains information about the delivery configuration.
+     * Gets the deliveryConfig property value. The configuration associated with this destination.
      * @return a {@link DeliveryConfig}
      */
     @jakarta.annotation.Nullable
@@ -96,7 +96,7 @@ public class Destination implements AdditionalDataHolder, Parsable {
         deserializerMap.put("deliveryConfig", (n) -> { this.setDeliveryConfig(n.getObjectValue(DeliveryConfig::createFromDiscriminatorValue)); });
         deserializerMap.put("destinationId", (n) -> { this.setDestinationId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("status", (n) -> { this.setStatus(n.getStringValue()); });
+        deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(DestinationStatusEnum::forValue)); });
         return deserializerMap;
     }
     /**
@@ -108,11 +108,11 @@ public class Destination implements AdditionalDataHolder, Parsable {
         return this.name;
     }
     /**
-     * Gets the status property value. The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;b&gt;MARKED_DOWN&lt;/b&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:DestinationStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the status property value. The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;MARKED_DOWN&lt;/code&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
+     * @return a {@link DestinationStatusEnum}
      */
     @jakarta.annotation.Nullable
-    public String getStatus() {
+    public DestinationStatusEnum getStatus() {
         return this.status;
     }
     /**
@@ -124,7 +124,7 @@ public class Destination implements AdditionalDataHolder, Parsable {
         writer.writeObjectValue("deliveryConfig", this.getDeliveryConfig());
         writer.writeStringValue("destinationId", this.getDestinationId());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("status", this.getStatus());
+        writer.writeEnumValue("status", this.getStatus());
         writer.writeAdditionalData(this.getAdditionalData());
     }
     /**
@@ -135,7 +135,7 @@ public class Destination implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the deliveryConfig property value. A type that contains information about the delivery configuration.
+     * Sets the deliveryConfig property value. The configuration associated with this destination.
      * @param value Value to set for the deliveryConfig property.
      */
     public void setDeliveryConfig(@jakarta.annotation.Nullable final DeliveryConfig value) {
@@ -156,10 +156,10 @@ public class Destination implements AdditionalDataHolder, Parsable {
         this.name = value;
     }
     /**
-     * Sets the status property value. The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;b&gt;MARKED_DOWN&lt;/b&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt; For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/notification/types/api:DestinationStatusEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the status property value. The status for this destination.&lt;br&gt;&lt;br&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;b&gt;Note:&lt;/b&gt; The &lt;code&gt;MARKED_DOWN&lt;/code&gt; value is set by eBay systems and cannot be used in a create or update call by applications.&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Valid values:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;ENABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;DISABLED&lt;/code&gt;&lt;/li&gt;&lt;li&gt;&lt;code&gt;MARKED_DOWN&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;
      * @param value Value to set for the status property.
      */
-    public void setStatus(@jakarta.annotation.Nullable final String value) {
+    public void setStatus(@jakarta.annotation.Nullable final DestinationStatusEnum value) {
         this.status = value;
     }
 }

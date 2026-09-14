@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 /**
- * This type provides fields for available values for use in a particular rating, and whether the value is enabled.
+ * This type provides fields for available values for use in a particular rating and whether the value is enabled.
  */
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class FeedbackRatingAcceptableValue implements AdditionalDataHolder, Parsable {
@@ -35,11 +35,11 @@ public class FeedbackRatingAcceptableValue implements AdditionalDataHolder, Pars
      */
     private Boolean enabled;
     /**
-     * The value that can be selected for feedback. For most &lt;b&gt;ratingType&lt;/b&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;b&gt;ratingType&lt;/b&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;b&gt;leaveFeedback&lt;/b&gt; methods.
+     * The value that can be selected for feedback. For most &lt;strong&gt;ratingType&lt;/strong&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;strong&gt;ratingType&lt;/strong&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;strong&gt;leaveFeedback&lt;/strong&gt; methods.
      */
     private String value;
     /**
-     * This field provides information about the corresponding &lt;b&gt;value&lt;/b&gt;.
+     * This field provides information about the corresponding &lt;strong&gt;value&lt;/strong&gt;.
      */
     private String valueLabel;
     /**
@@ -87,7 +87,7 @@ public class FeedbackRatingAcceptableValue implements AdditionalDataHolder, Pars
         return deserializerMap;
     }
     /**
-     * Gets the value property value. The value that can be selected for feedback. For most &lt;b&gt;ratingType&lt;/b&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;b&gt;ratingType&lt;/b&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;b&gt;leaveFeedback&lt;/b&gt; methods.
+     * Gets the value property value. The value that can be selected for feedback. For most &lt;strong&gt;ratingType&lt;/strong&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;strong&gt;ratingType&lt;/strong&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;strong&gt;leaveFeedback&lt;/strong&gt; methods.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -95,7 +95,7 @@ public class FeedbackRatingAcceptableValue implements AdditionalDataHolder, Pars
         return this.value;
     }
     /**
-     * Gets the valueLabel property value. This field provides information about the corresponding &lt;b&gt;value&lt;/b&gt;.
+     * Gets the valueLabel property value. This field provides information about the corresponding &lt;strong&gt;value&lt;/strong&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -128,14 +128,14 @@ public class FeedbackRatingAcceptableValue implements AdditionalDataHolder, Pars
         this.enabled = value;
     }
     /**
-     * Sets the value property value. The value that can be selected for feedback. For most &lt;b&gt;ratingType&lt;/b&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;b&gt;ratingType&lt;/b&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;b&gt;leaveFeedback&lt;/b&gt; methods.
+     * Sets the value property value. The value that can be selected for feedback. For most &lt;strong&gt;ratingType&lt;/strong&gt; values, this is &lt;code&gt;1&lt;/code&gt; through &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating. For &lt;strong&gt;ratingType&lt;/strong&gt; of &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, this can be &lt;code&gt;POSITIVE&lt;/code&gt;, &lt;code&gt;NEGATIVE&lt;/code&gt;, and &lt;code&gt;NEUTRAL&lt;/code&gt;. These are the same values as used with the &lt;strong&gt;leaveFeedback&lt;/strong&gt; methods.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final String value) {
         this.value = value;
     }
     /**
-     * Sets the valueLabel property value. This field provides information about the corresponding &lt;b&gt;value&lt;/b&gt;.
+     * Sets the valueLabel property value. This field provides information about the corresponding &lt;strong&gt;value&lt;/strong&gt;.
      * @param value Value to set for the valueLabel property.
      */
     public void setValueLabel(@jakarta.annotation.Nullable final String value) {

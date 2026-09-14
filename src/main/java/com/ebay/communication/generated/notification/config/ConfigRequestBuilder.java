@@ -15,6 +15,7 @@
 package com.ebay.communication.generated.notification.config;
 
 import com.ebay.communication.generated.notification.models.Config;
+import com.ebay.communication.generated.notification.models.Error;
 import com.microsoft.kiota.BaseRequestBuilder;
 import com.microsoft.kiota.BaseRequestConfiguration;
 import com.microsoft.kiota.HttpMethod;
@@ -51,6 +52,8 @@ public class ConfigRequestBuilder extends BaseRequestBuilder {
     /**
      * This method allows applications to retrieve a previously created configuration.
      * @return a {@link Config}
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Config get() {
@@ -60,28 +63,40 @@ public class ConfigRequestBuilder extends BaseRequestBuilder {
      * This method allows applications to retrieve a previously created configuration.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link Config}
+     * @throws Error When receiving a 404 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public Config get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, Config::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("404", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, Config::createFromDiscriminatorValue);
     }
     /**
      * This method allows applications to create a new configuration or update an existing configuration. This app-level configuration allows developers to set up alerts.
-     * @param body The type that defines the fields for the &lt;b&gt;alertEmail&lt;/b&gt; field.
+     * @param body The configurations for this application.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     public void put(@jakarta.annotation.Nonnull final Config body) {
         put(body, null);
     }
     /**
      * This method allows applications to create a new configuration or update an existing configuration. This app-level configuration allows developers to set up alerts.
-     * @param body The type that defines the fields for the &lt;b&gt;alertEmail&lt;/b&gt; field.
+     * @param body The configurations for this application.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     public void put(@jakarta.annotation.Nonnull final Config body, @jakarta.annotation.Nullable final java.util.function.Consumer<PutRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = toPutRequestInformation(body, requestConfiguration);
-        this.requestAdapter.sendPrimitive(requestInfo, null, Void.class);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        this.requestAdapter.sendPrimitive(requestInfo, errorMapping, Void.class);
     }
     /**
      * This method allows applications to retrieve a previously created configuration.
@@ -105,7 +120,7 @@ public class ConfigRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * This method allows applications to create a new configuration or update an existing configuration. This app-level configuration allows developers to set up alerts.
-     * @param body The type that defines the fields for the &lt;b&gt;alertEmail&lt;/b&gt; field.
+     * @param body The configurations for this application.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
@@ -114,7 +129,7 @@ public class ConfigRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * This method allows applications to create a new configuration or update an existing configuration. This app-level configuration allows developers to set up alerts.
-     * @param body The type that defines the fields for the &lt;b&gt;alertEmail&lt;/b&gt; field.
+     * @param body The configurations for this application.
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
@@ -123,6 +138,7 @@ public class ConfigRequestBuilder extends BaseRequestBuilder {
         Objects.requireNonNull(body);
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.PUT, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PutRequestConfiguration::new);
+        requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }

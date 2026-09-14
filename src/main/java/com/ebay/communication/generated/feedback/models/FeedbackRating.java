@@ -31,9 +31,9 @@ public class FeedbackRating implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;).
      */
-    private String ratingType;
+    private FeedbackRatingTypeEnum ratingType;
     /**
      * The value assigned to the rating, specified as a string representing a number from &lt;code&gt;1&lt;/code&gt; to &lt;code&gt;5&lt;/code&gt;, with &lt;code&gt;1&lt;/code&gt; representing the lowest rating and &lt;code&gt;5&lt;/code&gt; representing the highest rating.
      */
@@ -69,16 +69,16 @@ public class FeedbackRating implements AdditionalDataHolder, Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("ratingType", (n) -> { this.setRatingType(n.getStringValue()); });
+        deserializerMap.put("ratingType", (n) -> { this.setRatingType(n.getEnumValue(FeedbackRatingTypeEnum::forValue)); });
         deserializerMap.put("value", (n) -> { this.setValue(n.getStringValue()); });
         return deserializerMap;
     }
     /**
-     * Gets the ratingType property value. This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
-     * @return a {@link String}
+     * Gets the ratingType property value. This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;).
+     * @return a {@link FeedbackRatingTypeEnum}
      */
     @jakarta.annotation.Nullable
-    public String getRatingType() {
+    public FeedbackRatingTypeEnum getRatingType() {
         return this.ratingType;
     }
     /**
@@ -95,7 +95,7 @@ public class FeedbackRating implements AdditionalDataHolder, Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("ratingType", this.getRatingType());
+        writer.writeEnumValue("ratingType", this.getRatingType());
         writer.writeStringValue("value", this.getValue());
         writer.writeAdditionalData(this.getAdditionalData());
     }
@@ -107,10 +107,10 @@ public class FeedbackRating implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the ratingType property value. This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;). For implementation help, refer to &lt;a href=&apos;https://developer.ebay.com/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&apos;&gt;eBay API documentation&lt;/a&gt;
+     * Sets the ratingType property value. This enumerated value indicates the type of rating (for example, &lt;code&gt;OVERALL_EXPERIENCE&lt;/code&gt;, &lt;code&gt;DSR_ITEM_AS_DESCRIBED&lt;/code&gt;).
      * @param value Value to set for the ratingType property.
      */
-    public void setRatingType(@jakarta.annotation.Nullable final String value) {
+    public void setRatingType(@jakarta.annotation.Nullable final FeedbackRatingTypeEnum value) {
         this.ratingType = value;
     }
     /**

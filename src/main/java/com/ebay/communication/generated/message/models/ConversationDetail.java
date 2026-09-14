@@ -35,11 +35,11 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
      */
     private String conversationId;
     /**
-     * This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;.
+     * This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVED&lt;/code&gt;.
      */
     private String conversationStatus;
     /**
-     * The title of the conversation.
+     * This value indicates the title of the conversation.
      */
     private String conversationTitle;
     /**
@@ -47,23 +47,23 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
      */
     private String conversationType;
     /**
-     * This value indicates the date, in ISO 8601 format, the conversation was created.
+     * This value indicates the date the conversation was created in ISO 8601 format.
      */
     private String createdDate;
     /**
-     * This type defines message details for a conversation.
+     * This container returns the latest message in the conversation and its details.
      */
     private MessageDetail latestMessage;
     /**
-     * This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;b&gt;referenceType&lt;/b&gt;, this value will be the item ID value of the associated listing.
+     * This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;strong&gt;referenceType&lt;/strong&gt;, this value will be the item ID value of the associated listing.
      */
     private String referenceId;
     /**
-     * This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; will be returned.
+     * This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      */
     private String referenceType;
     /**
-     * This value indicates the amount of unread messages in the conversation.
+     * This value indicates the number of unread messages in the conversation.
      */
     private Integer unreadCount;
     /**
@@ -99,7 +99,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.conversationId;
     }
     /**
-     * Gets the conversationStatus property value. This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;.
+     * Gets the conversationStatus property value. This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVED&lt;/code&gt;.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -107,7 +107,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.conversationStatus;
     }
     /**
-     * Gets the conversationTitle property value. The title of the conversation.
+     * Gets the conversationTitle property value. This value indicates the title of the conversation.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -123,7 +123,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.conversationType;
     }
     /**
-     * Gets the createdDate property value. This value indicates the date, in ISO 8601 format, the conversation was created.
+     * Gets the createdDate property value. This value indicates the date the conversation was created in ISO 8601 format.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -149,7 +149,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the latestMessage property value. This type defines message details for a conversation.
+     * Gets the latestMessage property value. This container returns the latest message in the conversation and its details.
      * @return a {@link MessageDetail}
      */
     @jakarta.annotation.Nullable
@@ -157,7 +157,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.latestMessage;
     }
     /**
-     * Gets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;b&gt;referenceType&lt;/b&gt;, this value will be the item ID value of the associated listing.
+     * Gets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;strong&gt;referenceType&lt;/strong&gt;, this value will be the item ID value of the associated listing.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -165,7 +165,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.referenceId;
     }
     /**
-     * Gets the referenceType property value. This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; will be returned.
+     * Gets the referenceType property value. This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -173,7 +173,7 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         return this.referenceType;
     }
     /**
-     * Gets the unreadCount property value. This value indicates the amount of unread messages in the conversation.
+     * Gets the unreadCount property value. This value indicates the number of unread messages in the conversation.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -212,14 +212,14 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         this.conversationId = value;
     }
     /**
-     * Sets the conversationStatus property value. This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVE&lt;/code&gt;.
+     * Sets the conversationStatus property value. This value indicates the current status of the conversation, such as &lt;code&gt;ACTIVE&lt;/code&gt; or &lt;code&gt;ARCHIVED&lt;/code&gt;.
      * @param value Value to set for the conversationStatus property.
      */
     public void setConversationStatus(@jakarta.annotation.Nullable final String value) {
         this.conversationStatus = value;
     }
     /**
-     * Sets the conversationTitle property value. The title of the conversation.
+     * Sets the conversationTitle property value. This value indicates the title of the conversation.
      * @param value Value to set for the conversationTitle property.
      */
     public void setConversationTitle(@jakarta.annotation.Nullable final String value) {
@@ -233,35 +233,35 @@ public class ConversationDetail implements AdditionalDataHolder, Parsable {
         this.conversationType = value;
     }
     /**
-     * Sets the createdDate property value. This value indicates the date, in ISO 8601 format, the conversation was created.
+     * Sets the createdDate property value. This value indicates the date the conversation was created in ISO 8601 format.
      * @param value Value to set for the createdDate property.
      */
     public void setCreatedDate(@jakarta.annotation.Nullable final String value) {
         this.createdDate = value;
     }
     /**
-     * Sets the latestMessage property value. This type defines message details for a conversation.
+     * Sets the latestMessage property value. This container returns the latest message in the conversation and its details.
      * @param value Value to set for the latestMessage property.
      */
     public void setLatestMessage(@jakarta.annotation.Nullable final MessageDetail value) {
         this.latestMessage = value;
     }
     /**
-     * Sets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;b&gt;referenceType&lt;/b&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;b&gt;referenceType&lt;/b&gt;, this value will be the item ID value of the associated listing.
+     * Sets the referenceId property value. This value indicates the reference ID associated with the corresponding &lt;strong&gt;referenceType&lt;/strong&gt; value.&lt;br&gt;&lt;br&gt;In the case of a &lt;code&gt;LISTING&lt;/code&gt; &lt;strong&gt;referenceType&lt;/strong&gt;, this value will be the item ID value of the associated listing.
      * @param value Value to set for the referenceId property.
      */
     public void setReferenceId(@jakarta.annotation.Nullable final String value) {
         this.referenceId = value;
     }
     /**
-     * Sets the referenceType property value. This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;b&gt;referenceId&lt;/b&gt; field.&lt;br&gt;&lt;br&gt;Currently, only &lt;code&gt;LISTING&lt;/code&gt; will be returned.
+     * Sets the referenceType property value. This value indicates the reference type, if applicable, associated with the conversation.&lt;br&gt;&lt;br&gt;The reference type is used to specify what the conversation is in reference to. For example, a value of &lt;code&gt;LISTING&lt;/code&gt; specifies that the conversation is associated with a specific listing. The item ID associated with this listing will then be returned in the &lt;strong&gt;referenceId&lt;/strong&gt; field.&lt;br&gt;&lt;br&gt;Currently, only the &lt;code&gt;LISTING&lt;/code&gt; reference type is supported.
      * @param value Value to set for the referenceType property.
      */
     public void setReferenceType(@jakarta.annotation.Nullable final String value) {
         this.referenceType = value;
     }
     /**
-     * Sets the unreadCount property value. This value indicates the amount of unread messages in the conversation.
+     * Sets the unreadCount property value. This value indicates the number of unread messages in the conversation.
      * @param value Value to set for the unreadCount property.
      */
     public void setUnreadCount(@jakarta.annotation.Nullable final Integer value) {

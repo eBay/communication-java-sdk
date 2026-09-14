@@ -14,6 +14,7 @@
 
 package com.ebay.communication.generated.notification.topic;
 
+import com.ebay.communication.generated.notification.models.Error;
 import com.ebay.communication.generated.notification.models.TopicSearchResponse;
 import com.ebay.communication.generated.notification.topic.item.WithTopicItemRequestBuilder;
 import com.microsoft.kiota.BaseRequestBuilder;
@@ -36,7 +37,7 @@ import java.util.Objects;
 public class TopicRequestBuilder extends BaseRequestBuilder {
     /**
      * Gets an item from the com.ebay.communication.generated.notification.topic.item collection
-     * @param topic_id The unique identifier of the notification topic for which the details are retrieved. Use &lt;b&gt;getTopics&lt;/b&gt; to retrieve the topic ID.
+     * @param topic_id The unique identifier of the notification topic for which the details are retrieved. Use &lt;a href=&quot;/develop/api/sell/notification_api#sell-notification_api-topic-gettopics&quot;&gt;getTopics&lt;/a&gt; to retrieve the topic ID.
      * @return a {@link WithTopicItemRequestBuilder}
      */
     @jakarta.annotation.Nonnull
@@ -65,6 +66,8 @@ public class TopicRequestBuilder extends BaseRequestBuilder {
     /**
      * This method returns a paginated collection of all supported topics, along with the details for the topics. This information includes supported schema versions, formats, and other metadata for the topics.&lt;br&gt;&lt;br&gt;Applications can subscribe to any of the topics for a supported schema version and format, limited by the authorization scopes required to subscribe to the topic.&lt;br&gt;&lt;br&gt;A topic specifies the type of information to be received and the data types associated with an event. An event occurs in the eBay system, such as when a user requests deletion or revokes access for an application. An event is an instance of an event type (topic).
      * @return a {@link TopicSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public TopicSearchResponse get() {
@@ -74,11 +77,16 @@ public class TopicRequestBuilder extends BaseRequestBuilder {
      * This method returns a paginated collection of all supported topics, along with the details for the topics. This information includes supported schema versions, formats, and other metadata for the topics.&lt;br&gt;&lt;br&gt;Applications can subscribe to any of the topics for a supported schema version and format, limited by the authorization scopes required to subscribe to the topic.&lt;br&gt;&lt;br&gt;A topic specifies the type of information to be received and the data types associated with an event. An event occurs in the eBay system, such as when a user requests deletion or revokes access for an application. An event is an instance of an event type (topic).
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link TopicSearchResponse}
+     * @throws Error When receiving a 400 status code
+     * @throws Error When receiving a 500 status code
      */
     @jakarta.annotation.Nullable
     public TopicSearchResponse get(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = toGetRequestInformation(requestConfiguration);
-        return this.requestAdapter.send(requestInfo, null, TopicSearchResponse::createFromDiscriminatorValue);
+        final HashMap<String, ParsableFactory<? extends Parsable>> errorMapping = new HashMap<String, ParsableFactory<? extends Parsable>>();
+        errorMapping.put("400", Error::createFromDiscriminatorValue);
+        errorMapping.put("500", Error::createFromDiscriminatorValue);
+        return this.requestAdapter.send(requestInfo, errorMapping, TopicSearchResponse::createFromDiscriminatorValue);
     }
     /**
      * This method returns a paginated collection of all supported topics, along with the details for the topics. This information includes supported schema versions, formats, and other metadata for the topics.&lt;br&gt;&lt;br&gt;Applications can subscribe to any of the topics for a supported schema version and format, limited by the authorization scopes required to subscribe to the topic.&lt;br&gt;&lt;br&gt;A topic specifies the type of information to be received and the data types associated with an event. An event occurs in the eBay system, such as when a user requests deletion or revokes access for an application. An event is an instance of an event type (topic).

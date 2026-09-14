@@ -31,11 +31,11 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
      */
     private Map<String, Object> additionalData;
     /**
-     * This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing for which feedback is being awaited.
+     * This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing that is awaiting feedback.
      */
     private String listingId;
     /**
-     * This type provides details about the price of the listing awaiting feedback.
+     * This container shows the sale price of the listing.
      */
     private ListingPrice listingPrice;
     /**
@@ -43,11 +43,11 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
      */
     private String listingTitle;
     /**
-     * The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item for which feedback is being awaited.
+     * The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item awaiting feedback.
      */
     private String orderLineItemId;
     /**
-     * This array contains a list of available values for use in a particular rating, and whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;b&gt;leaveFeedback&lt;/b&gt; method. The key field in this container is the &lt;b&gt;ratingKey&lt;/b&gt; field. See &lt;a href=&quot;/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&quot; &gt;FeedbackRatingTypeEnum&lt;/a&gt; for its values. The other metadata returned in this container apply to each &lt;b&gt;ratingKey&lt;/b&gt; value that is returned.&lt;/p&gt;
+     * This array contains a list of available values for use in a particular rating as well as whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;strong&gt;leaveFeedback&lt;/strong&gt; method. The key field in this container is the &lt;strong&gt;ratingKey&lt;/strong&gt; field. See &lt;strong&gt;FeedbackRatingTypeEnum&lt;/strong&gt; for its values. The other metadata returned in this container apply to each &lt;strong&gt;ratingKey&lt;/strong&gt; value that is returned.&lt;/p&gt;
      */
     private java.util.List<FeedbackRatingTemplateType> ratingTemplates;
     /**
@@ -94,7 +94,7 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         return deserializerMap;
     }
     /**
-     * Gets the listingId property value. This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing for which feedback is being awaited.
+     * Gets the listingId property value. This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing that is awaiting feedback.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -102,7 +102,7 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         return this.listingId;
     }
     /**
-     * Gets the listingPrice property value. This type provides details about the price of the listing awaiting feedback.
+     * Gets the listingPrice property value. This container shows the sale price of the listing.
      * @return a {@link ListingPrice}
      */
     @jakarta.annotation.Nullable
@@ -118,7 +118,7 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         return this.listingTitle;
     }
     /**
-     * Gets the orderLineItemId property value. The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item for which feedback is being awaited.
+     * Gets the orderLineItemId property value. The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item awaiting feedback.
      * @return a {@link String}
      */
     @jakarta.annotation.Nullable
@@ -126,7 +126,7 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         return this.orderLineItemId;
     }
     /**
-     * Gets the ratingTemplates property value. This array contains a list of available values for use in a particular rating, and whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;b&gt;leaveFeedback&lt;/b&gt; method. The key field in this container is the &lt;b&gt;ratingKey&lt;/b&gt; field. See &lt;a href=&quot;/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&quot; &gt;FeedbackRatingTypeEnum&lt;/a&gt; for its values. The other metadata returned in this container apply to each &lt;b&gt;ratingKey&lt;/b&gt; value that is returned.&lt;/p&gt;
+     * Gets the ratingTemplates property value. This array contains a list of available values for use in a particular rating as well as whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;strong&gt;leaveFeedback&lt;/strong&gt; method. The key field in this container is the &lt;strong&gt;ratingKey&lt;/strong&gt; field. See &lt;strong&gt;FeedbackRatingTypeEnum&lt;/strong&gt; for its values. The other metadata returned in this container apply to each &lt;strong&gt;ratingKey&lt;/strong&gt; value that is returned.&lt;/p&gt;
      * @return a {@link java.util.List<FeedbackRatingTemplateType>}
      */
     @jakarta.annotation.Nullable
@@ -163,14 +163,14 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         this.additionalData = value;
     }
     /**
-     * Sets the listingId property value. This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing for which feedback is being awaited.
+     * Sets the listingId property value. This is the unique identifier for the listing associated with the line item. It is used to reference the specific listing that is awaiting feedback.
      * @param value Value to set for the listingId property.
      */
     public void setListingId(@jakarta.annotation.Nullable final String value) {
         this.listingId = value;
     }
     /**
-     * Sets the listingPrice property value. This type provides details about the price of the listing awaiting feedback.
+     * Sets the listingPrice property value. This container shows the sale price of the listing.
      * @param value Value to set for the listingPrice property.
      */
     public void setListingPrice(@jakarta.annotation.Nullable final ListingPrice value) {
@@ -184,14 +184,14 @@ public class AwaitingFeedback implements AdditionalDataHolder, Parsable {
         this.listingTitle = value;
     }
     /**
-     * Sets the orderLineItemId property value. The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item for which feedback is being awaited.
+     * Sets the orderLineItemId property value. The unique identifier for the eBay order line item associated with the listing. It is used to pinpoint the exact line item awaiting feedback.
      * @param value Value to set for the orderLineItemId property.
      */
     public void setOrderLineItemId(@jakarta.annotation.Nullable final String value) {
         this.orderLineItemId = value;
     }
     /**
-     * Sets the ratingTemplates property value. This array contains a list of available values for use in a particular rating, and whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;b&gt;leaveFeedback&lt;/b&gt; method. The key field in this container is the &lt;b&gt;ratingKey&lt;/b&gt; field. See &lt;a href=&quot;/api-docs/commerce/feedback/types/fdb:FeedbackRatingTypeEnum&quot; &gt;FeedbackRatingTypeEnum&lt;/a&gt; for its values. The other metadata returned in this container apply to each &lt;b&gt;ratingKey&lt;/b&gt; value that is returned.&lt;/p&gt;
+     * Sets the ratingTemplates property value. This array contains a list of available values for use in a particular rating as well as whether the value is enabled. This is dependent on what seller ratings the buyer&apos;s order partner qualifies.&lt;br&gt;&lt;p&gt;&lt;span class=&quot;tablenote&quot;&gt;&lt;span style=&quot;color:#004680&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;Rating templates should only be returned to the user in their role as a buyer; only sellers have Detailed Seller Ratings (DSRs). &lt;/span&gt;&lt;/p&gt;&lt;p&gt;Use the metadata returned here when leaving DSR ratings through the &lt;strong&gt;leaveFeedback&lt;/strong&gt; method. The key field in this container is the &lt;strong&gt;ratingKey&lt;/strong&gt; field. See &lt;strong&gt;FeedbackRatingTypeEnum&lt;/strong&gt; for its values. The other metadata returned in this container apply to each &lt;strong&gt;ratingKey&lt;/strong&gt; value that is returned.&lt;/p&gt;
      * @param value Value to set for the ratingTemplates property.
      */
     public void setRatingTemplates(@jakarta.annotation.Nullable final java.util.List<FeedbackRatingTemplateType> value) {
