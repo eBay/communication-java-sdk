@@ -2,7 +2,7 @@
   "descriptionHash": "C1F7BE6CFEAAE9554F8D19B7327753DDAB7EE4DC1E6ED1E6CB153AB19DAEA45E1469940BB79226EF3435541BAA8827F53F557EA62ED542E3BD98A7124BB0DA47",
   "descriptionLocation": "../../../../../../../../specs/openapi/negotiation.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "NegotiationApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "com.ebay.communication.generated.negotiation",
@@ -30,6 +30,5 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": [],
-  "allowedExternalOrigins": []
+  "disabledValidationRules": []
 }
