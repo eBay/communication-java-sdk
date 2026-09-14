@@ -23,10 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Client for the Commerce Message API (M2M - Member to Member).
- * Provides methods to manage conversations and send messages between eBay members.
- */
 public final class MessageClient {
     private final MessageApiClient kiota;
     private final CommunicationConfiguration config;
@@ -36,10 +32,6 @@ public final class MessageClient {
         this.config = config;
     }
 
-    /**
-     * Merges default headers from config with per-call headers.
-     * Per-call headers override defaults.
-     */
     private Map<String, String> mergedHeaders(RequestOptions requestOptions) {
         Map<String, String> headers = new HashMap<>(config.getDefaultRequestOptions().getHeaders());
         if (requestOptions != null) {
@@ -48,44 +40,48 @@ public final class MessageClient {
         return headers;
     }
 
-    /**
-     * Get a specific conversation by ID.
-     * @param conversationId The conversation ID.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
-    public CompletableFuture<GetMessagesByConversationIdResponse> getConversationAsync(
-            String conversationId, String accessToken, RequestOptions requestOptions) {
-        Params.requireValid("conversationId", conversationId);
+    public CompletableFuture<BulkUpdateConversationsResponse> bulkUpdateConversationAsync(
+            BulkUpdateConversationsRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.conversation().byConversation_id(conversationId).get(config -> {
+            return kiota.bulkUpdateConversation().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
         }));
     }
 
-    /**
-     * Get conversations for the authenticated user.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
+    public CompletableFuture<GetMessagesByConversationIdResponse> getConversationAsync(
+            String conversationId, String conversationType, String limit, String offset, String accessToken, RequestOptions requestOptions) {
+        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
+            Map<String, String> headers = mergedHeaders(requestOptions);
+            return kiota.conversation().byConversation_id(Params.requireValid("conversationId", conversationId)).get(config -> {
+                headers.forEach((k, v) -> config.headers.add(k, v));
+                if (conversationType != null) config.queryParameters.conversationType = conversationType;
+                if (limit != null) config.queryParameters.limit = limit;
+                if (offset != null) config.queryParameters.offset = offset;
+            });
+        }));
+    }
+
     public CompletableFuture<GetAllMyConversationsResponse> getConversationsAsync(
-            String accessToken, RequestOptions requestOptions) {
+            String conversationStatus, String conversationType, String endTime, String limit, String offset, String otherPartyUsername, String referenceId, String referenceType, String startTime, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.conversation().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
+                if (conversationStatus != null) config.queryParameters.conversationStatus = conversationStatus;
+                if (conversationType != null) config.queryParameters.conversationType = conversationType;
+                if (endTime != null) config.queryParameters.endTime = endTime;
+                if (limit != null) config.queryParameters.limit = limit;
+                if (offset != null) config.queryParameters.offset = offset;
+                if (otherPartyUsername != null) config.queryParameters.otherPartyUsername = otherPartyUsername;
+                if (referenceId != null) config.queryParameters.referenceId = referenceId;
+                if (referenceType != null) config.queryParameters.referenceType = referenceType;
+                if (startTime != null) config.queryParameters.startTime = startTime;
             });
         }));
     }
 
-    /**
-     * Send a message in a conversation.
-     * @param body The message details.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
     public CompletableFuture<SendMessageResponse> sendMessageAsync(
             SendMessageRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
@@ -96,12 +92,6 @@ public final class MessageClient {
         }));
     }
 
-    /**
-     * Update a conversation (e.g., mark as read).
-     * @param body The update details.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
     public CompletableFuture<Void> updateConversationAsync(
             UpdateConversationRequest body, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
@@ -110,22 +100,6 @@ public final class MessageClient {
                 headers.forEach((k, v) -> config.headers.add(k, v));
             });
             return null;
-        }));
-    }
-
-    /**
-     * Bulk update conversations.
-     * @param body The bulk update details.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
-    public CompletableFuture<BulkUpdateConversationsResponse> bulkUpdateConversationAsync(
-            BulkUpdateConversationsRequest body, String accessToken, RequestOptions requestOptions) {
-        return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
-            Map<String, String> headers = mergedHeaders(requestOptions);
-            return kiota.bulkUpdateConversation().post(body, config -> {
-                headers.forEach((k, v) -> config.headers.add(k, v));
-            });
         }));
     }
 }

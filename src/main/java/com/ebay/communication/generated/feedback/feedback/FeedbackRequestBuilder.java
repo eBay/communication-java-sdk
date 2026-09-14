@@ -41,7 +41,7 @@ public class FeedbackRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FeedbackRequestBuilder(@jakarta.annotation.Nonnull final HashMap<String, Object> pathParameters, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/feedback{?feedback_id*,filter*,limit*,listing_id*,offset*,order_line_item_id*,sort*,transaction_id*}", pathParameters);
+        super(requestAdapter, "{+baseurl}/feedback?feedback_type={feedback_type}&user_id={user_id}{&feedback_id*,filter*,limit*,listing_id*,offset*,order_line_item_id*,sort*,transaction_id*}", pathParameters);
     }
     /**
      * Instantiates a new {@link FeedbackRequestBuilder} and sets the default values.
@@ -49,7 +49,7 @@ public class FeedbackRequestBuilder extends BaseRequestBuilder {
      * @param requestAdapter The request adapter to use to execute the requests.
      */
     public FeedbackRequestBuilder(@jakarta.annotation.Nonnull final String rawUrl, @jakarta.annotation.Nonnull final RequestAdapter requestAdapter) {
-        super(requestAdapter, "{+baseurl}/feedback{?feedback_id*,filter*,limit*,listing_id*,offset*,order_line_item_id*,sort*,transaction_id*}", rawUrl);
+        super(requestAdapter, "{+baseurl}/feedback?feedback_type={feedback_type}&user_id={user_id}{&feedback_id*,filter*,limit*,listing_id*,offset*,order_line_item_id*,sort*,transaction_id*}", rawUrl);
     }
     /**
      * This method enables users to retrieve feedback for any specified user ID and feedback type (sent or received). You can refine the results using optional query parameters such as its feedback ID, listing ID, or order line item ID, or applying one or more filters.&lt;p&gt;Applying filters can narrow results using criteria such as comment type, photos, or topics identified through AI-based analysis. When filtering for feedback with photos (&lt;code&gt;filterImage:true&lt;/code&gt;), only entries with images (entries that include image URLs) are returned. Additionally, feedback can be refined for the number of days to look back, the role of the user providing the feedback, and whether to include automated feedback entries left by eBay.&lt;/p&gt;&lt;p&gt;Sorting and pagination features help organize and navigate returned items efficiently.&lt;/p&gt;&lt;p&gt;Returned data includes feedback details (such as comment text and type), feedback ratings (covering criteria like overall experience, and for sellers item description, shipping time, and communication), role and attributes of the feedback giver, line item and transaction summaries, images, and any available topics. See &lt;a href=&quot;/api-docs/commerce/feedback/resources/feedback/methods/getFeedback#uri.filter&quot; &gt;filter&lt;/a&gt; for additional information. Privacy is safeguarded by restricting the amount of detail visible to users, depending on their context. When accessing another user&apos;s feedback without logging in, buyer names are masked and seller names are shown. Logged-in users viewing their own feedback see all names, while those viewing other users&apos; feedback will encounter some masking.&lt;/p&gt;
@@ -105,7 +105,7 @@ public class FeedbackRequestBuilder extends BaseRequestBuilder {
      */
     @jakarta.annotation.Nonnull
     public RequestInformation toGetRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<GetRequestConfiguration> requestConfiguration) {
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, "{+baseurl}/feedback?feedback_type={feedback_type}&user_id={user_id}{&feedback_id*,filter*,limit*,listing_id*,offset*,order_line_item_id*,sort*,transaction_id*}", pathParameters);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.GET, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, GetRequestConfiguration::new, x -> x.queryParameters);
         requestInfo.headers.tryAdd("Accept", "application/json");
         return requestInfo;
@@ -128,7 +128,7 @@ public class FeedbackRequestBuilder extends BaseRequestBuilder {
     @jakarta.annotation.Nonnull
     public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final LeaveFeedbackRequest body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         Objects.requireNonNull(body);
-        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
+        final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, "{+baseurl}/feedback", pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
         requestInfo.setContentFromParsable(requestAdapter, "application/json", body);

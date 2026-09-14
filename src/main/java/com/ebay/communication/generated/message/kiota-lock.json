@@ -2,7 +2,7 @@
   "descriptionHash": "D6F634FDFB40BEDBB634B0E3A5917A291994B04506184E13CE516CB481CBAE19A1369A3430F406E93B378BEA28B0E1874CF4C18C7740BE2A253B3692B8A4E2FA",
   "descriptionLocation": "../../../../../../../../specs/openapi/message.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.35.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "MessageApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "com.ebay.communication.generated.message",
@@ -30,6 +30,5 @@
   ],
   "includePatterns": [],
   "excludePatterns": [],
-  "disabledValidationRules": [],
-  "allowedExternalOrigins": []
+  "disabledValidationRules": []
 }
