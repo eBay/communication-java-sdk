@@ -15,61 +15,34 @@
 package com.ebay.communication.configuration;
 
 import jakarta.annotation.Nullable;
-import java.net.URI;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Configuration for the Communication SDK.
- * Provides base URLs for each API and optional fallback access token.
- */
 public final class CommunicationConfiguration {
-    // Base URLs for each API (private final — immutable after construction)
-    private final String feedbackBaseUrl;
-    private final String messageBaseUrl;
-    private final String notificationBaseUrl;
-    private final String negotiationBaseUrl;
-    private final String graphQLBaseUrl;
-
-    private @Nullable String accessToken;  // static fallback; per-call token takes precedence
-    private boolean diagnosticLogging = false;
-
-    /**
-     * Default request options (headers) applied to all SDK calls.
-     * Per-call RequestOptions will override these.
-     */
+    private @Nullable String accessToken;
     private RequestOptions defaultRequestOptions = new RequestOptions();
 
-    /**
-     * Default constructor using production eBay API endpoints.
-     */
+    private final String feedbackBaseUrl;
+    private final String messageBaseUrl;
+    private final String negotiationBaseUrl;
+    private final String notificationBaseUrl;
+
     public CommunicationConfiguration() {
         this.feedbackBaseUrl = "https://api.ebay.com/commerce/feedback/v1";
         this.messageBaseUrl = "https://api.ebay.com/commerce/message/v1";
-        this.notificationBaseUrl = "https://api.ebay.com/commerce/notification/v1";
         this.negotiationBaseUrl = "https://api.ebay.com/sell/negotiation/v1";
-        this.graphQLBaseUrl = "https://api.ebay.com/graphql";
+        this.notificationBaseUrl = "https://api.ebay.com/commerce/notification/v1";
     }
 
-    /**
-     * Constructor with custom base URLs. All URLs are validated against the allowed host list.
-     * @param feedbackBaseUrl Base URL for the Feedback API.
-     * @param messageBaseUrl Base URL for the Message API.
-     * @param notificationBaseUrl Base URL for the Notification API.
-     * @param negotiationBaseUrl Base URL for the Negotiation API.
-     * @param graphQLBaseUrl Base URL for the GraphQL endpoint.
-     */
     public CommunicationConfiguration(
             String feedbackBaseUrl,
             String messageBaseUrl,
-            String notificationBaseUrl,
             String negotiationBaseUrl,
-            String graphQLBaseUrl) {
+            String notificationBaseUrl) {
         this.feedbackBaseUrl = validateHost(feedbackBaseUrl);
         this.messageBaseUrl = validateHost(messageBaseUrl);
-        this.notificationBaseUrl = validateHost(notificationBaseUrl);
         this.negotiationBaseUrl = validateHost(negotiationBaseUrl);
-        this.graphQLBaseUrl = validateHost(graphQLBaseUrl);
+        this.notificationBaseUrl = validateHost(notificationBaseUrl);
     }
 
     private String validateHost(String url) {
@@ -84,55 +57,45 @@ public final class CommunicationConfiguration {
         return url;
     }
 
-    // Getters
-    public String getFeedbackBaseUrl() { return feedbackBaseUrl; }
-
-    public String getMessageBaseUrl() { return messageBaseUrl; }
-
-    public String getNotificationBaseUrl() { return notificationBaseUrl; }
-
-    public String getNegotiationBaseUrl() { return negotiationBaseUrl; }
-
-    public String getGraphQLBaseUrl() { return graphQLBaseUrl; }
-
     /**
-     * Returns the static fallback access token.
-     * <p>
-     * <b>Security note:</b> Access tokens stored in heap memory (including this field) may be
-     * captured in heap dumps or exposed via reflection. Prefer per-call token passing via
-     * {@code TokenContext.runWith()} for sensitive multi-tenant scenarios.
+     * Sets the OAuth Bearer token used for API calls when no per-call token is provided.
+     *
+     * <p><b>Security note:</b> The token is stored as a Java {@code String} and will remain
+     * in heap memory until garbage collected. To minimize exposure: do not log this
+     * configuration object, null out the token reference when it is no longer needed,
+     * and avoid storing the configuration longer than the client lifecycle.
      */
-    public @Nullable String getAccessToken() { return accessToken; }
+    public void setAccessToken(@Nullable String token) {
+        this.accessToken = token;
+    }
 
-    /**
-     * Sets the static fallback access token.
-     * <p>
-     * <b>Security note:</b> Access tokens stored in heap memory may be captured in heap dumps
-     * or exposed via reflection. Prefer per-call token passing where possible.
-     */
-    public void setAccessToken(@Nullable String accessToken) { this.accessToken = accessToken; }
+    public @Nullable String getAccessToken() {
+        return accessToken;
+    }
 
-    public boolean isDiagnosticLogging() { return diagnosticLogging; }
-    public void setDiagnosticLogging(boolean diagnosticLogging) { this.diagnosticLogging = diagnosticLogging; }
+    public RequestOptions getDefaultRequestOptions() {
+        return defaultRequestOptions;
+    }
 
-    public RequestOptions getDefaultRequestOptions() { return defaultRequestOptions; }
-    public void setDefaultRequestOptions(RequestOptions defaultRequestOptions) { this.defaultRequestOptions = defaultRequestOptions; }
-
-    /**
-     * All hostnames tokens may be sent to; used by AllowedHostsValidator.
-     */
     public Set<String> getAllowedHosts() {
         Set<String> hosts = new HashSet<>();
         hosts.add("api.ebay.com");
-        hosts.add("apiz.ebay.com");
         return hosts;
     }
 
-    private String extractHost(String url) {
-        try {
-            return URI.create(url).getHost();
-        } catch (Exception e) {
-            return "api.ebay.com"; // fallback
-        }
+    public String getFeedbackBaseUrl() {
+        return feedbackBaseUrl;
+    }
+
+    public String getMessageBaseUrl() {
+        return messageBaseUrl;
+    }
+
+    public String getNegotiationBaseUrl() {
+        return negotiationBaseUrl;
+    }
+
+    public String getNotificationBaseUrl() {
+        return notificationBaseUrl;
     }
 }

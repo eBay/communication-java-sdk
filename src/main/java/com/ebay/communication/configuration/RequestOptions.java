@@ -36,18 +36,20 @@ public final class RequestOptions {
      * Adds a header to the request.
      * @param name Header name (e.g., "X-EBAY-C-MARKETPLACE-ID")
      * @param value Header value (e.g., "EBAY_US")
-     * @throws IllegalArgumentException if the name or value contain CR, LF, or null bytes (SEC-008),
-     *         or if the Authorization header is attempted to be overridden.
+     * @throws IllegalArgumentException if name or value contains CR, LF, or null bytes,
+     *         or if name attempts to override the Authorization header
      */
     public void addHeader(String name, String value) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Header name must not be null or empty");
         }
         if (containsLineSeparator(name) || containsLineSeparator(value)) {
-            throw new IllegalArgumentException("Header name and value must not contain CR, LF, or null bytes");
+            throw new IllegalArgumentException(
+                "Header name and value must not contain CR, LF, or null bytes");
         }
         if (name.equalsIgnoreCase("Authorization")) {
-            throw new IllegalArgumentException("Authorization header cannot be overridden via RequestOptions");
+            throw new IllegalArgumentException(
+                "Authorization header cannot be overridden via RequestOptions");
         }
         headers.put(name, value);
     }

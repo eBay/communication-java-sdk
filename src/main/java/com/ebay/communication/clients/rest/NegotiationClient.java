@@ -23,10 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Client for the Sell Negotiation API.
- * Provides methods to send promotional offers to interested buyers.
- */
 public final class NegotiationClient {
     private final NegotiationApiClient kiota;
     private final CommunicationConfiguration config;
@@ -36,10 +32,6 @@ public final class NegotiationClient {
         this.config = config;
     }
 
-    /**
-     * Merges default headers from config with per-call headers.
-     * Per-call headers override defaults.
-     */
     private Map<String, String> mergedHeaders(RequestOptions requestOptions) {
         Map<String, String> headers = new HashMap<>(config.getDefaultRequestOptions().getHeaders());
         if (requestOptions != null) {
@@ -48,33 +40,26 @@ public final class NegotiationClient {
         return headers;
     }
 
-    /**
-     * Find items eligible for sending offers to interested buyers.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
     public CompletableFuture<PagedEligibleItemCollection> findEligibleItemsAsync(
-            String accessToken, RequestOptions requestOptions) {
+            String limit, String offset, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.findEligibleItems().get(config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
+                if (limit != null) config.queryParameters.limit = limit;
+                if (offset != null) config.queryParameters.offset = offset;
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
             });
         }));
     }
 
-    /**
-     * Send an offer to interested buyers for a specific item.
-     * @param body The offer details.
-     * @param accessToken Per-call token; overrides config fallback.
-     * @param requestOptions Optional request options for custom headers.
-     */
     public CompletableFuture<SendOfferToInterestedBuyersCollectionResponse> sendOfferToInterestedBuyersAsync(
-            CreateOffersRequest body, String accessToken, RequestOptions requestOptions) {
+            CreateOffersRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions) {
         return CompletableFuture.supplyAsync(() -> TokenContext.runWith(accessToken, () -> {
             Map<String, String> headers = mergedHeaders(requestOptions);
             return kiota.sendOfferToInterestedBuyers().post(body, config -> {
                 headers.forEach((k, v) -> config.headers.add(k, v));
+                if (xEBAYCMARKETPLACEID != null) config.headers.add("X-EBAY-C-MARKETPLACE-ID", xEBAYCMARKETPLACEID);
             });
         }));
     }
