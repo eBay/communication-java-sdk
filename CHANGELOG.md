@@ -14,28 +14,28 @@
 
 | Operation | Previous parameters | Current parameters |
 | --- | --- | --- |
-| `getFeedbackAsync` | `(String, RequestOptions)` | `(String, String, String, String, String, String, String, String, String, String, String, RequestOptions)` |
-| `getFeedbackRatingSummaryAsync` | `(String, RequestOptions)` | `(String, String, String, RequestOptions)` |
-| `getItemsAwaitingFeedbackAsync` | `(String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
+| `getFeedbackAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String feedbackId, String feedbackType, String filter, String limit, String listingId, String offset, String orderLineItemId, String sort, String transactionId, String userId, String accessToken, RequestOptions requestOptions)` |
+| `getFeedbackRatingSummaryAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String filter, String userId, String accessToken, RequestOptions requestOptions)` |
+| `getItemsAwaitingFeedbackAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String filter, String limit, String offset, String sort, String accessToken, RequestOptions requestOptions)` |
 
 `MessageClient`:
 
 | Operation | Previous parameters | Current parameters |
 | --- | --- | --- |
-| `getConversationAsync` | `(String, String, RequestOptions)` | `(String, String, String, String, String, RequestOptions)` |
-| `getConversationsAsync` | `(String, RequestOptions)` | `(String, String, String, String, String, String, String, String, String, String, RequestOptions)` |
+| `getConversationAsync` | `(String conversationId, String accessToken, RequestOptions requestOptions)` | `(String conversationId, String conversationType, String limit, String offset, String accessToken, RequestOptions requestOptions)` |
+| `getConversationsAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String conversationStatus, String conversationType, String endTime, String limit, String offset, String otherPartyUsername, String referenceId, String referenceType, String startTime, String accessToken, RequestOptions requestOptions)` |
 
 `NegotiationClient`:
 
 | Operation | Previous parameters | Current parameters |
 | --- | --- | --- |
-| `findEligibleItemsAsync` | `(String, RequestOptions)` | `(Integer, Integer, String, String, RequestOptions)` |
-| `sendOfferToInterestedBuyersAsync` | `(CreateOffersRequest, String, RequestOptions)` | `(CreateOffersRequest, String, String, RequestOptions)` |
+| `findEligibleItemsAsync` | `(String accessToken, RequestOptions requestOptions)` | `(Integer limit, Integer offset, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions)` |
+| `sendOfferToInterestedBuyersAsync` | `(CreateOffersRequest body, String accessToken, RequestOptions requestOptions)` | `(CreateOffersRequest body, String xEBAYCMARKETPLACEID, String accessToken, RequestOptions requestOptions)` |
 
 `NotificationClient`:
 
 | Operation | Previous parameters | Current parameters |
 | --- | --- | --- |
-| `getDestinationsAsync` | `(String, RequestOptions)` | `(String, String, String, RequestOptions)` |
-| `getSubscriptionsAsync` | `(String, RequestOptions)` | `(String, String, String, RequestOptions)` |
-| `getTopicsAsync` | `(String, RequestOptions)` | `(String, String, String, RequestOptions)` |
+| `getDestinationsAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String continuationToken, String limit, String accessToken, RequestOptions requestOptions)` |
+| `getSubscriptionsAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String continuationToken, String limit, String accessToken, RequestOptions requestOptions)` |
+| `getTopicsAsync` | `(String accessToken, RequestOptions requestOptions)` | `(String continuationToken, String limit, String accessToken, RequestOptions requestOptions)` |
