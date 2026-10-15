@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.ebay"
-version = "0.2.0"
+version = "0.2.2"
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
@@ -28,6 +28,12 @@ dependencies {
 
     errorprone("com.google.errorprone:error_prone_core:2.42.0")
     errorprone("com.uber.nullaway:nullaway:0.12.10")
+
+    constraints {
+        errorprone("com.google.guava:guava:33.7.2-jre") {
+            because("Upgrade transitive Guava to address the reported vulnerability")
+        }
+    }
 
 }
 
@@ -56,7 +62,7 @@ publishing {
             from(components["java"])
             groupId = "com.ebay"
             artifactId = "communication-java-sdk"
-            version = "0.2.0"
+            version = "0.2.2"
         }
     }
 }
