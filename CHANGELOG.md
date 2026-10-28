@@ -1,5 +1,11 @@
 # ChangeLog
 
+## 0.2.3 (10/28/2026)
+
+### Dependencies
+
+- Bumped `com.fasterxml.jackson.core:jackson-databind` from 2.22.3 to 2.22.4 to fix CVE-2026-110879 (GHSA-m8xf-2cr7-77ph), a critical `PolymorphicTypeValidator` bypass via generic type arguments that allows arbitrary class instantiation.
+
 ## 0.2.2 (10/15/2026)
 
 ### Dependencies

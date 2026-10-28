@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.ebay"
-version = "0.2.2"
+version = "0.2.3"
 
 java {
     toolchain { languageVersion.set(JavaLanguageVersion.of(17)) }
@@ -23,7 +23,7 @@ dependencies {
 
     compileOnly("jakarta.annotation:jakarta.annotation-api:2.1.1")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.22.3")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.22.4")
     implementation("org.slf4j:slf4j-api:2.0.17")
 
     errorprone("com.google.errorprone:error_prone_core:2.42.0")
@@ -62,7 +62,7 @@ publishing {
             from(components["java"])
             groupId = "com.ebay"
             artifactId = "communication-java-sdk"
-            version = "0.2.2"
+            version = "0.2.3"
         }
     }
 }
