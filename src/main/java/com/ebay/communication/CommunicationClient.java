@@ -16,13 +16,11 @@ package com.ebay.communication;
 
 import com.ebay.communication.clients.rest.FeedbackClient;
 import com.ebay.communication.clients.rest.MessageClient;
-import com.ebay.communication.clients.rest.NegotiationClient;
 import com.ebay.communication.clients.rest.NotificationClient;
 import com.ebay.communication.configuration.KiotaAuthProvider;
 import com.ebay.communication.configuration.CommunicationConfiguration;
 import com.ebay.communication.generated.feedback.FeedbackApiClient;
 import com.ebay.communication.generated.message.MessageApiClient;
-import com.ebay.communication.generated.negotiation.NegotiationApiClient;
 import com.ebay.communication.generated.notification.NotificationApiClient;
 import com.microsoft.kiota.authentication.BaseBearerTokenAuthenticationProvider;
 import com.microsoft.kiota.http.OkHttpRequestAdapter;
@@ -38,7 +36,6 @@ public final class CommunicationClient implements Closeable {
 
     public final FeedbackClient feedback;
     public final MessageClient message;
-    public final NegotiationClient negotiation;
     public final NotificationClient notification;
 
     public CommunicationClient(CommunicationConfiguration config) {
@@ -57,10 +54,6 @@ public final class CommunicationClient implements Closeable {
         var messageAdapter = new OkHttpRequestAdapter(authProvider, null, null, sharedHttpClient);
         messageAdapter.setBaseUrl(config.getMessageBaseUrl());
         this.message = new MessageClient(new MessageApiClient(messageAdapter), config);
-
-        var negotiationAdapter = new OkHttpRequestAdapter(authProvider, null, null, sharedHttpClient);
-        negotiationAdapter.setBaseUrl(config.getNegotiationBaseUrl());
-        this.negotiation = new NegotiationClient(new NegotiationApiClient(negotiationAdapter), config);
 
         var notificationAdapter = new OkHttpRequestAdapter(authProvider, null, null, sharedHttpClient);
         notificationAdapter.setBaseUrl(config.getNotificationBaseUrl());

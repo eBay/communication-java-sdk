@@ -35,7 +35,7 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
      */
     private String unit;
     /**
-     * Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
+     * Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;5&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;YEAR&lt;/code&gt; (for older feedback). &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      */
     private Integer value;
     /**
@@ -82,7 +82,7 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
         return this.unit;
     }
     /**
-     * Gets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
+     * Gets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;5&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;YEAR&lt;/code&gt; (for older feedback). &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class CommentCommentPeriod implements AdditionalDataHolder, Parsable {
         this.unit = value;
     }
     /**
-     * Sets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;60&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
+     * Sets the value property value. Value of the time period expressed in the period contained in the &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;90&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;DAY&lt;/code&gt;, or &lt;code&gt;5&lt;/code&gt; when the &lt;strong&gt;unit&lt;/strong&gt; is &lt;code&gt;YEAR&lt;/code&gt; (for older feedback). &lt;p&gt;See the &lt;strong&gt;commentPeriod&lt;/strong&gt; container for more information.&lt;/p&gt;
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final Integer value) {

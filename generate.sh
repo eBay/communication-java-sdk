@@ -16,6 +16,13 @@
 
 set -euo pipefail
 
+KIOTA_VERSION=$(kiota --version 2>/dev/null | cut -d'+' -f1)
+if [ "$KIOTA_VERSION" != "1.35.0" ]; then
+  echo "Error: kiota 1.35.0 required, found '${KIOTA_VERSION:-not installed}'"
+  echo "See https://learn.microsoft.com/en-us/openapi/kiota/install for installation options."
+  exit 1
+fi
+
 echo "Generating Communication Java SDK with Kiota..."
 rm -rf src/main/java/com/ebay/communication/generated
 
@@ -28,11 +35,6 @@ echo "Generating MessageApiClient..."
 kiota generate -l java -d specs/openapi/message.json \
   -c MessageApiClient -n com.ebay.communication.generated.message \
   -o src/main/java/com/ebay/communication/generated/message --ebc --co
-
-echo "Generating NegotiationApiClient..."
-kiota generate -l java -d specs/openapi/negotiation.json \
-  -c NegotiationApiClient -n com.ebay.communication.generated.negotiation \
-  -o src/main/java/com/ebay/communication/generated/negotiation --ebc --co
 
 echo "Generating NotificationApiClient..."
 kiota generate -l java -d specs/openapi/notification.json \
