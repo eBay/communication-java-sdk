@@ -163,7 +163,7 @@
           {
             "name": "filter",
             "in": "query",
-            "description": "Use this parameter to limit the response based on the specified filter parameters as follows: <br><ul><li><strong>commentType</strong>: Return only feedback with the set type of comments. Comment types available are <code>POSITIVE</code>, <code>NEUTRAL</code>, or <code>NEGATIVE</code>. <p><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note: </strong>Sellers can only provide positive feedback.</span></p> </li><li><strong>filterImage</strong>: Return feedback dependent on if images are included. Filter values available:<ul><li><code>true</code>: Return only feedback with images</li><li><code>false</code>: Return feedback with or without images</li></ul></li><li><strong>topics</strong>: Uses AI to generate items returned that are associated with the set topic. For example, if you set <code>topics:shipping</code>, only feedback comments about shipping are returned. Topics available are <code>shipping</code>, <code>service</code>, <code>packaging</code>, <code>description</code>, <code>seller-satisfaction</code>, <code>overall-satisfaction</code>, <code>refund</code>, <code>inventory</code>, <code>customer loyalty</code>, <code>seller-other</code>, <code>quality</code>, <code>price</code>, <code>condition</code>, <code>fit</code>, <code>appearance</code>, <code>dimensions</code>, <code>usage</code>, <code>product-satisfaction</code>, <code>product-other</code>, and <code>extras</code>.<br><br>See <a href=\"/develop/guides-v2/communications/sell-communications-guide#retrieve-ai-filtered-items\" target=\"_blank\">Retrieve AI-filtered feedback</a> for an example.</li><li><strong>period</strong>: Filter results by the number of days to look back for feedback. If not set, lifetime results are returned. Supported values available are <code>7</code>, <code>30</code>, <code>90</code>, <code>180</code>, or <code>365</code>.</li><li><strong>role</strong>: Filter results by the role of the user providing feedback. Roles available are <code>BUYER</code> or <code>SELLER</code>.</li><li><strong>showAutomatedFeedback</strong>: Filter results to include automated feedback left by eBay  entries. For sellers with less than a 10 feedback score, an automated feedback message on behalf of eBay is returned.<ul><li><code>true</code>: Return automated feedback including both user and eBay generated feedback</li><li><code>false</code>: Do not return eBay's automatic feedback for seller in response (default)</li></ul></li></ul>Send the filter as a query parameter in a comma-separated <em>name</em>:<em>value</em> list. For example:  <br><br><code>filter=commentType:POSITIVE,filterImage:true,topics:fit,period:30,role:SELLER,showAutomatedFeedback:true</code></p>",
+            "description": "Use this parameter to limit the response based on the specified filter parameters as follows: <br><ul><li><strong>commentType</strong>: Return only feedback with the set type of comments. Comment types available are <code>POSITIVE</code>, <code>NEUTRAL</code>, or <code>NEGATIVE</code>. <p><span class=\"tablenote\"><span style=\"color:#004680\"><strong>Note: </strong>Sellers can only provide positive feedback.</span></p> </li><li><strong>filterImage</strong>: Return feedback dependent on if images are included. Filter values available:<ul><li><code>true</code>: Return only feedback with images</li><li><code>false</code>: Return feedback with or without images</li></ul></li><li><strong>topics</strong>: Uses AI to generate items returned that are associated with the set topic. For example, if you set <code>topics:shipping</code>, only feedback comments about shipping are returned. Topics available are <code>shipping</code>, <code>service</code>, <code>packaging</code>, <code>description</code>, <code>seller-satisfaction</code>, <code>overall-satisfaction</code>, <code>refund</code>, <code>inventory</code>, <code>customer loyalty</code>, <code>seller-other</code>, <code>quality</code>, <code>price</code>, <code>condition</code>, <code>fit</code>, <code>appearance</code>, <code>dimensions</code>, <code>usage</code>, <code>product-satisfaction</code>, <code>product-other</code>, and <code>extras</code>.<br><br>See <a href=\"/develop/guides-v2/communications/sell-communications-guide#retrieve-ai-filtered-items\" target=\"_blank\">Retrieve AI-filtered feedback</a> for an example.</li><li><strong>period</strong>: Filter results by the number of days to look back for feedback. If not set, lifetime results are returned. Supported values are <code>30</code>, <code>180</code>, or <code>365</code>.</li><li><strong>role</strong>: Filter results by the role of the user providing feedback. Roles available are <code>BUYER</code> or <code>SELLER</code>.</li><li><strong>showAutomatedFeedback</strong>: Filter results to include automated feedback left by eBay  entries. For sellers with less than a 10 feedback score, an automated feedback message on behalf of eBay is returned.<ul><li><code>true</code>: Return automated feedback including both user and eBay generated feedback</li><li><code>false</code>: Do not return eBay's automatic feedback for seller in response (default)</li></ul></li></ul>Send the filter as a query parameter in a comma-separated <em>name</em>:<em>value</em> list. For example:  <br><br><code>filter=commentType:POSITIVE,filterImage:true,topics:fit,period:30,role:SELLER,showAutomatedFeedback:true</code></p>",
             "required": false,
             "schema": {
               "type": "string"
@@ -286,7 +286,7 @@
                 "501037": {
                   "domain": "API_FEEDBACK",
                   "category": "REQUEST",
-                  "description": "Invalid period value. Must be 30, 60, or 365."
+                  "description": "Invalid period value. Must be 30, 180, or 365."
                 },
                 "501038": {
                   "domain": "API_FEEDBACK",
@@ -528,13 +528,13 @@
         "tags": [
           "feedback_rating_summary"
         ],
-        "description": "This method provides a detailed overview of feedback ratings associated with a user in the eBay marketplace. Specify a user ID and apply filters to retrieve summarized feedback data categorized by rating types and user roles. These returned metrics are aggregated, which offers insight into user experiences and performance. <p class=\"msgbox_tipInDiv\" ><div class=\"msgbox_tip\"><span><strong><span style=\"color: #478415;\">Tip:</span></strong></span></span> You can use this method to help sellers and buyers understand their marketplace reputation and identify areas for improvement.</div></p><p>Returned data provides a summary of feedback ratings for a user by rating type (such as overall experience, communication, or delivery timeliness) for both buyer and seller roles. Each type of rating includes aggregated metrics like averages, counts, unique feedback givers, and the percentage of positive ratings (excluding neutrals). The response also details the distribution of specific rating values, their frequency, and time period (with period units like days or months) over which these metrics were calculated.</p>",
+        "description": "This method provides a detailed overview of feedback ratings associated with a user in the eBay marketplace. Specify a user ID and apply filters to retrieve summarized feedback data categorized by rating types and user roles. These returned metrics are aggregated, which offers insight into user experiences and performance. <p class=\"msgbox_tipInDiv\" ><div class=\"msgbox_tip\"><span><strong><span style=\"color: #478415;\">Tip:</span></strong></span></span> You can use this method to help sellers and buyers understand their marketplace reputation and identify areas for improvement.</div></p><p>Returned data provides a summary of feedback ratings for a user by rating type (such as overall experience, communication, or delivery timeliness) for both buyer and seller roles. Each type of rating includes aggregated metrics like averages, counts, unique feedback givers, and the percentage of positive ratings (excluding neutrals). The response also details the distribution of specific rating values, their frequency, and time period (with period units like days or months) over which these metrics were calculated. If the <code>period</code> filter is not specified, summaries for all available look-back periods (<code>7</code>, <code>30</code>, <code>180</code>, and <code>365</code> days) are returned.</p>",
         "operationId": "getFeedbackRatingSummary",
         "parameters": [
           {
             "name": "filter",
             "in": "query",
-            "description": "Use this parameter to limit the response based on specified filter values:<br><ul><li><strong>ratingType</strong>: Specifies the type of rating being summarized and returned <strong>(Required)</strong>. Available values include <code>OVERALL_EXPERIENCE</code>, <code>OVERALL_EXPERIENCE_COMMENT</code>, <code>ON_TIME_DELIVERY</code>, <code>DSR_ITEM_AS_DESCRIBED</code>, <code>DSR_COMMUNICATION</code>, <code>DSR_SHIPPING_CHARGES</code>, <code>DSR_SHIPPING_TIME</code>, and <code>ITEM_RATING</code>.<br>See <strong>FeedbackRatingTypeEnum</strong> for descriptions of values. </li><li><strong>excludeRepeatFeedback</strong>: Set to <code>true</code> to exclude repeat feedback.</li><li><strong>lookbackPeriodInDays</strong>: Limit the response to a previous period of days. Available values include <code>7</code>, <code>30</code>, <code>90</code>, <code>180</code>, or <code>365</code></li></ul><p>You can send the filter as a query parameter, either with the required <strong>ratingType</strong> only, or combining the filter values with a comma-separated <em>name</em><strong>:</strong><em>value</em> list. For example:</p><p><code>filter=ratingType:OVERALL_EXPERIENCE,excludeRepeatFeedback:true,period:365</code></p>",
+            "description": "Use this parameter to limit the response based on specified filter values:<br><ul><li><strong>ratingType</strong>: Specifies the type of rating being summarized and returned <strong>(Required)</strong>. Available values include <code>OVERALL_EXPERIENCE</code>, <code>OVERALL_EXPERIENCE_COMMENT</code>, <code>ON_TIME_DELIVERY</code>, <code>DSR_ITEM_AS_DESCRIBED</code>, <code>DSR_COMMUNICATION</code>, <code>DSR_SHIPPING_CHARGES</code>, <code>DSR_SHIPPING_TIME</code>, and <code>ITEM_RATING</code>.<br>See <strong>FeedbackRatingTypeEnum</strong> for descriptions of values. </li><li><strong>excludeRepeatFeedback</strong>: Set to <code>true</code> to exclude repeat feedback. When set to <code>true</code>, counts are only available for the 365-day period, so only 365-day data is returned. Combining <code>excludeRepeatFeedback:true</code> with <code>period:30</code> or <code>period:180</code> returns an unsupported request parameter combination error.</li><li><strong>period</strong>: Limit the response to a previous period of days. Supported values are <code>30</code>, <code>180</code>, or <code>365</code>. Other values (for example, <code>7</code>, <code>60</code>, or <code>90</code>) are not supported and return error 501037. If this filter is omitted, summaries for all available periods (<code>7</code>, <code>30</code>, <code>180</code>, and <code>365</code> days) are returned.</li></ul><p>You can send the filter as a query parameter, either with the required <strong>ratingType</strong> only, or combining the filter values with a comma-separated <em>name</em><strong>:</strong><em>value</em> list. For example:</p><p><code>filter=ratingType:OVERALL_EXPERIENCE,period:30</code></p><p><code>filter=ratingType:OVERALL_EXPERIENCE,excludeRepeatFeedback:true,period:365</code></p>",
             "required": true,
             "schema": {
               "type": "string"
@@ -583,7 +583,7 @@
                 "501037": {
                   "domain": "API_FEEDBACK",
                   "category": "REQUEST",
-                  "description": "Invalid period value. Must be 30, 60, or 365."
+                  "description": "Invalid period value. Must be 30, 180, or 365."
                 }
               }
             }
@@ -896,7 +896,7 @@
           },
           "value": {
             "type": "integer",
-            "description": "Value of the time period expressed in the period contained in the <strong>unit</strong>. Supported values are <code>30</code>, <code>60</code>, or <code>365</code>. <p>See the <strong>commentPeriod</strong> container for more information.</p>",
+            "description": "Value of the time period expressed in the period contained in the <strong>unit</strong>. Supported values are <code>30</code>, <code>90</code>, <code>180</code>, or <code>365</code> when the <strong>unit</strong> is <code>DAY</code>, or <code>5</code> when the <strong>unit</strong> is <code>YEAR</code> (for older feedback). <p>See the <strong>commentPeriod</strong> container for more information.</p>",
             "format": "int32"
           }
         },
@@ -1093,11 +1093,11 @@
         "properties": {
           "unit": {
             "type": "string",
-            "description": "The unit for the feedback entry period's <strong>value</strong>. Supported value: <code>DAY</code>."
+            "description": "The unit for the feedback entry period's <strong>value</strong>. Supported values: <code>DAY</code> or <code>YEAR</code>."
           },
           "value": {
             "type": "integer",
-            "description": "The value for the feedback entry period, specified in units of <strong>unit</strong>. Supported values are <code>7</code>, <code>30</code>, <code>90</code>, <code>180</code>, or <code>365</code>.",
+            "description": "The value for the feedback entry period, specified in units of <strong>unit</strong>. Supported values are <code>30</code>, <code>90</code>, <code>180</code>, or <code>365</code> when the <strong>unit</strong> is <code>DAY</code>, or <code>5</code> when the <strong>unit</strong> is <code>YEAR</code> (for older feedback).",
             "format": "int32"
           }
         },
@@ -1575,7 +1575,7 @@
           },
           "value": {
             "type": "integer",
-            "description": "The value for the feedback period, specified in units of <strong>unit</strong>. Supported value: <code>90</code>.",
+            "description": "The value for the feedback period, specified in units of <strong>unit</strong>. Supported values are <code>7</code>, <code>30</code>, <code>180</code>, or <code>365</code>. If the <strong>period</strong> filter is set (<code>30</code>, <code>180</code>, or <code>365</code>), the returned value matches the filter. If the filter is omitted, entries for all periods (<code>7</code>, <code>30</code>, <code>180</code>, and <code>365</code>) are returned. If <strong>excludeRepeatFeedback</strong> is <code>true</code>, only <code>365</code> is returned.",
             "format": "int32"
           }
         },
@@ -1645,7 +1645,7 @@
         "properties": {
           "feedbackMetrics": {
             "type": "array",
-            "description": "An array of metrics associated with feedback aggregation.",
+            "description": "An array of metrics associated with feedback aggregation. This array is only returned when the <strong>excludeRepeatFeedback</strong> filter is set to <code>true</code>.",
             "items": {
               "$ref": "#/components/schemas/FeedbackMetrics"
             }

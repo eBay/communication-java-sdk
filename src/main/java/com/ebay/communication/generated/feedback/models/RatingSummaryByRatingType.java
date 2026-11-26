@@ -31,7 +31,7 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
      */
     private Map<String, Object> additionalData;
     /**
-     * An array of metrics associated with feedback aggregation.
+     * An array of metrics associated with feedback aggregation. This array is only returned when the &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; filter is set to &lt;code&gt;true&lt;/code&gt;.
      */
     private java.util.List<FeedbackMetrics> feedbackMetrics;
     /**
@@ -71,7 +71,7 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         return this.additionalData;
     }
     /**
-     * Gets the feedbackMetrics property value. An array of metrics associated with feedback aggregation.
+     * Gets the feedbackMetrics property value. An array of metrics associated with feedback aggregation. This array is only returned when the &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; filter is set to &lt;code&gt;true&lt;/code&gt;.
      * @return a {@link java.util.List<FeedbackMetrics>}
      */
     @jakarta.annotation.Nullable
@@ -135,7 +135,7 @@ public class RatingSummaryByRatingType implements AdditionalDataHolder, Parsable
         this.additionalData = value;
     }
     /**
-     * Sets the feedbackMetrics property value. An array of metrics associated with feedback aggregation.
+     * Sets the feedbackMetrics property value. An array of metrics associated with feedback aggregation. This array is only returned when the &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; filter is set to &lt;code&gt;true&lt;/code&gt;.
      * @param value Value to set for the feedbackMetrics property.
      */
     public void setFeedbackMetrics(@jakarta.annotation.Nullable final java.util.List<FeedbackMetrics> value) {

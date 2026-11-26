@@ -36,6 +36,10 @@ public final class KiotaAuthProvider implements AccessTokenProvider {
 
     @Override
     public String getAuthorizationToken(URI uri, Map<String, Object> ctx) {
+        // Never hand the token to a host outside the trusted list, or over plain http off loopback.
+        if (uri == null || !config.isTrustedUrl(uri.toString())) {
+            return "";
+        }
         String token = TokenContext.CURRENT.get() != null
             ? TokenContext.CURRENT.get()
             : config.getAccessToken();

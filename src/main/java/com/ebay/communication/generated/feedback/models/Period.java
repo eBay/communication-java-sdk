@@ -35,7 +35,7 @@ public class Period implements AdditionalDataHolder, Parsable {
      */
     private String unit;
     /**
-     * The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported value: &lt;code&gt;90&lt;/code&gt;.
+     * The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. If the &lt;strong&gt;period&lt;/strong&gt; filter is set (&lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;), the returned value matches the filter. If the filter is omitted, entries for all periods (&lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, and &lt;code&gt;365&lt;/code&gt;) are returned. If &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; is &lt;code&gt;true&lt;/code&gt;, only &lt;code&gt;365&lt;/code&gt; is returned.
      */
     private Integer value;
     /**
@@ -82,7 +82,7 @@ public class Period implements AdditionalDataHolder, Parsable {
         return this.unit;
     }
     /**
-     * Gets the value property value. The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported value: &lt;code&gt;90&lt;/code&gt;.
+     * Gets the value property value. The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. If the &lt;strong&gt;period&lt;/strong&gt; filter is set (&lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;), the returned value matches the filter. If the filter is omitted, entries for all periods (&lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, and &lt;code&gt;365&lt;/code&gt;) are returned. If &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; is &lt;code&gt;true&lt;/code&gt;, only &lt;code&gt;365&lt;/code&gt; is returned.
      * @return a {@link Integer}
      */
     @jakarta.annotation.Nullable
@@ -114,7 +114,7 @@ public class Period implements AdditionalDataHolder, Parsable {
         this.unit = value;
     }
     /**
-     * Sets the value property value. The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported value: &lt;code&gt;90&lt;/code&gt;.
+     * Sets the value property value. The value for the feedback period, specified in units of &lt;strong&gt;unit&lt;/strong&gt;. Supported values are &lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;. If the &lt;strong&gt;period&lt;/strong&gt; filter is set (&lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, or &lt;code&gt;365&lt;/code&gt;), the returned value matches the filter. If the filter is omitted, entries for all periods (&lt;code&gt;7&lt;/code&gt;, &lt;code&gt;30&lt;/code&gt;, &lt;code&gt;180&lt;/code&gt;, and &lt;code&gt;365&lt;/code&gt;) are returned. If &lt;strong&gt;excludeRepeatFeedback&lt;/strong&gt; is &lt;code&gt;true&lt;/code&gt;, only &lt;code&gt;365&lt;/code&gt; is returned.
      * @param value Value to set for the value property.
      */
     public void setValue(@jakarta.annotation.Nullable final Integer value) {
